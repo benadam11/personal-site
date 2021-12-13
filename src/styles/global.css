@@ -101,9 +101,13 @@ p {
   }
 }
 
-video {
+video.show {
   border-radius: 8px;
   animation: scale-up .3s ease-in-out;
+}
+
+.icon:hover {
+  color: #982E35;
 }
 
 @keyframes scale-up {
