@@ -14,7 +14,7 @@ function Nav() {
       </a>
       <div class='flex justify-end align-center gap-8'>
         <a class='nav-link' href='/'>Home</a>
-        <a class='nav-link' href='/thoughts'>Thoughts</a>
+        <a class='nav-link' href='/thoughts/'>Thoughts</a>
       </div>
     </nav>
   );
