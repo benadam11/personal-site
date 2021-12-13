@@ -22,7 +22,7 @@ function Video({ show, coords, unmute }) {
     }
   }, [show, unmute]);
   return (
-    <div class="fixed" style={{ left: coords[0], top: coords[1] + 40 }}>
+    <div class="fixed" style={{ left: coords[0] - 5, top: coords[1] + 30 }}>
       <video
         preload
         ref={el}

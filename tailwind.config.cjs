@@ -15,4 +15,7 @@ module.exports = {
       sand: "#F8F7FA"
     },
   },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

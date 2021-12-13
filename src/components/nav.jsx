@@ -1,6 +1,6 @@
 function Nav() {
   return (
-    <nav class="max-w-[1020px] mx-auto flex justify-between">
+    <nav class="max-w-[960px] mx-auto flex justify-between">
       <a href="/">
         <figure class="flex items-center gap-2">
           <svg role="img" width="24" height="24" viewBox="0 0 24 24">

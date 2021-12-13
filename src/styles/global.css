@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-p {
-  font-family: 'Libre Baskerville';
-  font-size: 16px;
-}
-
 .wipe {
   animation: 1.4s down-enter cubic-bezier(0.25, 1, 0.5, 1) backwards;
 }
@@ -75,7 +70,6 @@ p {
 }
 
 .nav-link.active::after {
-  /* opacity: .5; */
   animation: grow .8s cubic-bezier(0.25, 1, 0.5, 1);
   content: "";
   display: block;
@@ -103,6 +97,7 @@ p {
 
 video.show {
   border-radius: 8px;
+  overflow: visible;
   animation: scale-up .3s ease-in-out;
 }
 
@@ -120,4 +115,59 @@ video.show {
     transform: scaleY(1);
   }
 }
+
+.post-content h1 {
+  @apply text-4xl font-sans font-bold my-12;
+}
+
+.post-content h2 {
+  @apply text-2xl font-sans font-bold my-8;
+}
+
+.post-content p {
+  @apply text-xl font-serif;
+}
+
+.post-content p + p {
+  @apply mt-8;
+}
+
+.post-content strong {
+  @apply font-bold font-sans text-xl;
+}
+
+.post-content blockquote {
+  @apply italic relative my-6 pl-4; 
+}
+
+.post-content blockquote:before {
+  content: '';
+  width: 3px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: currentColor;
+}
+
+.post-content img {
+  @apply w-full h-auto my-8;
+}
+
+.post-content ol {
+  list-style: decimal;
+  @apply pl-6 my-8;
+}
+.post-content ol ol {
+  list-style: lower-latin;
+  @apply my-4;
+}
+
+.post-content li {
+  @apply font-serif text-xl;
+}
+.post-content li + li {
+  @apply mt-4;
+}
+
 
