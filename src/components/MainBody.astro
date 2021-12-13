@@ -1,0 +1,11 @@
+---
+import Nav from '../components/nav.jsx';
+---
+<body class='bg-sand'>
+  <header class='py-6 sticky top-0 bg-sand z-10'>
+    <Nav  />
+  </header>
+  <slot />
+  <canvas id='canvas' class='w-full h-full absolute top-0' style='z-index: -1;'></canvas>
+  <script src={Astro.resolve("../../public/scripts/index.js")} />
+</body>

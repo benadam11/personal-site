@@ -1,0 +1,16 @@
+{
+  "name": "@example/portfolio",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/renderer-preact": "^0.3.1",
+    "astro": "^0.21.10",
+    "tailwindcss": "^3.0.0"
+  }
+}
