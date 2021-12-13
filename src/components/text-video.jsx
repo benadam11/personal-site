@@ -21,7 +21,6 @@ function Video({ show, coords }) {
     <div class="fixed" style={{ left: coords[0], top: coords[1] + 60 }}>
       {show && (
         <video
-        muted
           ref={el}
           class={`max-w-[600px] right-0 aspect-video ${show ? "show" : ""}`}
           src={video}
@@ -46,7 +45,7 @@ export default function TextVideoPopover({ children }) {
     <span
       ref={el}
       class="relative cursor-help"
-      onMouseEnter={() => setShow(true)}
+      onClick={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
     >
       {children}
