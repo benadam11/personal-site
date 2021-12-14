@@ -15,7 +15,7 @@ function Nav() {
       <div class='flex justify-end align-center gap-8'>
         <a class='nav-link' href='/'>Home</a>
         <a class='nav-link' href='/thoughts/'>Thoughts</a>
-        <a class='nav-link' href='/projects/'>Projects</a>
+        <a class='nav-link' href='/experiments/'>Experiments</a>
         <a class='nav-link' href='/work/'>Work</a>
       </div>
     </nav>
