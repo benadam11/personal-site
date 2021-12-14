@@ -16,7 +16,7 @@ const posts = Astro.fetchContent('./*.md');
       <ul>
         {posts.map(post => 
           <li class='block mb-8'>
-            <h6 class='font-serif font-semibold text-grey2 text-sm mb-2'>12/10/21</h6>
+            <h6 class='font-serif font-semibold text-grey2 text-sm mb-2'>{post.published}</h6>
             <a href={post.url}>
               <h3 class='text-3xl'>{post.title}</h3>
             </a>
