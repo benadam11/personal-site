@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/renderer-react": "^0.3.1",
-    "astro": "^0.21.10",
+    "astro": "^0.21.12",
     "tailwindcss": "^3.0.0"
   }
 }
