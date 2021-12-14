@@ -14,8 +14,5 @@ module.exports = {
       grey3: "868279",
       sand: "#F8F7FA"
     },
-  },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  }
 };

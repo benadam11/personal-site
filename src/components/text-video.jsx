@@ -1,6 +1,6 @@
 import video from "../../public/assets/easter-egg.mp4";
-import { useState, useRef, useEffect } from "preact/hooks";
-import { createPortal } from "preact/compat";
+import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 function Video({ show, coords, unmute }) {
   const el = useRef(null);
