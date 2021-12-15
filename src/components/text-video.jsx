@@ -26,7 +26,7 @@ function Video({ show, coords, unmute }) {
       <video
         preload
         muted
-        autoplay
+        autoplay="autoplay"
         ref={el}
         class={`max-w-[600px] right-0 aspect-video ${show ? "show" : "hidden"}`}
         src={video}
