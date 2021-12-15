@@ -116,6 +116,10 @@ video.show {
   }
 }
 
+.post-content {
+  overflow: hidden;
+}
+
 .post-content h1 {
   @apply text-4xl font-sans font-bold my-12;
 }
