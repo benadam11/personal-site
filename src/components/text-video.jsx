@@ -25,6 +25,8 @@ function Video({ show, coords, unmute }) {
     <div class="fixed" style={{ left: coords[0] - 5, top: coords[1] + 30 }}>
       <video
         preload
+        muted
+        autoplay
         ref={el}
         class={`max-w-[600px] right-0 aspect-video ${show ? "show" : "hidden"}`}
         src={video}
