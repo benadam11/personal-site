@@ -9,8 +9,6 @@ const { content } = Astro.props;
     <MainHead title={content.title} description={content.description} />
   </head>
   <MainBody>
-    <div class="max-w-[960px] mx-auto">
-      <div class="post-content fade-in"><slot></slot></div>
-    </div>
+    <div class="post-content fade-in"><slot /></div>
   </MainBody>
 </html>

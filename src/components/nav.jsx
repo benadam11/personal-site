@@ -1,6 +1,6 @@
 function Nav() {
   return (
-    <nav class="max-w-[960px] mx-auto flex justify-between">
+    <nav class="max-w-[90ch] mx-auto flex justify-between px-8">
       <a href="/">
         <figure class="flex items-center gap-2">
           <svg role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -12,7 +12,7 @@ function Nav() {
           </figcaption>
         </figure>
       </a>
-      <div class='flex justify-end align-center gap-8'>
+      <div class='justify-end align-center gap-8 hidden lg:flex'>
         <a class='nav-link' href='/'>Home</a>
         <a class='nav-link' href='/thoughts/'>Thoughts</a>
         <a class='nav-link' href='/experiments/'>Experiments</a>
