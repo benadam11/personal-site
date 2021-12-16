@@ -6,6 +6,7 @@ import TextVideoPopover from '../components/text-video.jsx'
 import PostItem from '../components/post-item.jsx'
 import ParticleAnimation from '../components/particle-animation.jsx';
 import ImageColors from '../components/image-color.jsx';
+
 const posts = Astro.fetchContent('./thoughts/*.md');
 const topPosts = posts.slice(0,3);
 ---
@@ -24,9 +25,10 @@ const topPosts = posts.slice(0,3);
       <ul>
         {topPosts.map(post => <PostItem {...post} /> )}
       </ul>
-      <a href='/thoughts/' class='text-red hover:font-bold hover:underline uppercase text-sm'>See More</a>
+      
+      <a href='/thoughts/' class='text-red hover:font-bold hover:underline uppercase text-sm'>See More <span class="arrow-right">→</span></a>
     </section>
-    <section class='fade-in'>
+    <section class='fade-in pt-12'>
       <h2 class='uppercase text-sm mb-12'>Experiments</h2>
       <main class='flex gap-4 overflow-auto'>
         <ParticleAnimation client:load />

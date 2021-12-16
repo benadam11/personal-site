@@ -4,7 +4,6 @@ layout: ../../layouts/post.astro
 title: My Experience At Amazon
 published: 12/3/21
 ---
-# My Experience at Amazon
 
 ## Joining Amazon
 

@@ -5,7 +5,6 @@ title: Building A Developer Media Company
 published: 12/11/21
 ---
 
-# A Developer Media Company
 *Note: this is a synthesis of converations I’ve had with Tyler & Alex from ui.dev as well as some of my own ideas. The vision is what got me excited about joining ui.dev and to write this out.* 
 
 Over the past several years, software companies have put an ever increasing focus on “developer relations” hiring DevRel (or Developer Advocates) who’s role is to produce technical content that generates value for the business (videos, tutorials, documentation, SDKs, etc). Their role is critical for marketing the product (demos, conference talks etc), onboarding new users (tutorials, SDKs etc) and retaining existing users (documentation, community etc).

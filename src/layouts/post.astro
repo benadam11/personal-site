@@ -9,6 +9,11 @@ const { content } = Astro.props;
     <MainHead title={content.title} description={content.description} />
   </head>
   <MainBody>
-    <div class="post-content fade-in"><slot /></div>
+    <div class="post-content">
+      <h1 class='py-12 wipe'>{content.title}</h1>
+      <div class='fade-in'>
+      <slot />
+      </div>
+    </div>
   </MainBody>
 </html>
