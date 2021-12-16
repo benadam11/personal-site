@@ -85,6 +85,15 @@ video.show {
   }
 }
 
+.arrow-right {
+  display: inline-block;
+  transition: transform .2s ease-in-out;
+}
+
+a:hover .arrow-right {
+  transform: translateX(4px);
+}
+
 .post-content {
   overflow: hidden;
 }
