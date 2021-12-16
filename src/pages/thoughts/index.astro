@@ -5,7 +5,9 @@ import PostItem from '../../components/post-item.jsx'
 const posts = Astro.fetchContent('./*.md');
 ---
 <html lang="en">
-  <MainHead title="Thoughts" description="Essays, learning, and other miscellaneous goodies" />
+  <head>
+    <MainHead title="Thoughts" description="Essays, learning, and other miscellaneous goodies" />
+  </head>
   <MainBody>
     <section class='wipe max-w-[960px] mx-auto py-24'>
       <h1 class='text-4xl mb-4 font-bold'>Thoughts</h1>

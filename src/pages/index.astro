@@ -11,7 +11,9 @@ const posts = Astro.fetchContent('./thoughts/*.md');
 const topPosts = posts.slice(0,3);
 ---
 <html lang="en">
-  <MainHead title="Ben Adam: Personal Site" description="Ben: Designer, Developer, and Writer..." />
+  <head>
+    <MainHead title="Ben Adam: Personal Site" description="Ben Adam: Designer / Software Developer based in Tempe, Arizona." />
+  </head>
   <MainBody>
     <section class='py-24 wipe '>
       <h1 class='text-4xl mb-4 font-bold'>Hello, my name is Ben.</h1>

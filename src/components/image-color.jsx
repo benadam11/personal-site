@@ -27,7 +27,7 @@ export default function ImageUpload() {
 
   return (
     <article
-      className="w-full mb-12 p-8 rounded-xl relative grid min-w-[350px]"
+      className="w-full mb-12 p-8 rounded-xl relative grid transition-colors"
       style={{
         backgroundColor: colors[selected]?.hex,
         gridTemplateRows: "auto 1fr auto",
@@ -38,7 +38,10 @@ export default function ImageUpload() {
       </p>
 
       <figure className="relative image-color-figure aspect-square overflow-hidden rounded-md">
-        <label htmlFor="file-upload-color" className="block h-full cursor-pointer">
+        <label
+          htmlFor="file-upload-color"
+          className="block h-full cursor-pointer"
+        >
           {imgUrl && (
             <img
               src={imgUrl}
@@ -70,7 +73,10 @@ export default function ImageUpload() {
       </figure>
       <div className="flex pt-4 items-center gap-4 overflow-auto scroll-px-1">
         {colors.map((color, i) => (
-          <div key={i} className='bg-[rgba(255,255,255,.2)] p-2 rounded-lg flex place-items-center'>
+          <div
+            key={i}
+            className={`transition-colors bg-[rgba(255,255,255,.2)] p-2 rounded-lg flex place-items-center ${i === selected ? "bg-[rgba(255,255,255,.6)]" : ""}`}
+          >
             <button
               onClick={() => setSelected(i)}
               className="w-[32px] h-[32px] rounded-full shadow-md shadow-current shrink-0"
@@ -79,9 +85,9 @@ export default function ImageUpload() {
           </div>
         ))}
       </div>
-      <div className='flex items-center justify-between text-xs mt-4'>
-          <span className='font-thin'>Lighter</span>
-          <span className="font-bold">Darker</span>
+      <div className="flex items-center justify-between text-xs mt-4">
+        <span className="font-thin">Lighter</span>
+        <span className="font-bold">Darker</span>
       </div>
     </article>
   );
