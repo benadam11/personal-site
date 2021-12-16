@@ -1,10 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import getColors from "image-pal-canvas";
-import defaultImg from "../assets/winter-building.jpeg";
 
 export default function ImageUpload() {
   const input = useRef(null);
-  const [imgUrl, setImgUrl] = useState(defaultImg);
+  const [imgUrl, setImgUrl] = useState('https://source.unsplash.com/random');
   const [colors, setColors] = useState([]);
   const [selected, setSelected] = useState(0);
 
@@ -46,7 +45,7 @@ export default function ImageUpload() {
             <img
               src={imgUrl}
               alt="Image uploaded by a user"
-              className=" object-cover object-top "
+              className=" object-cover object-top aspect-square"
             />
           )}
           <input
@@ -62,13 +61,14 @@ export default function ImageUpload() {
         </label>
         <figcaption
           style={{
-            background: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.25))",
+            background: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.5))",
             bottom: "0px",
             color: "white",
           }}
-          className="p-4 absolute w-full text-center font-serif text-sm"
+          className="p-4 absolute w-full text-center font-serif text-sm grid"
         >
-          Click to upload your own image
+          Click image upload your own or
+          <button className='font-bold underline cursor-pointer' onClick={() => setImgUrl(`https://source.unsplash.com/random/${Math.floor(Math.random() * 100)}`)}>Try Random</button>
         </figcaption>
       </figure>
       <div className="flex pt-4 items-center gap-4 overflow-auto scroll-px-1">
