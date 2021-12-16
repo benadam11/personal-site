@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-[90ch] my-12 fade-in px-8">
+    <footer className="mx-auto max-w-[90ch] my-12 fade-in px-4">
       <h2 className="uppercase text-sm mb-12 font-bold">Connect</h2>
       <ul>
         <li>
