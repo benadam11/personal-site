@@ -27,7 +27,7 @@ export default function ImageUpload() {
 
   return (
     <article
-      className="w-full mb-12 p-8 rounded-xl relative grid transition-colors"
+      className="w-full mb-12 p-8 rounded-xl relative grid transition-colors min-w-[320px]"
       style={{
         backgroundColor: colors[selected]?.hex,
         gridTemplateRows: "auto 1fr auto",
