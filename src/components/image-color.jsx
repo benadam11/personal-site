@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import getColors from "image-pal-canvas";
-import defaultImg from "../../public/assets/winter-building.jpeg";
+import defaultImg from "../assets/winter-building.jpeg";
 
 export default function ImageUpload() {
   const input = useRef(null);
@@ -18,7 +18,7 @@ export default function ImageUpload() {
 
   return (
     <article
-      className="w-full mb-12 p-8 rounded-xl relative grid"
+      className="w-full mb-12 p-8 rounded-xl relative grid min-w-[350px]"
       style={{ backgroundColor: colors[selected]?.hex, gridTemplateRows: 'auto 1fr auto'}}
     >
       <p className="text-center font-serif text-xl pb-4">Image Color Extraction</p>
@@ -30,7 +30,6 @@ export default function ImageUpload() {
             name="file-upload"
             id="file-upload-color"
             className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] invisible"
-            style={{}}
             type="file"
             ref={input}
             onChange={(e) => {
@@ -49,7 +48,7 @@ export default function ImageUpload() {
           Click to upload your own image
         </figcaption>
       </figure>
-      <div className="flex justify-center pt-4 items-center gap-4 overflow-auto">
+      <div className="flex justify-center pt-4 items-center gap-4 overflow-auto scroll-px-1">
         {colors.map((color, i) => (
           <button
             key={i}

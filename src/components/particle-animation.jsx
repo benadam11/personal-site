@@ -9,9 +9,9 @@ export default function ParticleAnimation() {
     animateCanvas(canvas.current, count);
   }, [count]);
   return (
-    <article className="w-full mb-12 p-8 rounded-xl bg-blue">
+    <article className="w-full mb-12 p-8 rounded-xl bg-blue min-w-[350px]">
       <figure
-        className="grid min-h-[500px]"
+        className="grid h-full"
         style={{ gridTemplateRows: "auto 1fr auto" }}
       >
         <figcaption className="text-center font-serif text-sand pb-8 text-xl">

@@ -1,4 +1,4 @@
-import video from "../../public/assets/easter-egg.mp4";
+import video from "../assets/easter-egg.mp4";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 

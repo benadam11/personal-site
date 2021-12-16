@@ -34,35 +34,6 @@
   }
 }
 
-
-
-.overlay {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
-  clip-path: inset(0 0 100% 0);
-  position: absolute;
-  top: 0;
-  transition: all .8s cubic-bezier(0,1.5,1,1.5);
-  padding: 1rem;
-}
-
-.overlay-inner {
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  color: #982E35;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 1rem;
-}
-
-.project-card:hover .overlay {
-  clip-path: inset(0);
-}
-
 .nav-link {
   position: relative;
   font-size: 14px;
