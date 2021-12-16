@@ -14,7 +14,7 @@ export default function ParticleAnimation() {
       style={{ gridTemplateRows: "auto 1fr auto" }}
     >
       <figcaption className="text-center font-serif text-sand pb-8 text-xl">
-        Particle Animation
+        {count} Particles (Animated)
       </figcaption>
       <canvas ref={canvas} id="canvas-demo" />
       <div className="pt-8">

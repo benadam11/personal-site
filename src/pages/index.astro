@@ -4,6 +4,7 @@ import MainHead from '../components/MainHead.astro';
 import MainBody from '../components/MainBody.astro';
 import TextVideoPopover from '../components/text-video.jsx'
 import PostItem from '../components/post-item.jsx'
+import ParticleAnimation from '../components/particle-animation.jsx';
 const posts = Astro.fetchContent('./thoughts/*.md');
 const topPosts = posts.slice(0,3);
 ---
@@ -26,16 +27,13 @@ const topPosts = posts.slice(0,3);
     </section>
     <section class='fade-in'>
       <h2 class='uppercase text-sm mb-12'>Experiments</h2>
-      <main class='grid grid-flow-col snap-mandatory snap-x gap-4 overflow-auto'>
-        {['Title One', 'Title Two', 'Title Three', 'Title Four', 'Title Five'].map(project => {
-          return <article class='project-card aspect-video bg-blue snap-center min-h-[300px] relative'>
-            <div class='overlay'>
-              <div class='overlay-inner'>
-                <h4>{project}</h4>
-              </div>
-            </div>
-          </article>
-        })}
+      <main class='grid grid-cols-2 gap-4'>
+        <article class='bg-blue p-8 rounded-lg'>
+          <ParticleAnimation client:load />
+        </article>
+        <article class='bg-red p-8 rounded-lg'>
+          
+        </article>
       </main>
     </section>
   </MainBody>
