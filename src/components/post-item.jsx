@@ -1,6 +1,6 @@
 export default function PostItem({ published, url, title }) {
   return (
-    <li class="block mb-8">
+    <li className="block mb-8">
       <time className="font-serif italic font-medium text-grey2 text-md mb-2">
         {published}
       </time>

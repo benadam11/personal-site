@@ -1,7 +1,7 @@
 ---
 import MainHead from '../../components/MainHead.astro';
 import MainBody from '../../components/MainBody.astro';
-const colors = [ 'bg-grey1', 'bg-blue', 'bg-grey2', 'bg-red',];
+import ParticleAnimation from '../../components/particle-animation.jsx';
 ---
 <html lang="en">
   <MainHead title="Experiments" description="Interactions, widgets and other things I have been tinkering with" />
@@ -12,9 +12,9 @@ const colors = [ 'bg-grey1', 'bg-blue', 'bg-grey2', 'bg-red',];
     </section>
     <section class='fade-in max-w-[960px] mx-auto py-12'>
       <main>
-        {colors.map((className) => {
-          return <article class={`w-full aspect-[4/3] mb-12 rounded-xl ${className}`} />
-        })}
+        <article class='w-full mb-12 p-8 rounded-xl bg-blue' >
+          <ParticleAnimation client:load />
+        </article>
       </main>
     </section>
   </MainBody>
