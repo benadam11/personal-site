@@ -5,7 +5,7 @@ export default function PostItem({ published, url, title }) {
         {published}
       </time>
       <a href={url}>
-        <h3 className="text-3xl">{title}</h3>
+        <h3 className="text-3xl font-bold">{title}</h3>
       </a>
     </li>
   );

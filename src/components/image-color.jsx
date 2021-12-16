@@ -14,9 +14,9 @@ export default function ImageUpload() {
         {
           srcUrl: imgUrl,
           mean: false,
-          order: "distance",
+          maxColors: 20,
           minDensity: 0.001,
-          cubicCells: 8,
+          cubicCells: 27,
         },
         (_, colors) => {
           setColors(colors);
@@ -78,6 +78,10 @@ export default function ImageUpload() {
             />
           </div>
         ))}
+      </div>
+      <div className='flex items-center justify-between text-xs mt-4'>
+          <span className='font-thin'>Lighter</span>
+          <span className="font-bold">Darker</span>
       </div>
     </article>
   );

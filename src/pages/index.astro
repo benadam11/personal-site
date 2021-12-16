@@ -14,22 +14,22 @@ const topPosts = posts.slice(0,3);
   <MainHead title="Ben Adam: Personal Site" description="Ben: Designer, Developer, and Writer..." />
   <MainBody>
     <section class='py-24 wipe '>
-      <h1 class='text-4xl mb-4'>Hello, my name is Ben.</h1>
+      <h1 class='text-4xl mb-4 font-bold'>Hello, my name is Ben.</h1>
       <h4 class='font-serif italic text-2xl max-w-[760px]'>
         I am a Software Designer / Engineer based in Tempe, AZ. <br> Currently I'm
         <span class='line-through opacity-50'>working at Amazon</span> enjoying a break before starting a <TextVideoPopover client:load>new adventure.</TextVideoPopover>
       </h4>
     </section>
     <section class='fade-in pb-12'>
-      <h2 class='uppercase text-sm mb-12'>Recent Thoughts</h2>
+      <h2 class='uppercase text-sm mb-12 font-bold'>Recent Thoughts</h2>
       <ul>
         {topPosts.map(post => <PostItem {...post} /> )}
       </ul>
       
-      <a href='/thoughts/' class='text-red hover:font-bold hover:underline uppercase text-sm'>See More <span class="arrow-right">→</span></a>
+      <a href='/thoughts/' class='text-red font-bold hover:underline uppercase text-sm'>See More <span class="arrow-right">→</span></a>
     </section>
     <section class='fade-in pt-12'>
-      <h2 class='uppercase text-sm mb-12'>Experiments</h2>
+      <h2 class='uppercase text-sm mb-12 font-bold'>Experiments</h2>
       <main class='flex gap-4 overflow-auto'>
         <ParticleAnimation client:load />
         <ImageColors client:load />
