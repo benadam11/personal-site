@@ -5,6 +5,7 @@ import MainBody from '../components/MainBody.astro';
 import TextVideoPopover from '../components/text-video.jsx'
 import PostItem from '../components/post-item.jsx'
 import ParticleAnimation from '../components/particle-animation.jsx';
+import ImageColors from '../components/image-color.jsx';
 const posts = Astro.fetchContent('./thoughts/*.md');
 const topPosts = posts.slice(0,3);
 ---
@@ -28,12 +29,8 @@ const topPosts = posts.slice(0,3);
     <section class='fade-in'>
       <h2 class='uppercase text-sm mb-12'>Experiments</h2>
       <main class='grid grid-cols-2 gap-4'>
-        <article class='bg-blue p-8 rounded-lg'>
-          <ParticleAnimation client:load />
-        </article>
-        <article class='bg-red p-8 rounded-lg'>
-          
-        </article>
+        <ParticleAnimation client:load />
+        <ImageColors client:load />
       </main>
     </section>
   </MainBody>

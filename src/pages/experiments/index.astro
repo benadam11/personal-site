@@ -2,6 +2,7 @@
 import MainHead from '../../components/MainHead.astro';
 import MainBody from '../../components/MainBody.astro';
 import ParticleAnimation from '../../components/particle-animation.jsx';
+import ImageColors from '../../components/image-color.jsx';
 ---
 <html lang="en">
   <MainHead title="Experiments" description="Interactions, widgets and other things I have been tinkering with" />
@@ -12,9 +13,8 @@ import ParticleAnimation from '../../components/particle-animation.jsx';
     </section>
     <section class='fade-in max-w-[960px] mx-auto py-12'>
       <main>
-        <article class='w-full mb-12 p-8 rounded-xl bg-blue' >
-          <ParticleAnimation client:load />
-        </article>
+        <ParticleAnimation client:load />
+        <ImageColors client:load />
       </main>
     </section>
   </MainBody>

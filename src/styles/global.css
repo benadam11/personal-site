@@ -116,6 +116,15 @@ video.show {
   }
 }
 
+.image-color-figure figcaption {
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.image-color-figure:hover figcaption {
+  opacity: 1;
+}
+
 .post-content {
   overflow: hidden;
 }

@@ -22,13 +22,13 @@ function Video({ show, coords, unmute }) {
     }
   }, [show, unmute]);
   return (
-    <div class="fixed" style={{ left: coords[0] - 5, top: coords[1] + 30 }}>
+    <div className="fixed" style={{ left: coords[0] - 5, top: coords[1] + 30 }}>
       <video
-        preload
+        preload="true"
         muted
-        autoplay="autoplay"
+        autoPlay="autoplay"
         ref={el}
-        class={`max-w-[600px] right-0 aspect-video ${show ? "show" : "hidden"}`}
+        className={`max-w-[600px] right-0 aspect-video ${show ? "show" : "hidden"}`}
         src={video}
       />
     </div>
@@ -50,7 +50,7 @@ export default function TextVideoPopover({ children }) {
   return (
     <span
       ref={el}
-      class="relative cursor-help inline-flex items-center gap-2"
+      className="relative cursor-help inline-flex items-center gap-2"
       onMouseOver={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
     >

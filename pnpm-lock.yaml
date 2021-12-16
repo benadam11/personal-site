@@ -5,11 +5,13 @@ specifiers:
   '@radix-ui/react-slider': ^0.1.3
   '@stitches/react': ^1.2.6
   astro: ^0.21.12
+  image-pal-canvas: ^1.2.5
   tailwindcss: ^3.0.0
 
 dependencies:
   '@radix-ui/react-slider': 0.1.3
   '@stitches/react': 1.2.6
+  image-pal-canvas: 1.2.5
 
 devDependencies:
   '@astrojs/renderer-react': 0.3.1
@@ -2090,6 +2092,10 @@ packages:
       space-separated-tokens: 2.0.1
     dev: true
 
+  /hsluv/0.0.3:
+    resolution: {integrity: sha1-gpEH2vtKn4tSoYCe0C4JHq3mdUw=}
+    dev: false
+
   /html-entities/2.3.2:
     resolution: {integrity: sha512-c3Ab/url5ksaT0WyleslpBEthOzWhrjQbg75y7XUsfSzi3Dgzt0l8w5e7DylRn15MTlMMD58dTfzddNS2kcAjQ==}
     dev: true
@@ -2117,6 +2123,18 @@ packages:
       statuses: 1.5.0
       toidentifier: 1.0.0
     dev: true
+
+  /image-pal-canvas/1.2.5:
+    resolution: {integrity: sha512-O4IEJwRhXJNwy0/31zD+wq1ta1qeSf6n4grkZ0JddqEaro0CxZIVyhHPPIWKEjc3ugEE+6RcXKlxICPkIBZEjA==}
+    dependencies:
+      image-pal: 1.2.2
+    dev: false
+
+  /image-pal/1.2.2:
+    resolution: {integrity: sha512-mCHp8MrkpEtK3THaOfvQfMIKIeZwuDTmFD6kKJ/0aVq5lTwWhWQ3D3XtOrziQE64Vr5YC0eHzlpfhsMGhcuenw==}
+    dependencies:
+      hsluv: 0.0.3
+    dev: false
 
   /immutable/4.0.0:
     resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==}
