@@ -3,12 +3,14 @@ import getColors from "image-pal-canvas";
 
 export default function ImageUpload() {
   const input = useRef(null);
-  const [imgUrl, setImgUrl] = useState('https://source.unsplash.com/random');
+  const [imgUrl, setImgUrl] = useState("/winter-building.jpeg");
   const [colors, setColors] = useState([]);
   const [selected, setSelected] = useState(0);
 
   useEffect(() => {
-    if (input.current) {
+    const img = new Image();
+    img.src = imgUrl
+    img.onload = function() {
       getColors(
         {
           srcUrl: imgUrl,
@@ -22,6 +24,7 @@ export default function ImageUpload() {
         }
       );
     }
+    
   }, [imgUrl]);
 
   return (
@@ -68,14 +71,27 @@ export default function ImageUpload() {
           className="p-4 absolute w-full text-center font-serif text-sm grid"
         >
           Click image upload your own or
-          <button className='font-bold underline cursor-pointer' onClick={() => setImgUrl(`https://source.unsplash.com/random/${Math.floor(Math.random() * 100)}`)}>Try Random</button>
+          <button
+            className="font-bold underline cursor-pointer"
+            onClick={() =>
+              setImgUrl(
+                `https://source.unsplash.com/random/${Math.floor(
+                  Math.random() * 100
+                )}`
+              )
+            }
+          >
+            Try Random
+          </button>
         </figcaption>
       </figure>
       <div className="flex pt-4 items-center gap-4 overflow-auto scroll-px-1">
         {colors.map((color, i) => (
           <div
             key={i}
-            className={`transition-colors bg-[rgba(255,255,255,.2)] p-2 rounded-lg flex place-items-center ${i === selected ? "bg-[rgba(255,255,255,.6)]" : ""}`}
+            className={`transition-colors bg-[rgba(255,255,255,.2)] p-2 rounded-lg flex place-items-center ${
+              i === selected ? "bg-[rgba(255,255,255,.6)]" : ""
+            }`}
           >
             <button
               onClick={() => setSelected(i)}
