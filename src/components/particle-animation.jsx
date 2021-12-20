@@ -9,7 +9,7 @@ export default function ParticleAnimation() {
     animateCanvas(canvas.current, count);
   }, [count]);
   return (
-    <article className="w-full mb-12 p-8 rounded-xl bg-blue min-w-[350px]">
+    <article className="default-scheme w-full mb-12 p-8 rounded-xl bg-blue min-w-[350px]">
       <figure
         className="grid h-full"
         style={{ gridTemplateRows: "auto 1fr auto" }}

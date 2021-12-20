@@ -4,8 +4,8 @@ function Nav() {
       <a href="/">
         <figure className="flex items-center gap-2">
           <svg role="img" width="24" height="24" viewBox="0 0 24 24">
-            <circle r="12" cx="12" cy="12" fill="currentColor" />
-            <circle id="circle" r="3" cx="12" cy="18" fill="#f8f7fa" />
+            <circle r="12" cx="12" cy="12" fill="var(--grey1)" />
+            <circle id="circle" r="3" cx="12" cy="18" fill="var(--sand)" />
           </svg>
           <figcaption>
             <b className="uppercase">Ben Adam</b>

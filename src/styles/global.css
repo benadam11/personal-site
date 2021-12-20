@@ -2,23 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+:root,
+.default-scheme {
+  --green: #004445;
+  --light-green: #52beac;
+  --blue: #396783;
+  --light-blue: #6cccf9;
+  --red: #982e35;
+  --purple: #32293c;
+  --grey1: #34373c;
+  --grey2: #6e6c6e;
+  --grey3: #868279;
+  --sand: #f8f7fa;
+  --accent: var(--blue);
+}
+
+.alt-scheme {
+  --grey1: #fdfcfe;
+  --grey2: #a9a9a9;
+  --sand: #34373c;
+  --red: #d02828;
+  --accent: var(--light-green);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grey1: #fdfcfe;
+    --grey2: #a9a9a9;
+    --sand: #34373c;
+    --red: #d02828;
+    --accent: var(--light-green);
+  }
+}
+
 .wipe {
   animation: 1.4s down-enter cubic-bezier(0.25, 1, 0.5, 1) backwards;
 }
 
 .fade-in {
-  animation: 2s fade-in cubic-bezier(0.25, 1, 0.5, 1) backwards;
+  animation: 1.8s fade-in cubic-bezier(0.25, 1, 0.5, 1) backwards;
 }
 
 @keyframes down-enter {
   0% {
-    clip-path: inset(0 100% 0 0);
+    /* clip-path: inset(0 100% 0 0); */
+    transform: translateY(30px);
+    opacity: 0;
   }
   40% {
-    clip-path: inset(0 100% 0 0);
+    /* clip-path: inset(0 100% 0 0); */
+    transform: translateY(30px);
+    opacity: 0;
   }
   100% {
-    clip-path: inset(0);
+    /* clip-path: inset(0); */
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
 
@@ -39,7 +78,7 @@
 }
 
 .nav-link.active::after {
-  animation: grow .8s cubic-bezier(0.25, 1, 0.5, 1);
+  animation: grow 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   content: "";
   display: block;
   width: 6px;
@@ -54,10 +93,10 @@
 
 @keyframes grow {
   0% {
-    transform: translateX(-50%) scale(0)
+    transform: translateX(-50%) scale(0);
   }
   40% {
-    transform: translateX(-50%) scale(0)
+    transform: translateX(-50%) scale(0);
   }
   100% {
     transform: translateX(-50%) scale(1);
@@ -67,17 +106,17 @@
 video.show {
   border-radius: 8px;
   overflow: visible;
-  animation: scale-up .3s ease-in-out;
+  animation: scale-up 0.3s ease-in-out;
 }
 
 .icon:hover {
-  color: #982E35;
+  color: #982e35;
 }
 
 @keyframes scale-up {
   0% {
     transform-origin: bottom center;
-    transform: scaleY(.25);
+    transform: scaleY(0.25);
   }
   100% {
     transform-origin: bottom center;
@@ -87,7 +126,7 @@ video.show {
 
 .arrow-right {
   display: inline-block;
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 a:hover .arrow-right {
@@ -119,11 +158,11 @@ a:hover .arrow-right {
 }
 
 .post-content blockquote {
-  @apply italic relative my-6 pl-4; 
+  @apply italic relative my-6 pl-4;
 }
 
 .post-content blockquote:before {
-  content: '';
+  content: "";
   width: 3px;
   height: 100%;
   display: block;
@@ -156,5 +195,3 @@ a:hover .arrow-right {
 .post-content li + li {
   @apply mt-4;
 }
-
-

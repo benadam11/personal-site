@@ -7,12 +7,14 @@ module.exports = {
       serif: ["Libre Baskerville", "Georgia"],
     },
     colors: {
-      blue: "#396783",
-      red: "#982E35",
-      grey1: "#34373C",
-      grey2: "#6E6C6E",
-      grey3: "868279",
-      sand: "#F8F7FA"
+      green: "var(--green)",
+      blue: "var(--blue)",
+      red: "var(--red)",
+      grey1: "var(--grey1)",
+      grey2: "var(--grey2)",
+      grey3: "var(--grey3)",
+      sand: "var(--sand)",
+      accent: "var(--accent)",
     },
   }
 };

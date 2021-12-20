@@ -6,11 +6,12 @@ export default function ImageUpload() {
   const [imgUrl, setImgUrl] = useState("/winter-building.jpeg");
   const [colors, setColors] = useState([]);
   const [selected, setSelected] = useState(0);
+  const isLight = colors?.[selected]?.distance > 50;
 
   useEffect(() => {
     const img = new Image();
-    img.src = imgUrl
-    img.onload = function() {
+    img.src = imgUrl;
+    img.onload = function () {
       getColors(
         {
           srcUrl: imgUrl,
@@ -23,13 +24,12 @@ export default function ImageUpload() {
           setColors(colors);
         }
       );
-    }
-    
+    };
   }, [imgUrl]);
 
   return (
     <article
-      className="w-full mb-12 p-8 rounded-xl relative grid transition-colors min-w-[320px]"
+      className={`${isLight? 'default-scheme': 'alt-scheme'} w-full text-grey1 mb-12 p-8 rounded-xl relative grid transition-colors min-w-[320px]`}
       style={{
         backgroundColor: colors[selected]?.hex,
         gridTemplateRows: "auto 1fr auto",

@@ -56,12 +56,12 @@ Developing media distribution is very resource intensive in most cases (having t
 
 ***(incomplete list of media channel distribution examples)***
 
-Print → (Content → **Print → Merchandising + Direct Delivery** → Readers) 
-Broadcast → (Content → **TV / Cable Network** → Viewers) 
-Feature Film → (Content → **Theaters** → Viewers )
-Publishing → (Content → **Publisher → Book Stores / Amazon** → Readers) 
-Video Games → (Game Development → **$GME / Marketplace → Game Platform** → Gamers)
-Music → (Music Production → **Record Label → Tours + Physical Record + Streaming** → Listeners) 
+- Print → (Content → **Print → Merchandising + Direct Delivery** → Readers)
+- Broadcast → (Content → **TV / Cable Network** → Viewers) 
+- Feature Film → (Content → **Theaters** → Viewers )
+- Publishing → (Content → **Publisher → Book Stores / Amazon** → Readers) 
+- Video Games → (Game Development → **$GME / Marketplace → Game Platform** → Gamers)
+- Music → (Music Production → **Record Label → Tours + Physical Record + Streaming** → Listeners) 
 
 More recently we have seen media companies make huge investments to own their own distribution.  With the success of Netflix ([the most valuable media company in the world](https://www.investopedia.com/stock-analysis/021815/worlds-top-ten-media-companies-dis-cmcsa-fox.aspx)) building a direct to consumer platform for content, there has been an arms race to own content distribution. Netflix started their ascent to the throne by building up their distribution and over time increased their margins by producing their own content (rather than liscensing it from other content providers). In contrast, Disney has been the owner of a mountain of content and has been able to purchase distribution (buying ABC, ESPN, creating cable channels etc). With the creation of Disney+ they made the decision to forgo lucrative licensing deals in favor of controlling distribution. 
 

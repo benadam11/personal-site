@@ -7,7 +7,20 @@ const { title = 'Ben Adam: Personal Site', description = 'The personal site of B
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 
-<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+  <style>
+    circle { fill: rgba(52, 55, 60, 1); }
+    .test { fill: white; }
+    @media (prefers-color-scheme: dark)  {
+      circle { fill: white; }
+      .test { fill: rgba(52, 55, 60, 1); }
+    }
+  </style>
+  <circle cx='12' cy='12' r='12' />
+  <circle class='test' cx='12' cy='18' r='3'>
+    <animate attributeName='r' values='3;0;3' dur='1s' repeatCount='indefinite' />
+  </circle>
+</svg>" />
 <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')}>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

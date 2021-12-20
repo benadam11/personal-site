@@ -28,7 +28,7 @@ const topPosts = posts.slice(0,3);
         {topPosts.map(post => <PostItem {...post} /> )}
       </ul>
       
-      <a href='/thoughts/' class='text-red font-bold uppercase text-sm'>See More <span class="arrow-right">→</span></a>
+      <a href='/thoughts/' class='text-accent font-bold uppercase text-sm'>See More <span class="arrow-right">→</span></a>
     </section>
     <section class='fade-in pt-12'>
       <h2 class='uppercase text-sm mb-12 font-bold'>Experiments</h2>
@@ -36,7 +36,7 @@ const topPosts = posts.slice(0,3);
         <ParticleAnimation client:visible />
         <ImageColors client:visible />
       </main>
-      <a href='/experiments/' class='text-red font-bold uppercase text-sm'>See More <span class="arrow-right">→</span></a>
+      <a href='/experiments/' class='text-accent font-bold uppercase text-sm'>See More <span class="arrow-right">→</span></a>
     </section>
   </MainBody>
 </html>
