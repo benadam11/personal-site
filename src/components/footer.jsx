@@ -4,17 +4,17 @@ export default function Footer() {
       <h2 className="uppercase text-sm mb-12 font-bold">Connect</h2>
       <ul>
         <li>
-          <a className='font-serif text-lg' href="https://twitter.com/benadam11" target="_blank">
+          <a className='font-serif text-lg' href="https://twitter.com/benadam11" target="_blank" rel="noreferrer">
             Twitter
           </a>
         </li>
         <li>
-          <a className='font-serif text-lg'  href="https://twitter.com/benadam11" target="_blank">
+          <a className='font-serif text-lg'  href="https://twitter.com/benadam11" target="_blank" rel="noreferrer">
             LinkedIn
           </a>
         </li>
         <li>
-          <a className='font-serif text-lg'  href="https://twitter.com/benadam11" target="_blank">
+          <a className='font-serif text-lg'  href="https://twitter.com/benadam11" target="_blank" rel="noreferrer">
             Email
           </a>
         </li>

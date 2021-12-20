@@ -47,6 +47,8 @@ export default function ImageUpload() {
           {imgUrl && (
             <img
               src={imgUrl}
+              width='1000'
+              height='1000'
               alt="Image uploaded by a user"
               className=" object-cover object-top aspect-square"
             />
