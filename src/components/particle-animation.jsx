@@ -14,7 +14,7 @@ export default function ParticleAnimation() {
         className="grid h-full"
         style={{ gridTemplateRows: "auto 1fr auto" }}
       >
-        <figcaption className="text-center font-serif text-sand pb-8 text-xl">
+        <figcaption className="text-center font-serif text-base pb-8 text-xl">
           {`${count} Particles (Animated)`} 
         </figcaption>
         <canvas ref={canvas} id="canvas-demo" />
@@ -26,10 +26,10 @@ export default function ParticleAnimation() {
             className="relative flex items-center w-full h-[20px]"
           >
             <Slider.Track className="bg-[rgba(0,0,0,.2)] relative grow rounded-full h-[3px]">
-              <Slider.Range className="absolute rounded-full h-full bg-sand" />
+              <Slider.Range className="absolute rounded-full h-full bg-base" />
             </Slider.Track>
             <Slider.Thumb
-              className="block w-[20px] h-[20px] bg-sand rounded-full focus:shadow-md"
+              className="block w-[20px] h-[20px] bg-base rounded-full focus:shadow-md"
               style={{ unset: "all" }}
             />
           </Slider.Root>

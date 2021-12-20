@@ -2,6 +2,7 @@
 import MainHead from '../../components/MainHead.astro';
 import MainBody from '../../components/MainBody.astro';
 import PostItem from '../../components/post-item.jsx'
+import { sortDate } from '../../scripts/utils.js';
 const posts = Astro.fetchContent('./*.md');
 ---
 <html lang="en">
@@ -15,7 +16,7 @@ const posts = Astro.fetchContent('./*.md');
     </section>
     <section class='fade-in max-w-[960px] mx-auto py-12'>
       <ul>
-        {posts.map(post => <PostItem {...post} />)}
+        {posts.sort(sortDate).map(post => <PostItem {...post} />)}
       </ul>
     </section>
   </MainBody>

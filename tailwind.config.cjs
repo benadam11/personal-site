@@ -10,10 +10,10 @@ module.exports = {
       green: "var(--green)",
       blue: "var(--blue)",
       red: "var(--red)",
-      grey1: "var(--grey1)",
+      contrast: "var(--contrast)",
       grey2: "var(--grey2)",
       grey3: "var(--grey3)",
-      sand: "var(--sand)",
+      base: "var(--base)",
       accent: "var(--accent)",
     },
   }

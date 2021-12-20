@@ -10,26 +10,28 @@
   --light-blue: #6cccf9;
   --red: #982e35;
   --purple: #32293c;
-  --grey1: #34373c;
+  --contrast: #34373c;
   --grey2: #6e6c6e;
   --grey3: #868279;
-  --sand: #f8f7fa;
+  --base: #f8f7fa;
   --accent: var(--blue);
 }
 
 .alt-scheme {
-  --grey1: #fdfcfe;
+  --contrast: #fdfcfe;
   --grey2: #a9a9a9;
-  --sand: #34373c;
+  --grey3: #34373c;
+  --base: #0e0e10;
   --red: #d02828;
   --accent: var(--light-green);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --grey1: #fdfcfe;
+    --contrast: #fdfcfe;
     --grey2: #a9a9a9;
-    --sand: #34373c;
+    --grey3: #34373c;
+    --base: #0e0e10;
     --red: #d02828;
     --accent: var(--light-green);
   }

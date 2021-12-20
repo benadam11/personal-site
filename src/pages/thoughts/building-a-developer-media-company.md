@@ -2,7 +2,7 @@
 # src/pages/index.md
 layout: ../../layouts/post.astro
 title: Building A Developer Media Company
-published: 12/11/21
+published: 12/11/2021
 ---
 
 *Note: this is a synthesis of converations I’ve had with Tyler & Alex from ui.dev as well as some of my own ideas. The vision is what got me excited about joining ui.dev and to write this out.* 

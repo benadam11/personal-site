@@ -2,7 +2,7 @@
 # src/pages/index.md
 layout: ../../layouts/post.astro
 title: My Experience At Amazon
-published: 12/3/21
+published: 12/3/2021
 ---
 
 ## Joining Amazon
@@ -13,7 +13,7 @@ After working at GoDaddy for 5.5 years I was ready to make a change. I was recru
 
 Amazon interview loops are fairly similar across roles and heavily rely on *behavioral* interview process through which they are assessing your answers against the [Amazon Leadership Principles](https://www.amazon.jobs/en/principles). (If you are going through the process you will be specifically coached by the recruiter on how to use the leadership principles). In preparation for the interview, I wrote down all of the principles and made bullet notes of work examples that I could use to relate my experiences to specific principle. To Amazon’s credit, the leadership principles are not just bulletin board material, they are referenced and used actively in decision making and so interviewing through the lens of the principles makes a lot of sense for them as a business. 
 
-In addition to the behavioral interviews I also did a technical screen (live coding with a Sr Design Technologist at the company) which consisted of a fairly simple html, css and javascript exercise (no framework). For the onsite, I was asked to prepare a take-home exercise to present during the onsite (as well as 2-3 case studies of current work). Amazon is big on data, so they are really interested in the impact of your work (what metrics do you have to support that you made the right decision etc). Unfortunately due to a miscommunication, I found out about the take home exercise 2 days before the onsite, so I had to scramble to put together a [prototype](https://codesandbox.io/s/movie-reviews-5yccq) the day before (which unfortunately meant I did really poorly in another interview I had scheduled for the same week). 
+In addition to the behavioral interviews I also did a technical screen (live coding with a Sr Design Technologist at the company) which consisted of a fairly simple html, css and javascript exercise (no framework). For the onsite, I was asked to prepare a take-home exercise to present during the onsite (as well as 2-3 case studies of current work). Amazon is big on data, so they are really interested in the impact of your work (what metrics do you have to support that you made the right decision etc). Unfortunately due to a miscommunication, I found out about the take home exercise 2 days before the onsite, so I had to scramble to put together a [prototype](https://codebasebox.io/s/movie-reviews-5yccq) the day before (which unfortunately meant I did really poorly in another interview I had scheduled for the same week). 
 
 I don’t mean to sound arrogant, but after the panel interview where I presented 2 case studies as well as my prototype, I was very confident that I would get an offer. I could sense from people’s body language and questions that they were impressed with my work. (as a side note, I have had WAY more success interviewing for design roles being a technical designer or designer who codes vs engineering roles where my design eye could add value). 
 

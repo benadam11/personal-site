@@ -6,9 +6,11 @@ import TextVideoPopover from '../components/text-video.jsx'
 import PostItem from '../components/post-item.jsx'
 import ParticleAnimation from '../components/particle-animation.jsx';
 import ImageColors from '../components/image-color.jsx';
+import { sortDate }from '../scripts/utils.js';
 
 const posts = Astro.fetchContent('./thoughts/*.md');
-const topPosts = posts.slice(0,3);
+
+const topPosts = posts.sort(sortDate).slice(0,3);
 ---
 <html lang="en">
   <head>
