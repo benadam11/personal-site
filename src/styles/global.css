@@ -147,6 +147,10 @@ a:hover .arrow-right {
   @apply text-2xl font-sans font-bold my-8;
 }
 
+.post-content h3 {
+  @apply text-xl font-sans font-bold my-8;
+}
+
 .post-content p {
   @apply text-xl font-serif leading-normal;
 }
