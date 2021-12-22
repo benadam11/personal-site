@@ -144,7 +144,11 @@ a:hover .arrow-right {
 }
 
 .post-content h2 {
-  @apply text-2xl font-sans font-bold my-8;
+  @apply text-2xl font-sans font-bold my-10;
+}
+
+.post-content h3 {
+  @apply text-xl font-sans font-bold my-10;
 }
 
 .post-content h3 {
@@ -156,7 +160,7 @@ a:hover .arrow-right {
 }
 
 .post-content p + p {
-  @apply mt-8;
+  @apply mt-10;
 }
 
 .post-content strong {
@@ -164,7 +168,7 @@ a:hover .arrow-right {
 }
 
 .post-content blockquote {
-  @apply italic relative my-6 pl-4;
+  @apply italic relative my-10 pl-4;
 }
 
 .post-content blockquote:before {
@@ -200,4 +204,9 @@ a:hover .arrow-right {
 }
 .post-content li + li {
   @apply mt-4;
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: underline;
 }

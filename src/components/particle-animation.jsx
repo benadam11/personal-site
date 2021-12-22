@@ -9,13 +9,13 @@ export default function ParticleAnimation() {
     animateCanvas(canvas.current, count);
   }, [count]);
   return (
-    <article className="default-scheme w-full mb-12 p-8 rounded-xl bg-blue min-w-[350px]">
+    <article className="default-scheme w-full mb-12 p-8 rounded-xl bg-blue min-w-[328px]">
       <figure
         className="grid h-full"
         style={{ gridTemplateRows: "auto 1fr auto" }}
       >
         <figcaption className="text-center font-serif text-base pb-8 text-xl">
-          {`${count} Particles (Animated)`} 
+          {`${count} Particles (Animated)`}
         </figcaption>
         <canvas ref={canvas} id="canvas-demo" />
         <div className="pt-8">

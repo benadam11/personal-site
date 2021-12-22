@@ -13,4 +13,8 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   devOptions: {
     tailwindConfig: "./tailwind.config.js",
   },
+  buildOptions: {
+    sitemap: true,
+    site: 'https://benadam.me'
+  }
 });
