@@ -1,22 +1,30 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@astrojs/markdown-remark': ^0.5.0
   '@astrojs/renderer-react': ^0.3.1
+  '@jsdevtools/rehype-toc': ^3.0.2
   '@radix-ui/react-slider': ^0.1.3
   astro: ^0.21.12
   canvaskit-wasm: ^0.32.0
   image-pal-canvas: ^1.2.5
+  rehype-slug: ^5.0.0
   tailwindcss: ^3.0.0
+  unified: ^10.1.1
 
 dependencies:
   '@radix-ui/react-slider': 0.1.3
   image-pal-canvas: 1.2.5
 
 devDependencies:
+  '@astrojs/markdown-remark': 0.5.0
   '@astrojs/renderer-react': 0.3.1
+  '@jsdevtools/rehype-toc': 3.0.2
   astro: 0.21.12
   canvaskit-wasm: 0.32.0
+  rehype-slug: 5.0.0
   tailwindcss: 3.0.0
+  unified: 10.1.1
 
 packages:
 
@@ -434,6 +442,11 @@ packages:
 
   /@emmetio/scanner/1.0.0:
     resolution: {integrity: sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==}
+    dev: true
+
+  /@jsdevtools/rehype-toc/3.0.2:
+    resolution: {integrity: sha512-n5JEf16Wr4mdkRMZ8wMP/wN9/sHmTjRPbouXjJH371mZ2LEGDl72t8tEsMRNFerQN/QJtivOxqK1frdGa4QK5Q==}
+    engines: {node: '>=10'}
     dev: true
 
   /@ljharb/has-package-exports-patterns/0.0.1:

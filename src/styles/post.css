@@ -1,3 +1,167 @@
+.post-content {
+  overflow: hidden;
+}
+
+.post-content h1 {
+  @apply text-4xl font-sans font-bold my-12;
+}
+
+.post-content h2 {
+  @apply text-2xl font-sans font-bold my-10;
+}
+
+.post-content h3 {
+  @apply text-xl font-sans font-bold my-10;
+}
+
+.post-content h3 {
+  @apply text-xl font-sans font-bold my-8;
+}
+
+.post-content p {
+  @apply text-xl font-serif leading-normal;
+}
+
+.post-content p + p {
+  @apply mt-10;
+}
+
+.post-content strong {
+  @apply font-bold font-sans text-xl;
+}
+
+.post-content blockquote {
+  @apply italic relative my-10 pl-4;
+}
+
+.post-content blockquote:before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: currentColor;
+}
+
+.post-content img {
+  @apply w-full h-auto my-8;
+}
+
+.post-content ol {
+  list-style: decimal;
+  @apply pl-6 my-8 italic;
+}
+
+.post-content ul {
+  list-style: disc;
+  @apply pl-6 my-8;
+}
+.post-content ol ol {
+  list-style: lower-latin;
+  @apply my-4;
+}
+
+.post-content li {
+  @apply font-serif text-xl;
+}
+.post-content li + li {
+  @apply mt-4;
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.toc {
+  @apply fixed hidden lg:block;
+  top: 50%;
+  max-width: 240px;
+  transform: translateY(-50%);
+  left: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  z-index: 2;
+}
+
+.toc:hover {
+  background-color: var(--base);
+}
+
+.toc:hover ol {
+  visibility: visible;
+}
+
+.toc ol {
+  @apply relative pl-0 invisible;
+}
+
+.toc li {
+  @apply block text-sm font-sans not-italic font-bold pl-0;
+}
+.toc li li {
+  @apply text-[13px];
+}
+.toc a {
+  @apply no-underline whitespace-nowrap text-contrast truncate w-full block;
+}
+
+.toc a:hover {
+  @apply text-accent;
+}
+
+.toc-item {
+  @apply relative;
+}
+
+.toc-link-h2,
+.toc-link-h3 {
+  transform: translateX(-8px);
+  transition: transform .3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.toc-link-h3 {
+  @apply pl-2;
+}
+
+.toc:hover .toc-link-h2,
+.toc:hover .toc-link-h3 {
+  transform: translateX(0);
+}
+
+.toc-link-h2::after,
+.toc-link-h3::after {
+  content: "";
+  display:  block;
+  width: 28px;
+  height: 2px;
+  background-color: var(--accent);
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  z-index: 2;
+  border-radius: 8px;
+  visibility: visible;
+  transform: translateX(0px);
+  transition: transform .4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.toc-link-h3::after {
+  width: 16px;
+}
+
+.toc:hover .toc-link-h2::after,
+.toc:hover .toc-link-h3::after {
+  visibility: hidden;
+  transform: translateX(-24px);
+  /* width: 21px; */
+}
+
+/* .toc:hover .toc-link-h3::after {
+  width: 14px;
+} */
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: #393a34;

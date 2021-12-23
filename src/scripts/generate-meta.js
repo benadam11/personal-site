@@ -5,7 +5,7 @@ export default function generateMetaImage({ title }, cb) {
   if (process.env.NODE_ENV === "production") {
     CanvasKitInit().then(async (CanvasKit) => {
       const fontData = await fetch(
-        "https://fonts.gstatic.com/s/bitter/v7/HEpP8tJXlWaYHimsnXgfCOvvDin1pK8aKteLpeZ5c0A.woff2"
+        "https://fonts.gstatic.com/s/raleway/v22/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2"
       ).then((response) => response.arrayBuffer());
 
       let canvas = CanvasKit.MakeCanvas(1200, 630);

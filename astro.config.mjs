@@ -15,6 +15,17 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   },
   buildOptions: {
     sitemap: true,
-    site: 'https://benadam.me'
-  }
+    site: "https://benadam.me",
+  },
+  markdownOptions: {
+    render: [
+      "@astrojs/markdown-remark",
+      {
+        rehypePlugins: [
+          "rehype-slug",
+          ["@jsdevtools/rehype-toc", { position: "afterend" }],
+        ],
+      },
+    ],
+  },
 });

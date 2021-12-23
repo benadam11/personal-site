@@ -9,7 +9,7 @@ published: 12/3/2021
 
 After working at GoDaddy for 5.5 years I was ready to make a change. I was recruited by Amazon to work in their devices org, and after joining learned that specifically I was joining a centralized UX team with in the sales and marketing division within devices. (Note: it is a really good thing to understand the org structure you are joining during the interview process, and get information about the goals of the org and how that influences decision making). 
 
-**Interviewing:**
+### Interviewing:
 
 Amazon interview loops are fairly similar across roles and heavily rely on *behavioral* interview process through which they are assessing your answers against the [Amazon Leadership Principles](https://www.amazon.jobs/en/principles). (If you are going through the process you will be specifically coached by the recruiter on how to use the leadership principles). In preparation for the interview, I wrote down all of the principles and made bullet notes of work examples that I could use to relate my experiences to specific principle. To Amazon’s credit, the leadership principles are not just bulletin board material, they are referenced and used actively in decision making and so interviewing through the lens of the principles makes a lot of sense for them as a business. 
 
@@ -17,7 +17,7 @@ In addition to the behavioral interviews I also did a technical screen (live cod
 
 I don’t mean to sound arrogant, but after the panel interview where I presented 2 case studies as well as my prototype, I was very confident that I would get an offer. I could sense from people’s body language and questions that they were impressed with my work. (as a side note, I have had WAY more success interviewing for design roles being a technical designer or designer who codes vs engineering roles where my design eye could add value). 
 
-**The Offer:**
+### The Offer:
 
 Sure enough I got an offer the following week. When I read through they offer they were pushing aggressively for a start date (2 weeks from the offer). This should have been an indication to dig deeper to better understand why they were in such a hurry (which I did a bit but I wish I would have gotten some more information). We ended up negotiating a later start date and increased the total comp number by ~10k (which netted out to about a 25% raise from where I was at with GoDaddy). 
 
@@ -26,7 +26,7 @@ Sure enough I got an offer the following week. When I read through they offer th
 
 When I joined Amazon it felt simultaneously WAY bigger and WAY smaller than I expected . This says a lot about the way that Amazon operates (I’ll dive into the implications of this).
 
-**How Amazon Operates:**
+### How Amazon Operates:
 
 Amazon effectively operates like a federation of smaller companies. There are (extremely) large organizations, which break into divisions, and then into small, functionally independent teams. At the time I joined, the Devices Org was 29,000 employees (massive). Each individual team owns its own infrastructure, roadmap, and goals (which trickle down the org). This is further emphasized when Team A (for example) wants Team B to build an integration or work on something, they will “fund headcount” out of their operating budget. 
 
@@ -34,7 +34,7 @@ When you operate at this type of scale, centralization is the enemy of efficienc
 
 The most surprising thing I encountered when joining was how manual the vast majority of processes are. It blew my mind how many business critical processes were managed with excel spreadsheets being shared via email chains.  (It is incredible how flexible and effective Excel is for such a wide variety of use-cases). 
 
-**The Implications:**
+### The Implications:
 
 There are a number of implications (some good some bad) of this operating model. 
 

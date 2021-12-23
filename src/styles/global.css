@@ -13,11 +13,13 @@
   --contrast: #34373c;
   --grey2: #6e6c6e;
   --grey3: #868279;
+  --contrast-alpha: rgba(0,0,0,.2);
   --base: #f8f7fa;
   --accent: var(--blue);
 }
 
 .alt-scheme {
+  --contrast-alpha: rgba(255,255,255,.2);
   --contrast: #fdfcfe;
   --grey2: #a9a9a9;
   --grey3: #34373c;
@@ -28,6 +30,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --contrast-alpha: rgba(255,255,255,.5);
     --contrast: #fdfcfe;
     --grey2: #a9a9a9;
     --grey3: #34373c;
@@ -71,7 +74,7 @@
     opacity: 0;
   }
   100% {
-    transform: translateY(0px);
+    opacity: 1;
   }
 }
 
@@ -135,78 +138,3 @@ a:hover .arrow-right {
   transform: translateX(4px);
 }
 
-.post-content {
-  overflow: hidden;
-}
-
-.post-content h1 {
-  @apply text-4xl font-sans font-bold my-12;
-}
-
-.post-content h2 {
-  @apply text-2xl font-sans font-bold my-10;
-}
-
-.post-content h3 {
-  @apply text-xl font-sans font-bold my-10;
-}
-
-.post-content h3 {
-  @apply text-xl font-sans font-bold my-8;
-}
-
-.post-content p {
-  @apply text-xl font-serif leading-normal;
-}
-
-.post-content p + p {
-  @apply mt-10;
-}
-
-.post-content strong {
-  @apply font-bold font-sans text-xl;
-}
-
-.post-content blockquote {
-  @apply italic relative my-10 pl-4;
-}
-
-.post-content blockquote:before {
-  content: "";
-  width: 3px;
-  height: 100%;
-  display: block;
-  position: absolute;
-  left: 0;
-  background-color: currentColor;
-}
-
-.post-content img {
-  @apply w-full h-auto my-8;
-}
-
-.post-content ol {
-  list-style: decimal;
-  @apply pl-6 my-8 italic;
-}
-
-.post-content ul {
-  list-style: disc;
-  @apply pl-6 my-8;
-}
-.post-content ol ol {
-  list-style: lower-latin;
-  @apply my-4;
-}
-
-.post-content li {
-  @apply font-serif text-xl;
-}
-.post-content li + li {
-  @apply mt-4;
-}
-
-.post-content a {
-  color: var(--accent);
-  text-decoration: underline;
-}

@@ -20,7 +20,7 @@ As Forrest insightfully points out,  devrels / dev advocates have had to learn h
 
 The top 10 largest media companies (including Netflix, Disney, Comcast,  & AT&T) are worth well over a trillion dollars combined, and business is booming. At a macro level, all media companies effectively operate in the same way. Media companies grow their audience by producing and effectively distrbuting their content (which leads to revenue). 
 
-**Content (Product)**
+### Content (Product)
 
 
 > “Content is King. “ - Bill Gates (1996)
@@ -45,7 +45,7 @@ High quality content is one of the most valuable commodities around, and is the 
 Today people are flooded with choices which becomes paralyzing. As they are inundated with choice, they will naturally gravitate to the trusted brands who have come through for them before. Having high quality content is not enough. In order to have the resources for content creation, media companies have to distribute their content to the the correct audience. Over time this grows their audience and reinforces their brand (associating it with quality), differentiating those who are able to do this consistently. 
 
 
-**Channels (Distribution)**
+### Channels (Distribution)
 
 
 > “Having a great idea for a product is important, but having a great idea for product distribution is even more important" - Reid Hoffman
@@ -65,7 +65,7 @@ Developing media distribution is very resource intensive in most cases (having t
 
 More recently we have seen media companies make huge investments to own their own distribution.  With the success of Netflix ([the most valuable media company in the world](https://www.investopedia.com/stock-analysis/021815/worlds-top-ten-media-companies-dis-cmcsa-fox.aspx)) building a direct to consumer platform for content, there has been an arms race to own content distribution. Netflix started their ascent to the throne by building up their distribution and over time increased their margins by producing their own content (rather than liscensing it from other content providers). In contrast, Disney has been the owner of a mountain of content and has been able to purchase distribution (buying ABC, ESPN, creating cable channels etc). With the creation of Disney+ they made the decision to forgo lucrative licensing deals in favor of controlling distribution. 
 
-**Audience**
+### Audience
 
 Which came first, the chicken or the egg? Do media companies create content for an audience or does an audience form around the content that they create? At the end of the day the answer to this question probably depends on the media company (for example: Fox News is clearly the former, and Disney probably the latter). The general formula for success for media companies is simply to create great content. 
 
@@ -80,7 +80,7 @@ Developing an audience is usually the combination of consistency and storytellin
 
 So what does all of this have to do with software development and how does it relate to media companies? As an affinity group, software developers are an under served media market. More mainstream markets like sports & entertainment are now saturated and extremely competive, but there is still a massive opportunity to build a media company for developers. 
 
-**Why Developers?**
+### Why Developers?
 
 
 ![developers developers, developers, developers, developers, developers,  developers - Steve Ballmer](https://memegenerator.net/img/instances/61143257.jpg)
@@ -91,13 +91,13 @@ The stereotype of a socially awkward nerd who loves computers (in addition to no
 
 My belief is that developers are the single most important affinity group to market to. In order to market to developers, you have to have their trust (developers have seen enough “snake oil” to be intrisically distrusting of any technology or service that is being marketed to them). This begs the question: how do you build trust with developers? 
 
-**Creating Developer Content**
+### Creating Developer Content
 
 There is a joke in software about how developers just Google the answer to everything (which is honestly very true). There is too much information to hold in your head as a developer. You need to stay on top of changes that are happening in your industry (learning new technologies as they become relevant to your work or future job opportunities). You also need to develop foundational knowledge on which to build your career. And finally, you need to be able to find information to “unblock” your work. Simply put, there are an extrodinary number of ways to create value for developers and earn their trust. However, trust is more easily broken than it is earned. 
 
 One of the primary ways that trust is broken with developers is when tools / resources that they rely on are broken or out of date. Developers complain about “breaking changes” in software (this is when a dependency of an application requires code changes in order for it to work) because it creates a bunch of work for them to do (unrelated to adding features to the product they are working on). It is also extremely frustrating to look for information about how to do _____ task and the documentation (or tutorial) is outdated. 
 
-**Opportunities**
+### Opportunities
 
 Currently the developer content market is flooded with low quality content targeted at beginners. Many platforms rely on UGC (user generated content) which mean’s that there is significant variance in quality between articles and its hard to identify up front which posts will be high quality and which ones provide little value. To make matters worse, a good article over time becomes outdated and loses its value over time. This impacts the platform, because as soon as you can’t consistently predict the quality of the content, you will stop relying on it for its distribution. Building a brand where users can rely on quality that consistently delivers value is a major opportunity. 
 
@@ -114,7 +114,7 @@ How you define yourself as a business has significant implications for how you o
 
 In contrast, companies such as Kodak were not able to make the transition to digital because they had defined themselves as a film photography company. As of now, there are very few companies that define themselves as developer media companies. There are several including Smashing Magazine and CSS-Tricks that operate as developer focused media companies. Both of these companies have been extremely successful and valuable resources to the community, but both suffer from some of the issues mentioned previously related to UGC and content going stale. Additionally they operate at a scale where it generates a non-trivial amount of noise to follow all of they content they produce (its easy to get overwhelmed and stop following). 
 
-**Create Content To Build Distribution**
+### Create Content To Build Distribution
 
 Content creation is a flywheel (create valuable content → audience shares content → new audience members). Building distribution is always a factor of quality content, but it is possible to be strategic about how to create quality content that will maximize your distribution. The most savvy marketers are able to build bridges between content that reinforces the content flywheel across platforms. 
 
@@ -196,7 +196,7 @@ Open source software is a “type” of content (that this new wave of developer
 
 Documentation is another form of technical content, and when done well can be the best marketing for a product, service or library. Great documentation is personalized and interactive (Airtable’s API docs are the gold standard) and create frictionless onramps to key adoption milestones for the product. It is not particularly relevant to a generalized developer media company, but they are extremely relevant to the mini internal media (developer relations organizations) cropping up inside larger tech companies.
 
-**Leverage Distribution to Generate Revenue**
+### Leverage Distribution to Generate Revenue
 
 I mentioned distribution enough that you may be asking yourself “so don’t you want to actually make money?” The answer is yes. 
 

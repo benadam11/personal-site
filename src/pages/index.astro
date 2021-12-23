@@ -9,7 +9,6 @@ import ImageColors from '../components/image-color.jsx';
 import { sortDate }from '../scripts/utils.js';
 
 const posts = Astro.fetchContent('./thoughts/*.md');
-
 const topPosts = posts.sort(sortDate).slice(0,2);
 ---
 <html lang="en">
@@ -29,14 +28,13 @@ const topPosts = posts.sort(sortDate).slice(0,2);
       <ul>
         {topPosts.map(post => <PostItem {...post} /> )}
       </ul>
-      
       <a href='/thoughts/' class='text-accent font-bold uppercase text-sm'>See More <span class="arrow-right">→</span></a>
     </section>
     <section class='fade-in pt-12'>
       <h2 class='uppercase text-sm mb-12 font-bold'>Experiments</h2>
       <main class='flex gap-4 overflow-auto'>
-        <ParticleAnimation client:visible />
         <ImageColors client:visible />
+        <ParticleAnimation client:visible />
       </main>
       <a href='/experiments/' class='text-accent font-bold uppercase text-sm'>See More <span class="arrow-right">→</span></a>
     </section>

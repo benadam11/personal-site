@@ -5,8 +5,9 @@ const { content } = Astro.props;
 ---
 <html lang={ content.lang || 'en' }>
   <head>
-    <MainHead title={content.title} description={content.description} />
-    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/post.css')}>
+    <MainHead title={content.title} description={content.description}>
+      <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/post.css')}>
+    </MainHead>
   </head>
   <MainBody>
     <div class="post-content">
@@ -15,5 +16,20 @@ const { content } = Astro.props;
       <slot />
       </div>
     </div>
+    <script>
+      document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(trigger => {
+          trigger.onclick = function(e) {
+            e.preventDefault();
+            let target = document.querySelector(trigger.getAttribute('href'));
+            let offsetPosition = target.offsetTop - 100;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          };
+        });
+    </script>
   </MainBody>
 </html>
