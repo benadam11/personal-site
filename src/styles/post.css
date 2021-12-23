@@ -19,7 +19,7 @@
 }
 
 .post-content p {
-  @apply text-xl font-serif leading-normal;
+  @apply text-xl font-serif leading-relaxed;
 }
 
 .post-content p + p {
