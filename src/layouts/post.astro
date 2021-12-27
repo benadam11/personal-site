@@ -11,42 +11,13 @@ const { content } = Astro.props;
   </head>
   <MainBody>
     <div class="post-content">
-    <header class='py-12 wipe'>
-      <h1>{content.title}</h1>
-    </header>
+      <header class='py-12 wipe'>
+        <h1>{content.title}</h1>
+      </header>
       <div class='fade-in'>
         <slot />
       </div>
     </div>
-    <script>
-      const links = document.querySelectorAll('a[href^="#"]')
-      links.forEach(trigger => {
-        trigger.onclick = function(e) {
-          e.preventDefault();
-          let target = document.querySelector(trigger.getAttribute('href'));
-          let offsetPosition = target.offsetTop - 100;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-        };
-      });
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if(entry.isIntersecting) {
-            links.forEach(el => {
-              el.classList.remove('active')
-              if(entry.target.id === el.href.split('#')[1]) {
-                el.classList.add('active')
-              }
-            });
-          }
-        });
-      });
-
-      const targetElements = document.querySelectorAll('h2, h3');
-      targetElements.forEach(el => observer.observe(el));
-    </script>
+    <script defer src={Astro.resolve('../scripts/post.js')}></script>
   </MainBody>
 </html>
