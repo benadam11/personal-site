@@ -73,6 +73,9 @@
   color: var(--accent);
   text-decoration: underline;
 }
+.post-content iframe {
+  @apply my-10 aspect-video w-full h-auto;
+}
 
 .toc {
   @apply fixed hidden lg:block;

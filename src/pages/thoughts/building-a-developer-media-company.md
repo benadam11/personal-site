@@ -164,7 +164,7 @@ Good video content is gold. Youtube, in a similar way to Google search, rewards 
 4. Postivity Wins 
 
 
-<iframe width="100%" height="auto" class='aspect-video my-10' src="https://www.youtube.com/embed/JJ-ogw8AZ3o?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/JJ-ogw8AZ3o?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Creating great developer content on Youtube is obviously quite different than Mr Beast, but there are still insights to benefit from. Fireship implements many of these strategies and has produced one of the best youtube channels for developers. If excecuted in combination with pillar cluster content strategy, cluster content can leverage Youtube videos (playlists mapping to pillar content) driving traffic both to pillar posts as well as back to Youtube. Combining multiple flywheels together starts to give you the primitives of an engine (but that is a topic for another time). 
@@ -181,8 +181,7 @@ Feeling a sense of belonging sits right in the center in Maslow’s hierarchy of
 
 Events are relational and ephemeral in nature. The point of an event is to connect with others while you learn or are entertained on a particular topic. Conferences are the prime example of this, but this is also true on a smaller level with meetups. They are ideal for introducing new ideas, and exposing people to different points of view. Events are ephemeral which mean’s their content has a relatively short halflife. This makes them ideal for subscriptions. The key is that they enhance people’s sense of connection and belonging. 
 
-
-https://twitter.com/CascadiaJS/status/1469030435501920258
+<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Remember, <a href="https://twitter.com/hashtag/CascadiaJS?src=hash&amp;ref_src=twsrc%5Etfw">#CascadiaJS</a> is more than just tech talks, it&#39;s about people, fun &amp; new experiences.<a href="https://twitter.com/thejoriedel?ref_src=twsrc%5Etfw">@thejoriedel</a> is thinking about doing some rockclimbing 🧗‍♀️ at Smith Rock.<br><br>What else is there to do around Bend, OR? What say you <a href="https://twitter.com/chriscoyier?ref_src=twsrc%5Etfw">@chriscoyier</a> ?<br><br>Leave a reply below 👇</p>&mdash; CascadiaJS 🇺🇸 🇨🇦 (@CascadiaJS) <a href="https://twitter.com/CascadiaJS/status/1469030435501920258?ref_src=twsrc%5Etfw">December 9, 2021</a></blockquote>
 
 
 
@@ -201,7 +200,7 @@ Documentation is another form of technical content, and when done well can be th
 I mentioned distribution enough that you may be asking yourself “so don’t you want to actually make money?” The answer is yes. 
 
 
-https://www.youtube.com/watch?v=iW7j_M25P8A&
+<iframe src="https://www.youtube.com/embed/iW7j_M25P8A?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 It turns out the reason why exectuives like Reed Hoffman are obsessed with distribution is that once you have distribution, sales is easy (have a good product and it will sell). There are a number of ways for developer media companies to make money.
