@@ -4,17 +4,17 @@
 
 :root,
 .default-scheme {
-  --green: #004445;
-  --light-green: #52beac;
-  --blue: #396783;
-  --light-blue: #6cccf9;
-  --red: #982e35;
-  --purple: #32293c;
+  --green: rgb(0, 68, 69);
+  --light-green: rgb(82, 190, 172);
+  --blue: rgb(57, 103, 131);
+  --light-blue: rgb(108, 204, 249);
+  --red: rgb(152, 46, 53);
+  --purple: rgb(50, 41, 60);
   --contrast: #34373c;
-  --grey2: #6e6c6e;
-  --grey3: #868279;
+  --grey2: rgb(110, 108, 110);
+  --grey3: rgb(134, 130, 121);
   --contrast-alpha: rgba(0,0,0,.2);
-  --base: #f8f7fa;
+  --base: rgb(248, 247, 250);
   --accent: var(--blue);
 }
 
@@ -23,7 +23,7 @@
   --contrast: #fdfcfe;
   --grey2: #a9a9a9;
   --grey3: #34373c;
-  --base: #0e0e10;
+  --base: #1f1f24;
   --red: #d02828;
   --accent: var(--light-green);
 }
@@ -34,7 +34,7 @@
     --contrast: #fdfcfe;
     --grey2: #a9a9a9;
     --grey3: #34373c;
-    --base: #0e0e10;
+    --base: #1f1f24;
     --red: #d02828;
     --accent: var(--light-green);
   }

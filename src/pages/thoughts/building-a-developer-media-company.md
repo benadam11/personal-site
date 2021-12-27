@@ -10,7 +10,7 @@ published: 12/11/2021
 Over the past several years, software companies have put an ever increasing focus on “developer relations” hiring DevRel (or Developer Advocates) who’s role is to produce technical content that generates value for the business (videos, tutorials, documentation, SDKs, etc). Their role is critical for marketing the product (demos, conference talks etc), onboarding new users (tutorials, SDKs etc) and retaining existing users (documentation, community etc).
 
 
-https://twitter.com/forrestbrazeal/status/1463666781545979907
+<blockquote class="twitter-tweet" data-conversation="none" data-theme="dark"><p lang="en" dir="ltr">I feel like every DA I know who prospered during the pandemic basically figured out how to run a small media company. Prediction: there are going to be some cool, scrappy little developer media startups popping up in the next ~2 years as these folks operationalize their talents</p>&mdash; Forrest Brazeal (@forrestbrazeal) <a href="https://twitter.com/forrestbrazeal/status/1463666781545979907?ref_src=twsrc%5Etfw">November 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 As Forrest insightfully points out,  devrels / dev advocates have had to learn how to run mini “media companies” during the pandemic. If anything this trend is accelerating. So it begs the question: what does it mean to be a developer media company? 
@@ -105,7 +105,7 @@ In addition to building a brand, there is an opportunity to appeal across some o
 
 
 
-## Building a Developer Media Company
+## Building a (Developer) Media Company
 
 How you define yourself as a business has significant implications for how you operate. For example, in 2007 Apple renamed itself from *Apple Computers* to *Apple Inc.* This was a subtle but significant shift that represented a change in direction for the company as it looked to move beyond desktop computers to new opportunities with mobile and wearable technology. This was an inflection point for the company as it went on from that point to become the most valuable company in the world. 
 
@@ -164,7 +164,7 @@ Good video content is gold. Youtube, in a similar way to Google search, rewards 
 4. Postivity Wins 
 
 
-https://www.youtube.com/watch?v=JJ-ogw8AZ3o&
+<iframe width="100%" height="auto" class='aspect-video my-10' src="https://www.youtube.com/embed/JJ-ogw8AZ3o?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Creating great developer content on Youtube is obviously quite different than Mr Beast, but there are still insights to benefit from. Fireship implements many of these strategies and has produced one of the best youtube channels for developers. If excecuted in combination with pillar cluster content strategy, cluster content can leverage Youtube videos (playlists mapping to pillar content) driving traffic both to pillar posts as well as back to Youtube. Combining multiple flywheels together starts to give you the primitives of an engine (but that is a topic for another time). 

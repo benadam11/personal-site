@@ -1,5 +1,5 @@
 .post-content {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .post-content h1 {
@@ -19,7 +19,7 @@
 }
 
 .post-content p {
-  @apply text-xl font-serif leading-relaxed;
+  @apply text-xl font-serif leading-relaxed opacity-95;
 }
 
 .post-content p + p {
@@ -97,18 +97,31 @@
   @apply relative pl-0 invisible;
 }
 
+.toc ol ol {
+  @apply mt-1 mb-0;
+}
+
 .toc li {
   @apply block text-sm font-sans not-italic font-bold pl-0;
 }
+.toc li + li {
+  @apply mt-1;
+}
+
 .toc li li {
   @apply text-[13px];
 }
+
 .toc a {
   @apply no-underline whitespace-nowrap text-contrast truncate w-full block;
 }
 
+.toc a.active {
+  @apply opacity-100;
+}
+
 .toc a:hover {
-  @apply text-accent;
+  @apply text-accent opacity-100;
 }
 
 .toc-item {
@@ -122,7 +135,7 @@
 }
 
 .toc-link-h3 {
-  @apply pl-2;
+  @apply pl-4;
 }
 
 .toc:hover .toc-link-h2,
@@ -136,7 +149,7 @@
   display:  block;
   width: 28px;
   height: 2px;
-  background-color: var(--accent);
+  background-color: currentColor;
   position: absolute;
   left: 0px;
   top: 10px;
@@ -147,6 +160,11 @@
   transition: transform .4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.toc-link-h2:not(.active),
+.toc-link-h3:not(.active){
+  opacity: .5;
+}
+
 .toc-link-h3::after {
   width: 16px;
 }
@@ -155,12 +173,11 @@
 .toc:hover .toc-link-h3::after {
   visibility: hidden;
   transform: translateX(-24px);
-  /* width: 21px; */
 }
 
-/* .toc:hover .toc-link-h3::after {
-  width: 14px;
-} */
+.post-content .twitter-tweet {
+  @apply mx-auto my-10 !important;
+}
 
 code[class*="language-"],
 pre[class*="language-"] {

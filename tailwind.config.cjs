@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  content: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,vue}"],
+  content: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,vue,md}"],
   theme: {
     fontFamily: {
       sans: ["raleway", "system-ui"],
