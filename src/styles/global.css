@@ -24,7 +24,7 @@
   --grey2: #a9a9a9;
   --grey3: #34373c;
   --base: #1f1f24;
-  --red: #d02828;
+  --red: #FF6A67;
   --accent: var(--light-green);
 }
 
@@ -35,7 +35,7 @@
     --grey2: #a9a9a9;
     --grey3: #34373c;
     --base: #1f1f24;
-    --red: #d02828;
+    --red: #FF6A67;
     --accent: var(--light-green);
   }
 }
@@ -78,6 +78,15 @@
   }
 }
 
+.full-width {
+  width: 1280px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
 .nav-link {
   @apply relative text-sm uppercase font-bold;
 }
@@ -115,7 +124,7 @@ video.show {
 }
 
 .icon:hover {
-  color: #982e35;
+  @apply text-accent;
 }
 
 @keyframes scale-up {
@@ -127,6 +136,10 @@ video.show {
     transform-origin: bottom center;
     transform: scaleY(1);
   }
+}
+
+.more-link {
+  @apply flex items-center gap-1 font-semibold hover:text-accent opacity-80 hover:opacity-100;
 }
 
 .arrow-right {

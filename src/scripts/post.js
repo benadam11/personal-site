@@ -1,9 +1,9 @@
 (() => {
   const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach((trigger) => {
-    trigger.onclick = function (e) {
+  links.forEach((el) => {
+    el.onclick = function (e) {
       e.preventDefault();
-      let target = document.querySelector(trigger.getAttribute("href"));
+      let target = document.querySelector(el.getAttribute("href"));
       let offsetPosition = target.offsetTop - 100;
       window.scrollTo({
         top: offsetPosition,
@@ -25,6 +25,5 @@
     });
   });
 
-  const targetElements = document.querySelectorAll("h2, h3");
-  targetElements.forEach((el) => observer.observe(el));
+  document.querySelectorAll("h2, h3").forEach((el) => observer.observe(el));
 })();

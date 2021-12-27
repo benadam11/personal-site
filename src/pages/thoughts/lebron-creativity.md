@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/post.astro
-title: > 
-    A Guide to Creativity for the Left Brained
+title: >
+  A Guide to Creativity for the Left Brained
 published: 10/11/2013
---- 
+---
 
 ![Flagstaff Photo](/images/flagstaff.jpeg)
 

@@ -2,11 +2,10 @@ import video from "../assets/easter-egg.mp4";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 
-function Video({ show, coords, unmute }) {
+function Video({ show, unmute }) {
   const el = useRef(null);
   useEffect(async () => {
     if (show) {
-      // el.current.muted = false;
       try {
         if (unmute) {
           el.current.muted = false;
@@ -22,13 +21,16 @@ function Video({ show, coords, unmute }) {
     }
   }, [show, unmute]);
   return (
-    <div className="fixed" style={{ left: coords[0] - 5, top: coords[1] + 30 }}>
+    <div
+      className="absolute max-w-[76ch] w-full mx-auto z-10"
+      style={{ left: "-4px" }}
+    >
       <video
         preload="true"
         muted
         autoPlay="autoplay"
         ref={el}
-        className={`max-w-[600px] right-0 aspect-video ${show ? "show" : "hidden"}`}
+        className={`aspect-video ${show ? "show" : "hidden"}`}
         src={video}
       />
     </div>
@@ -39,24 +41,28 @@ export default function TextVideoPopover({ children }) {
   const [container, setContainer] = useState(null);
   const [unmute, setUnmute] = useState(false);
   const [show, setShow] = useState(false);
-  const [coords, setCoords] = useState([0, 0]);
   const el = useRef(null);
   useEffect(() => {
-    const { x, y } = el.current.getBoundingClientRect();
-    setCoords([x, y]);
-    setContainer(document.body);
+    setContainer(document.getElementById("hero"));
   }, []);
+
+  function handleHover() {
+    setShow(true);
+  }
 
   return (
     <span
       ref={el}
       className="relative cursor-help inline-flex items-center gap-2"
-      onMouseOver={() => setShow(true)}
+      onMouseOver={handleHover}
       onMouseLeave={() => setShow(false)}
     >
       {children}
       {show && (
-        <span onClick={() => setUnmute(!unmute)} className='icon cursor-pointer'>
+        <span
+          onClick={() => setUnmute(!unmute)}
+          className="icon cursor-pointer"
+        >
           {unmute ? (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path
@@ -75,10 +81,7 @@ export default function TextVideoPopover({ children }) {
         </span>
       )}
       {container
-        ? createPortal(
-            <Video show={show} unmute={unmute} coords={coords} />,
-            container
-          )
+        ? createPortal(<Video show={show} unmute={unmute} />, container)
         : null}
     </span>
   );
