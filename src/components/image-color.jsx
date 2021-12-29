@@ -3,7 +3,7 @@ import getColors from "image-pal-canvas";
 
 export default function ImageUpload() {
   const input = useRef(null);
-  const [imgUrl, setImgUrl] = useState("/winter-building.jpeg");
+  const [imgUrl, setImgUrl] = useState("/winter-building.jpg");
   const [colors, setColors] = useState([]);
   const [selected, setSelected] = useState(0);
   const isLight = colors?.[selected]?.distance > 50;
@@ -50,7 +50,7 @@ export default function ImageUpload() {
               width='1000'
               height='1000'
               alt="Image uploaded by a user"
-              className=" object-cover object-top aspect-square"
+              className="object-cover object-top aspect-square"
             />
           )}
           <input

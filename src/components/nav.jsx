@@ -14,9 +14,9 @@ function Nav() {
       </a>
       <div className='justify-end align-center gap-8 hidden lg:flex'>
         <a className='nav-link' href='/'>Home</a>
-        <a className='nav-link' href='/thoughts/'>Thoughts</a>
-        <a className='nav-link' href='/experiments/'>Experiments</a>
-        <a className='nav-link' href='/work/'>Work</a>
+        <a className='nav-link' href='/thoughts'>Thoughts</a>
+        <a className='nav-link' href='/experiments'>Experiments</a>
+        <a className='nav-link' href='/work'>Work</a>
       </div>
     </nav>
   );

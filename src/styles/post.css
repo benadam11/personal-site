@@ -59,11 +59,11 @@
   @apply font-serif text-xl my-4;
 }
 
-.post-content a {
+.post-content a:not(.more-link, .toc-link) {
   @apply underline opacity-80;
 }
 
-.post-content a:hover {
+.post-content a:not(.toc-link):hover {
   @apply opacity-100 text-accent;
 }
 
@@ -72,11 +72,10 @@
 }
 
 .toc {
-  @apply fixed hidden lg:block px-8;
+  @apply fixed hidden lg:block px-8 right-0;
   top: 50%;
   max-width: 280px;
   transform: translateY(calc(-50% + 40px));
-  right: 0px;
   z-index: 2;
 }
 

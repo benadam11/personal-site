@@ -13,10 +13,10 @@ const topPosts = posts.sort(sortDate).slice(0,2);
 ---
 <html lang="en">
   <head>
-    <MainHead title="Ben Adam: Personal Site" description="Ben Adam: Designer / Software Developer based in Tempe, Arizona." />
+    <MainHead title="Ben Adam: Personal Site" description="Ben Adam is a Designer / Software Developer based in Tempe, Arizona." />
   </head>
   <MainBody>
-    <section id='hero' class='py-24 wipe relative'>
+    <section id='hero' class='py-24 intro-animation relative'>
       <h1 class='text-4xl mb-4 font-bold'>Hello, my name is Ben.</h1>
       <h4 class='font-serif italic text-2xl'>
         I am a Software Designer / Engineer based in Tempe, AZ. <br> Currently I'm
@@ -28,7 +28,7 @@ const topPosts = posts.sort(sortDate).slice(0,2);
       <ul>
         {topPosts.map(post => <PostItem {...post} /> )}
       </ul>
-      <a href='/thoughts/' class='more-link'>More <span class="arrow-right">→</span></a>
+      <a href='/thoughts' class='more-link'>More <span class="arrow">→</span></a>
     </section>
     <section class='fade-in pt-12'>
       <h2 class='uppercase text-sm mb-12 font-bold text-accent'>Experiments</h2>
@@ -36,7 +36,7 @@ const topPosts = posts.sort(sortDate).slice(0,2);
         <ImageColors client:visible />
         <ParticleAnimation client:visible />
       </main>
-      <a href='/experiments/' class='more-link'>More <span class="arrow-right">→</span></a>
+      <a href='/experiments' class='more-link'>More <span class="arrow">→</span></a>
     </section>
   </MainBody>
 </html>

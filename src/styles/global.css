@@ -40,7 +40,7 @@
   }
 }
 
-.wipe {
+.intro-animation {
   animation: 1.4s down-enter cubic-bezier(0.25, 1, 0.5, 1) backwards;
 }
 
@@ -78,14 +78,6 @@
   }
 }
 
-.full-width {
-  width: 1280px;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
 
 .nav-link {
   @apply relative text-sm uppercase font-bold;
@@ -142,12 +134,17 @@ video.show {
   @apply flex items-center gap-1 font-semibold hover:text-accent opacity-80 hover:opacity-100;
 }
 
-.arrow-right {
+.arrow {
   display: inline-block;
   transition: transform 0.2s ease-in-out;
+  --arrow-distance: 4px;
 }
 
-a:hover .arrow-right {
-  transform: translateX(4px);
+.arrow.left {
+  --arrow-distance: -4px;
+}
+
+a:hover .arrow {
+  transform: translateX(var(--arrow-distance));
 }
 

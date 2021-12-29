@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-[80ch] my-12 fade-in px-4">
+    <footer className="mx-auto max-w-[80ch] py-12 fade-in px-4">
       <h2 className="uppercase text-sm mb-12 font-bold text-accent">Connect</h2>
-      <ul class='grid gap-4'>
+      <ul className='grid gap-4'>
         <li>
           <a className='font-serif text-lg opacity-80 hover:opacity-100 underline' href="https://twitter.com/benadam11" target="_blank" rel="noreferrer">
             Twitter
