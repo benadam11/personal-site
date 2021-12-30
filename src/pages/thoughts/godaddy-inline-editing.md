@@ -2,6 +2,8 @@
 layout: ../../layouts/post.astro
 title: >
   Case Study: Inline Editing
+description: >
+  An in depth case study on one of the major projects I worked on at Godaddy: Inline Editing including my design process, the results and the outcomes the work drove.
 published: 1/10/2021
 ---
 

@@ -2,13 +2,30 @@
 // import { writeFile } from "node:fs/promises";
 // import generateMetaImage from '../scripts/generate-meta.js';
 const { title = 'Ben Adam: Personal Site', description = 'The personal site of Ben Adam' } = Astro.props;
-// generateMetaImage({ title, published }, writeFile);
+const { href, origin } = Astro.request.url
 ---
 
 <meta charset="UTF-8">
-<meta name="description" property="og:description" content={description}>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Primary Meta Tags -->
 <title>{title}</title>
+<meta name="title" content={title}>
+<meta name="description" content={description}>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content={href}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:image" content={`${origin}/meta-images/og:image.jpg`}>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content={href}>
+<meta property="twitter:title" content={title}>
+<meta property="twitter:description" content={description}>
+<meta property="twitter:image" content={`${origin}/meta-images/og:image.jpg`}>
 
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
   <style>

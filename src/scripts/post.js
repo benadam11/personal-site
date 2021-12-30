@@ -1,6 +1,7 @@
 (() => {
   const links = document.querySelectorAll('a[href^="#"]');
   const opts = { threshold: 1, rootMargin: "0px 0px -70% 0px " };
+
   links[0].classList.add("active");
 
   function resetActiveElement(match) {
@@ -10,10 +11,12 @@
     }
   }
 
-  const observer = new IntersectionObserver((entries) => {
+  const observerCallback = (entries) => {
     const id = entries.find((entry) => entry.isIntersecting)?.target?.id;
     resetActiveElement(document.querySelector(`a[href="#${id}"`));
-  }, opts);
+  }
+
+  const observer = new IntersectionObserver(observerCallback, opts);
 
   document
     .querySelectorAll(".post-content h2, .post-content h3")

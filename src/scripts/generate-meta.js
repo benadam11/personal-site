@@ -8,7 +8,7 @@ export default function generateMetaImage({ title }, cb) {
         "https://fonts.gstatic.com/s/raleway/v22/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2"
       ).then((response) => response.arrayBuffer());
 
-      let canvas = CanvasKit.MakeCanvas(1200, 630);
+      let canvas = CanvasKit.MakeCanvas(1200, 628);
       canvas.loadFont(fontData, { style: 'normal', weight: 'bold'});
       let ctx = canvas.getContext("2d");
       // Card Background

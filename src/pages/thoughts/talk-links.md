@@ -1,6 +1,6 @@
 ---
 title: Static Site Generator Talk Links
-headline: Dev Meetup 6/15/2016 - Links
+description: Dev Meetup 6/15/2016 - Slides & links from my talk about Static Site Generators.
 published: 6/15/2016
 author: Ben Adam
 layout: ../../layouts/post.astro

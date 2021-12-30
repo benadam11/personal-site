@@ -1,7 +1,10 @@
 ---
 # src/pages/index.md
 layout: ../../layouts/post.astro
-title: My Experience At Amazon
+title: I took a job at Amazon, only to leave after 10 months.
+description: > 
+    Reflections on working at Amazon, the interview process, the organizational
+    structure, and why it wasn't a great fit for me (but might be for you).
 published: 12/3/2021
 ---
 
@@ -92,4 +95,4 @@ I think everyone’s experience at a big company will vary by organization and e
 
 I have also really enjoyed the opportunity to get more hands on experience with AWS. That 10% has been fun (contributing to a Vue.js app that generates marketing graphics - migrating from EventBus to Vuex, adding routing etc). I have helped migrate the app from an EC2 instance to S3 + Cloudfront (using Lambda Edge for authentication). I also got to do a deep dive on permissions and learned a lot about Cognito (user & identity pools) and IAM roles (while integrating with an external OAuth provider). I wish that I could have gotten more hands on experience with Dynamo DB. There is a perfect project for using it and it would be fun to work on data modeling and building an API to power our front end app (but also extend its a capabilities to be able to generate graphics with a service). Unfortunately this work probably falls in the high impact low priority category and wont be executed while I am on the team.
 
-I don’t regret my decision to come work at Amazon. I have learned a lot in a really short amount of time, but I also realize that this is not a place for me long term and I am at peace with that. On to the next one (and in the meantime finish well).
+I don’t regret my decision to come work at Amazon. I have learned a lot in a really short amount of time, but I also realize that this is not a place for me long term and I am at peace with that. On to the next one.

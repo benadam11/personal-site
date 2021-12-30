@@ -2,6 +2,8 @@
 layout: ../../layouts/post.astro
 title: >
   A Guide to Creativity for the Left Brained
+description: >
+  Defining creativity and how to grow as a creative person regardless of your profession.
 published: 10/11/2013
 ---
 
