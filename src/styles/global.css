@@ -14,7 +14,7 @@
   --grey2: rgb(110, 108, 110);
   --grey3: rgb(134, 130, 121);
   --contrast-alpha: rgba(0,0,0,.2);
-  --base: rgb(248, 247, 250);
+  --base: rgb(255, 255, 255);
   --accent: var(--blue);
 }
 
