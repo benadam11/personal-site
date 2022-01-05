@@ -5,7 +5,7 @@ const { content } = Astro.props;
 ---
 <html lang={ content.lang || 'en' }>
   <head>
-    <MainHead title={content.title} description={content.description}>
+    <MainHead title={content.title} description={content.description} image={content.image}>
       <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/post.css')}>
       <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/prisma-light.css')}>
       <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/prisma-dark.css')}>

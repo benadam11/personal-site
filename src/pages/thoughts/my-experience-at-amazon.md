@@ -2,6 +2,7 @@
 # src/pages/index.md
 layout: ../../layouts/post.astro
 title: I took a job at Amazon, only to leave after 10 months.
+image: og_image_a2z.jpg
 description: > 
     Reflections on working at Amazon, the interview process, the organizational
     structure, and why it wasn't a great fit for me (but might be for you).
