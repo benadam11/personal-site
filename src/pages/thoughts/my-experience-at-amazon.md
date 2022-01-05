@@ -19,7 +19,7 @@ Amazon interview loops are fairly similar across roles and heavily rely on _beha
 
 In addition to the behavioral interviews I also did a technical screen (live coding with a Sr Design Technologist at the company) which consisted of a fairly simple html, css and javascript exercise (no framework). For the onsite, I was asked to prepare a take-home exercise to present during the onsite (as well as 2-3 case studies of current work). Amazon is big on data, so they are really interested in the impact of your work (what metrics do you have to support that you made the right decision etc). Unfortunately due to a miscommunication, I found out about the take home exercise 2 days before the onsite, so I had to scramble to put together a [prototype](https://codebasebox.io/s/movie-reviews-5yccq) the day before (which unfortunately meant I did really poorly in another interview I had scheduled for the same week).
 
-I don’t mean to sound arrogant, but after the panel interview where I presented 2 case studies as well as my prototype, I was very confident that I would get an offer. I could sense from people’s body language and questions that they were impressed with my work. (as a side note, I have had WAY more success interviewing for design roles being a technical designer or designer who codes vs engineering roles where my design eye could add value).
+I don’t mean to sound arrogant, but after the panel interview where I presented 2 case studies as well as my prototype, I was very confident that I would get an offer. I could sense from people’s body language and questions that they were impressed with my work.
 
 ### The Offer:
 
