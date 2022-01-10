@@ -2,7 +2,6 @@
 // Component Imports
 import MainHead from '../components/MainHead.astro';
 import MainBody from '../components/MainBody.astro';
-import TextVideoPopover from '../components/text-video.jsx'
 import PostItem from '../components/post-item.jsx'
 import ParticleAnimation from '../components/particle-animation.jsx';
 import ImageColors from '../components/image-color.jsx';
@@ -19,8 +18,8 @@ const topPosts = posts.sort(sortDate).slice(0,2);
     <section id='hero' class='py-24 intro-animation relative'>
       <h1 class='text-4xl mb-4 font-bold'>Hello, my name is Ben.</h1>
       <h4 class='font-serif italic text-2xl'>
-        I am a Software Designer / Engineer based in Tempe, AZ. <br> Currently I'm
-        <span class='line-through opacity-50'>working at Amazon</span> enjoying a break before starting a <TextVideoPopover client:load>new adventure.</TextVideoPopover>
+        I am a Software Designer / Engineer based in Tempe, AZ.
+        <br>Currently I'm working at <a class='opacity-80 underline' href="https://ui.dev">ui.dev</a> helping folks level up with JavaScript.
       </h4>
     </section>
     <section class='fade-in pb-12'>
