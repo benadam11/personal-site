@@ -39,7 +39,11 @@ TLDR - [Inline SVGs using sprites](#rendering-icons-using-svg-sprites) gives you
 The big tradeoffs we are evaluating are performance vs. user experience. Before you hit me with a "well
 ackchyually, performance is a part of user experience", I know (and I agree), let's keep moving.
 
+### Technique 1: Image + SVG 
+
 When using the first approach I mentioned, an image tag referencing an image asset (png, svg, etc.), the first time the page is downloaded there is a flicker before the icons render. This happens because of a request waterfall. First the Browser downloads the HTML document. It then makes the subsequent requests to fetch all the assets for the page (images, scripts, stylesheets, etc). The benefit of referencing an external asset is caching. The browser (or CDN) can cache the asset and reference it on subsequent requests. The technique is optimized for subsequent requests, but the initial loading experience is less than desireable. The other downside of this technique is that we can't style the svg using CSS when it is referenced in an image tag 😢. 
+
+### Technique 2: Inline SVG
 
 The second technique, which is often used to combat the issues I just mentioned is inlining the svg into the HTML document. When the Browser downloads the HTML document, it doesn't need to make a secondary request for the image asset, it is there immediately (no flicker). The other benefit is that the content is now able to be accessed and styled with CSS (win + win). But this approach is not without its pitfalls. Inlining the SVG into your HTML document makes your document significantly larger, and adds elements to the page (which slows down memory performance). The good folks at Google wrote a [nice article on the topic](https://web.dev/dom-size/). The second pitfall, is that the SVG bloats your JavaScript bundle size. The browser has to download, parse, and evaluate the JavaScript on the page before anything renders. Including SVG in your bundle makes you pay this cost twice. You have a larger bundle to download and parse (path data can be large for some icons especially if they are more intricate), and then the rendered HTML adds lots of additional elements to the page (slowing down DOM traversal). 
 
@@ -53,9 +57,9 @@ Well if you made this far, congratulations, you are about to have your life chan
 
 You might be old enough to remember image sprites (you probably aren't let's be honest), but essentially you would put all your image assets into a single image and then reference the specific image using coordinates (for where the icon was laid out on the sprite). This was a performance technique used to avoid lots of image requests (HTTP 2 has largely solved that issue now btw). This technique is similar, but different.
 
-Let me introduce you to the `<symbol>` element. The [symbol element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol) "element is used to define graphical template objects which can be instantiated by a `<use>` element." - MDN. We can leverage this to construct a sprite with our icons. First, we create a file sprite.svg, and add an `<svg>` element that wraps a symbol. Next, we take the icon (that we would have inlined), and swap the svg for a symbol element, and give it an id (the id is important). 
+### The Symbol Element
 
-Next, we add another icon to the sprite by adding it as a symbol.
+Let me introduce you to the `<symbol>` element. The [symbol element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol) "element is used to define graphical template objects which can be instantiated by a `<use>` element." - MDN. We can leverage this to construct a sprite with our icons. First, we create a file sprite.svg, and add an `<svg>` element that wraps a symbol. Next, we take the icon (that we would have inlined), and swap the svg for a symbol element, and give it an id. The id is important! Finally, we'll add a second icon to the sprite by adding it as a symbol.
 
 Example:
 
@@ -107,6 +111,8 @@ function App() {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
+
+### The Use Element
 
 In the example above, the magic happens in the `<use>` element which links to the "Fragment Identifier" (aka the id that we defined on the symbol). Now, we have an icon component that lets us do all the things we could do with inline SVGs (like defining the height, width, and color of the icon), but all of the path data lives in an external asset (and not in the JavaScript bundle). 
 
