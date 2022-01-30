@@ -10,7 +10,7 @@ published: 1/29/2022
 
 ## Icon Rendering Techniques 
 
-If you have been building user interfaces for any amount of time, you know that icons are, well, they are everywhere. I have spent the last 7 years building UIs with React.js and I have tried a number of different techniques for managing icons. Each technique has different tradeoffs. The main techniques I have use are:
+If you have been building user interfaces for any amount of time, you know that icons are, well, they are everywhere. I have spent the last 7 years building UIs with React.js and I have tried a number of different techniques for managing icons. Each technique has different tradeoffs. The main techniques I have used are:
 
 1. Image + SVG 
 ```html
