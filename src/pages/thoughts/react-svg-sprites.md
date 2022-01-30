@@ -14,7 +14,7 @@ If you have been building user interfaces for any amount of time, you know that 
 
 1. Image + SVG 
 ```html
-  <img src='path-to-svg.svg'>
+  <img src='icon.svg'>
 ```
 2. Inline SVG
 ```js
@@ -28,7 +28,7 @@ const icon = (
 ```js
 const icon = (
   <svg viewBox="0 0 24 24" width={16} height={16}>
-    <use href="path-to-svg-sprite.svg#icon" />
+    <use href="sprite.svg#icon" />
   </svg>
 )
 ```
@@ -38,7 +38,8 @@ TLDR - [Inline SVGs using sprites](#rendering-icons-using-svg-sprites) gives you
 ## Tradeoffs
 
 The big tradeoffs we are evaluating are performance vs. user experience. Before you hit me with a "well
-ackchyually, performance is a part of user experience", I know (and I agree), let's keep moving.
+ackchyually, performance is a part of user experience", I know (
+I agree), let's keep moving.
 
 ### Technique 1: Image + SVG 
 
@@ -46,11 +47,9 @@ When using the first approach I mentioned, an image tag referencing an image ass
 
 ### Technique 2: Inline SVG
 
-The second technique, which is often used to combat the issues I just mentioned is inlining the svg into the HTML document. When the Browser downloads the HTML document, it doesn't need to make a secondary request for the image asset, it is there immediately (no flicker). The other benefit is that the content is now able to be accessed and styled with CSS (win + win). But this approach is not without its pitfalls. Inlining the SVG into your HTML document makes your document significantly larger, and adds elements to the page (which slows down memory performance). The good folks at Google wrote a [nice article on the topic](https://web.dev/dom-size/). The second pitfall, is that the SVG bloats your JavaScript bundle size. The browser has to download, parse, and evaluate the JavaScript on the page before anything renders. Including SVG in your bundle makes you pay this cost twice. You have a larger bundle to download and parse (path data can be large for some icons especially if they are more intricate), and then the rendered HTML adds lots of additional elements to the page (slowing down DOM traversal). 
+The second technique, which is often used to combat the issues I just mentioned is inlining the svg into the HTML document. When the Browser downloads the HTML document, it doesn't need to make a secondary request for the image asset, it is there immediately (no flicker). The other benefit is that the content is now able to be accessed and styled with CSS (win + win). But this approach is not without its pitfalls. Inlining the SVG into your HTML document makes your document significantly larger, and adds elements to the page (which slows down memory performance). The good folks at Google wrote a [nice article on the topic](https://web.dev/dom-size/).
 
-The vast majority of React applications use this second technique (I have been a big proponent of it in the past), but after battling with `react-icons` bloating the bundle size of a relatively simple page, I knew there had to be a better way. 
-
-(There are ways to treeshake unused icons out of the bundle, but if you aren't careful `react-icons` used out of the box will give you a 5mb bundle of JavaScript 😱).
+The second pitfall, is that the SVG bloats your JavaScript bundle size. The browser has to download, parse, and evaluate the JavaScript on the page before anything renders. Including SVG in your bundle makes you pay this cost twice. You have a larger bundle to download and parse (path data can be large for some icons especially if they are more intricate), and then the rendered HTML adds lots of additional elements to the page (slowing down DOM traversal). The vast majority of React applications use this second technique (I have been a big proponent of it in the past), but after battling with `react-icons` bloating the bundle size of a relatively simple page, I knew there had to be a better way. **Note:** There are ways to treeshake unused icons out of the bundle, but if you aren't careful `react-icons` used out of the box will give you a 5mb bundle of JavaScript 😱.
 
 ## Rendering Icons using SVG Sprites
 
@@ -62,7 +61,7 @@ You might be old enough to remember image sprites (you probably aren't let's be 
 
 Let me introduce you to the `<symbol>` element. The [symbol element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol) "element is used to define graphical template objects which can be instantiated by a `<use>` element." - MDN. When combined with [the `<defs>` element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs), we can construct a svg sprite with our icons. 
 
-First, we create a file sprite.svg, and add an `<svg>` element that wraps a `defs` element and a `<symbol>`. Next, we take the icon (that we would have inlined), and swap the svg for a symbol element, and give it an id. The id is important! Finally, we'll add a second icon to the sprite by adding it as a symbol.
+First, we create a file sprite.svg, and add an `<svg>` element that wraps a `defs` element and a `<symbol>`. Next, we take the icon (that we would have inlined), swap the svg for a symbol element, and give it an id. The id is important! Finally, we'll add a second icon to the sprite by adding it as a symbol.
 
 Example:
 
@@ -134,6 +133,6 @@ To preload the sprite, you add a link tag to the head of the document.
   <link rel="preload" as="image/svg+xml" href="sprite.svg">
 </head>
 ```
-Depending on your servers' configuration, you might need to make sure the proper cache-headers are set on your sprite.svg so the browser can cache it appropriately. 
+Depending on your server's configuration, you might need to make sure the proper cache-headers are set on your sprite.svg so the browser can cache it appropriately. 
 
 That's it! Hope this was helpful. 
