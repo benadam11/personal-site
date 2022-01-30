@@ -16,7 +16,7 @@
 }
 
 .post-content p {
-  @apply text-xl font-serif leading-relaxed opacity-90 mt-10;
+  @apply text-xl font-serif leading-[1.75] opacity-90 mt-10;
 }
 
 .post-content strong {
