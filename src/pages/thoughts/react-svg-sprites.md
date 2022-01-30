@@ -134,6 +134,6 @@ To preload the sprite, you add a link tag to the head of the document.
   <link rel="preload" as="image/svg+xml" href="sprite.svg">
 </head>
 ```
-Depending on your servers, configuration, you might need to make sure the proper cache-headers are set on your sprite.svg so the browser can cache it appropriately. 
+Depending on your servers' configuration, you might need to make sure the proper cache-headers are set on your sprite.svg so the browser can cache it appropriately. 
 
 That's it! Hope this was helpful. 
