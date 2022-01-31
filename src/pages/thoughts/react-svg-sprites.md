@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/post.astro
 title: >
-  "The best way" to manage icons in React.js
+  The "best" way to manage icons in React.js
 image: og_image_svg_sprites.jpg
 description: >
   How to remove icons from JavaScript bundles without losing the flexibility of inline SVG
