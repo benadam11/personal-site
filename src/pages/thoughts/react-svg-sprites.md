@@ -55,13 +55,13 @@ The second pitfall, is that the SVG bloats your JavaScript bundle size. The brow
 
 ## Rendering Icons using SVG Sprites
 
-Well if you made this far, congratulations, you are about to have your life changed. There is a third option, SVG Sprites, which rememedy the majority of the issues I have mentioned with the two approaches.
+Well if you made this far, congratulations, you are about to have your life changed. There is a third option: **SVG Sprites**, which rememedy the majority of the issues I have mentioned with the two approaches.
 
-You might be old enough to remember image sprites (you probably aren't let's be honest), but essentially you would put all your image assets into a single image and then reference the specific image using coordinates (for where the icon was laid out on the sprite). This was a performance technique used to avoid lots of image requests (HTTP 2 has largely solved that issue now btw). This technique is similar, but different.
+You might not be old enough to remember image sprites (you probably aren't let's be honest), but essentially you would put all your image assets into a single image and then reference the specific image using coordinates (for where the icon was laid out on the sprite). This was a performance technique used to avoid lots of image requests (an issue which HTTP 2 has largely solved now). This technique is similar, but different.
 
 ### The Symbol Element
 
-Let me introduce you to the `<symbol>` element. The [symbol element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol) "element is used to define graphical template objects which can be instantiated by a `<use>` element." - MDN. When combined with [the `<defs>` element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs), we can construct a svg sprite with our icons. 
+Let me introduce you to the `<symbol>` element. The [symbol element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol) "is used to define graphical template objects which can be instantiated by a `<use>` element." - MDN. When combined with [the `<defs>` element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs), we can construct a svg sprite with our icons. 
 
 First, we create a file sprite.svg, and add an `<svg>` element that wraps a `defs` element and a `<symbol>`. Next, we take the icon (that we would have inlined), swap the svg for a symbol element, and give it an id. The id is important! Finally, we'll add a second icon to the sprite by adding it as a symbol.
 
