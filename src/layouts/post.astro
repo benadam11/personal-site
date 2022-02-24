@@ -22,6 +22,8 @@ const { content } = Astro.props;
         <a href='/thoughts' class='more-link my-12'><span class="arrow left">&larr;</span>All Posts</a>
       </div>
     </div>
-    <script src="/scripts/post.js"></script>
+    <script hoist>
+      import '../scripts/post.js';
+    </script>
   </MainBody>
 </html>
