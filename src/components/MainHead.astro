@@ -1,6 +1,7 @@
 ---
 // import { writeFile } from "node:fs/promises";
 // import generateMetaImage from '../scripts/generate-meta.js';
+import "../styles/global.css";
 const { title = 'Ben Adam: Personal Site', description = 'The personal site of Ben Adam', image = 'og_image.jpg' } = Astro.props;
 const { href, origin } = Astro.request.url
 ---
@@ -41,7 +42,6 @@ const { href, origin } = Astro.request.url
     <animate attributeName='r' values='3;0;3' dur='1s' repeatCount='indefinite' />
   </circle>
 </svg>" />
-<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')}>
 <slot />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

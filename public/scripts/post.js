@@ -1,4 +1,5 @@
 (() => {
+  console.log('called')
   const links = document.querySelectorAll('a[href^="#"]');
   const opts = { threshold: 1, rootMargin: "0px 0px -70% 0px " };
 

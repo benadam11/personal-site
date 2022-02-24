@@ -1,15 +1,15 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import MainBody from '../components/MainBody.astro';
+import "../styles/post.css";
+import "../styles/prisma-light.css";
+import "../styles/prisma-dark.css";
 const { content } = Astro.props;
+
 ---
 <html lang={ content.lang || 'en' }>
   <head>
-    <MainHead title={content.title} description={content.description} image={content.image}>
-      <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/post.css')}>
-      <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/prisma-light.css')}>
-      <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/prisma-dark.css')}>
-    </MainHead>
+    <MainHead title={content.title} description={content.description} image={content.image} />
   </head>
   <MainBody>
     <div class="post-content">
@@ -22,6 +22,6 @@ const { content } = Astro.props;
         <a href='/thoughts' class='more-link my-12'><span class="arrow left">&larr;</span>All Posts</a>
       </div>
     </div>
-    <script defer src={Astro.resolve('../scripts/post.js')}></script>
+    <script src="/scripts/post.js"></script>
   </MainBody>
 </html>
