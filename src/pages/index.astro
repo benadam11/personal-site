@@ -7,7 +7,7 @@ import ParticleAnimation from '../components/particle-animation.jsx';
 import ImageColors from '../components/image-color.jsx';
 import { sortDate }from '../scripts/utils.js';
 
-const posts = Astro.fetchContent('./thoughts/*.md');
+const posts = await Astro.glob('./thoughts/*.md');
 const topPosts = posts.sort(sortDate).slice(0,2);
 ---
 <html lang="en">
@@ -25,7 +25,7 @@ const topPosts = posts.sort(sortDate).slice(0,2);
     <section class='fade-in pb-12'>
       <h2 class='uppercase text-sm mb-12 font-bold text-accent'>Recent Thoughts</h2>
       <ul>
-        {topPosts.map(post => <PostItem {...post} /> )}
+        {topPosts.map(({ frontmatter, url }) => <PostItem {...frontmatter} url={url} /> )}
       </ul>
       <a href='/thoughts' class='more-link'>More <span class="arrow">→</span></a>
     </section>

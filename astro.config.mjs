@@ -1,31 +1,26 @@
-// Full Astro Configuration API Documentation:
-// https://docs.astro.build/reference/configuration-reference
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap"; // @ts-check
+import tailwind from "@astrojs/tailwind";
+import partytown from "@astrojs/partytown";
 
-// @type-check enabled!
-// VSCode and other TypeScript-enabled text editors will provide auto-completion,
-// helpful tooltips, and warnings if your exported object is invalid.
-// You can disable this by removing "@ts-check" and `@type` comments below.
-
-// @ts-check
-export default /** @type {import('astro').AstroUserConfig} */ ({
-  // Enable the Preact renderer to support Preact JSX components.
-  renderers: ["@astrojs/renderer-react"],
-  devOptions: {
-    tailwindConfig: "./tailwind.config.js",
-  },
-  buildOptions: {
-    sitemap: true,
+// https://astro.build/config
+export default defineConfig(
+  /** @type {import('astro').AstroUserConfig} */
+  {
+    // Enable the Preact renderer to support Preact JSX components.
+    integrations: [react(), sitemap(), tailwind(), partytown()],
     site: "https://benadam.me",
-  },
-  markdownOptions: {
-    render: [
-      "@astrojs/markdown-remark",
-      {
-        rehypePlugins: [
-          "rehype-slug",
-          ["@jsdevtools/rehype-toc", { position: "afterend" }],
+    markdown: {
+      rehypePlugins: [
+        ["rehype-slug", {}],
+        [
+          "@jsdevtools/rehype-toc",
+          {
+            position: "afterend",
+          },
         ],
-      },
-    ],
-  },
-});
+      ],
+    },
+  }
+);

@@ -43,8 +43,9 @@ const { href, origin } = Astro.request.url
 <slot />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Raleway:wght@100;600;800&display=swap" rel="stylesheet">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51618306-1"></script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Raleway:wght@100;600;800">
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Raleway:wght@100;600;800">
+<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=UA-51618306-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
