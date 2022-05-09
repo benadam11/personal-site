@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/markdown-remark': ^0.6.1
@@ -23,7 +23,7 @@ dependencies:
 devDependencies:
   '@astrojs/markdown-remark': 0.6.1
   '@astrojs/partytown': 0.1.2
-  '@astrojs/react': 0.1.1_react-dom@18.0.0+react@18.0.0
+  '@astrojs/react': 0.1.1_zpnidt7m3osuk7shl3s4oenomq
   '@astrojs/sitemap': 0.1.0
   '@astrojs/tailwind': 0.2.0
   '@jsdevtools/rehype-toc': 3.0.2
@@ -138,7 +138,7 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0}
     dev: true
 
-  /@astrojs/react/0.1.1_react-dom@18.0.0+react@18.0.0:
+  /@astrojs/react/0.1.1_zpnidt7m3osuk7shl3s4oenomq:
     resolution: {integrity: sha512-vYCqwQ82tz3oOCH0Rru24zOJ7NN49pxa0LWF8rsgSTxUwAB2l/8JiHtR7HIh4TH14/73WNbtTvemYHMzHYKEDg==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
@@ -162,7 +162,7 @@ packages:
     resolution: {integrity: sha512-sXCe9FBgn31HAlBwimT2RfveNrYP6/j+XT/YHlj15tdlYqqcEQUj3IP43wSWwkIKwtKVrHWUjY+SOk+MeD+eow==}
     dependencies:
       svelte: 3.46.4
-      svelte2tsx: 0.5.9_svelte@3.46.4+typescript@4.6.3
+      svelte2tsx: 0.5.9_jguo25ojyzfzetckrhyj3fbfwy
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -344,6 +344,8 @@ packages:
     resolution: {integrity: sha512-vqUSBLP8dQHFPdPi9bc5GK9vRkYHJ49fsZdtoJ8EQ8ibpwk5rPKfvNIwChB0KVXcIjcepEBBd2VHC5r9Gy8ueg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.0
     dev: true
 
   /@babel/plugin-syntax-jsx/7.16.7:
@@ -3636,7 +3638,7 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /svelte2tsx/0.5.9_svelte@3.46.4+typescript@4.6.3:
+  /svelte2tsx/0.5.9_jguo25ojyzfzetckrhyj3fbfwy:
     resolution: {integrity: sha512-xTDASjlh+rKo4QRhTRYSH87sS7fRoyX67xhGIMPKa3FYqftRHRmMes6nVgEskiuhBovslNHYYpMMg5YM5n/STg==}
     peerDependencies:
       svelte: ^3.24
