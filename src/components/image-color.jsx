@@ -47,7 +47,7 @@ export default function ImageUpload() {
           {imgUrl && (
             <img
               src={imgUrl}
-              width='1000'
+              width='667'
               height='1000'
               alt="Image uploaded by a user"
               className="object-cover object-top aspect-square"
@@ -77,7 +77,7 @@ export default function ImageUpload() {
             className="font-bold underline cursor-pointer"
             onClick={() =>
               setImgUrl(
-                `https://source.unsplash.com/random/${Math.floor(
+                `https://source.unsplash.com/random/?width=667&height=1000&key${Math.floor(
                   Math.random() * 100
                 )}`
               )
