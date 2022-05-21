@@ -31,7 +31,7 @@ export default function ImageUpload() {
     <article
       className={`${isLight? 'default-scheme': 'alt-scheme'} w-full text-contrast mb-12 p-8 rounded-xl relative grid transition-colors min-w-[320px]`}
       style={{
-        backgroundColor: colors[selected]?.hex,
+        backgroundColor: colors[selected]?.hex || "rgb(200, 200, 200)",
         gridTemplateRows: "auto 1fr auto",
       }}
     >
