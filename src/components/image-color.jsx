@@ -6,7 +6,7 @@ export default function ImageUpload() {
   const [imgUrl, setImgUrl] = useState("/winter-building.jpg");
   const [colors, setColors] = useState([]);
   const [selected, setSelected] = useState(0);
-  const isLight = colors?.[selected]?.distance > 50;
+  const isLight = colors?.[selected]?.distance || 87 > 50;
 
   useEffect(() => {
     const img = new Image();
