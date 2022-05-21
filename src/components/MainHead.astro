@@ -50,9 +50,8 @@ const { href, origin } = Astro.request.url
     forward: ['dataLayer.push'],
     resolveUrl: function (url) {
       if (url.hostname === 'www.google-analytics.com') {
-        var proxyUrl = new URL('https://benadam.me/ba');
-        proxyUrl.searchParams.append('url', url.href);
-        return proxyUrl;
+        const proxyUrl = url.href.replace(/www.google-analytics.com/, "benadam.me/ba");
+        return new URL(proxyUrl);
       }
       return url;
     },
