@@ -48,13 +48,6 @@ const { href, origin } = Astro.request.url
 <script is:inline>
   partytown = {
     forward: ['dataLayer.push'],
-    resolveUrl: function (url) {
-      if (url.pathname === '/analytics.js') {
-        var proxyUrl = new URL('/ba.js');
-        return proxyUrl;
-      }
-      return url;
-    },
   }
 </script>
 <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-WPPQPK4EDS"></script>
