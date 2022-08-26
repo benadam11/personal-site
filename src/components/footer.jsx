@@ -9,6 +9,11 @@ export default function Footer() {
           </a>
         </li>
         <li>
+          <a className='font-serif text-lg opacity-80 hover:opacity-100 underline' href="https://github.com/benadam11" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+        </li>
+        <li>
           <a className='font-serif text-lg opacity-80 hover:opacity-100 underline'  href="https://www.linkedin.com/in/benjaminadam/" target="_blank" rel="noreferrer">
             LinkedIn
           </a>

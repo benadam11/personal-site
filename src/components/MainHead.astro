@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 const { title = 'Ben Adam: Personal Site', description = 'The personal site of Ben Adam', image = 'og_image.jpg' } = Astro.props;
-const { href, origin } = Astro.request.url
+const { href, origin } = new URL(Astro.request.url);
 ---
 
 <meta charset="UTF-8">
