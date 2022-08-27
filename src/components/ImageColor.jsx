@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import getColors from "image-pal-canvas";
 
-export default function ImageUpload() {
+export default function ImageColors() {
   const input = useRef(null);
   const [imgUrl, setImgUrl] = useState("/winter-building.jpg");
   const [colors, setColors] = useState([]);

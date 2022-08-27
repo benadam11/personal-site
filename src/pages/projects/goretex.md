@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: Gore Tex Interactive Prototype
 thumbnail: /images/gorethumb.jpg
 date: 2/15/2015

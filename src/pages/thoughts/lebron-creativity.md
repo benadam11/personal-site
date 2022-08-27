@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: >
   A Guide to Creativity for the Left Brained
 description: >

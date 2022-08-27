@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: Struggling to Believe Greatness is Worth It
 description: >
   Personal Essay on whether or not being "the best" is worth it (for me personally).

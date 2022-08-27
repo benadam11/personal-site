@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: Gina Meola Photography Brand Collateral Design
 thumbnail: /images/gm_thumbnail.jpg
 date: 11/30/2013

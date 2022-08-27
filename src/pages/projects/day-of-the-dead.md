@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: Day of the Dead
 thumbnail: /images/dotd-thumb.jpg
 date: 9/14/2018

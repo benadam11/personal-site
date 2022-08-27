@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: >
   The "best" way to manage icons in React.js
 image: og_image_svg_sprites.jpg

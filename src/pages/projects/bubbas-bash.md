@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: Bubba's Bash - A simple landing page promoting Bubba Watson's charity concert
 thumbnail: /images/bubbas_thumbnail.jpg
 date: 9/11/2014

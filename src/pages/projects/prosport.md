@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: > 
     Prosport Management: Branding for an international sports agency.
 thumbnail: /images/prosport_thumbnail.jpg

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: > 
     JDA: Information Architecture
 thumbnail: /images/jda-thumb.jpg

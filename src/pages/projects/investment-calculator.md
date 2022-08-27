@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: > 
     Investment Calculator
 thumbnail: /static/images/ic-thumb.jpg

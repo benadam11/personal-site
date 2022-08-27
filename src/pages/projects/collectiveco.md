@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: The Collective Printing Company
 thumbnail: /images/collectiveco_thumbnail.jpg
 date: 9/10/2014

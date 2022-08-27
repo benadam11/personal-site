@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: > 
     Phoenix Seminary: Responsive Landing Page to Increase Online Enrollment.
 thumbnail: /images/seminary_thumbnail.jpg

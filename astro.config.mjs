@@ -8,7 +8,6 @@ import partytown from "@astrojs/partytown";
 export default defineConfig(
   /** @type {import('astro').AstroUserConfig} */
   {
-    // Enable the Preact renderer to support Preact JSX components.
     integrations: [react(), sitemap(), tailwind(), partytown()],
     site: "https://benadam.me",
     markdown: {

@@ -1,6 +1,6 @@
 ---
 # src/pages/index.md
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: I took a job at Amazon, only to leave after 10 months.
 image: og_image_a2z.jpg
 description: >

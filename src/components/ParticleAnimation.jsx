@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as Slider from "@radix-ui/react-slider";
 import { animateCanvas } from "../scripts/particle-animation";
+const { Root, Track, Range, Thumb } = Slider.default;
 
 export default function ParticleAnimation() {
   const [count, setCount] = useState(30);
@@ -19,20 +20,20 @@ export default function ParticleAnimation() {
         </figcaption>
         <canvas ref={canvas} id="canvas-demo" />
         <div className="pt-8">
-          <Slider.Root
+          <Root
             onValueChange={(c) => setCount(c[0])}
             defaultValue={[count]}
             step={1}
             className="relative flex items-center w-full h-[20px]"
           >
-            <Slider.Track className="bg-[rgba(0,0,0,.2)] relative grow rounded-full h-[3px]">
-              <Slider.Range className="absolute rounded-full h-full bg-base" />
-            </Slider.Track>
-            <Slider.Thumb
+            <Track className="bg-[rgba(0,0,0,.2)] relative grow rounded-full h-[3px]">
+              <Range className="absolute rounded-full h-full bg-base" />
+            </Track>
+            <Thumb
               className="block w-[20px] h-[20px] bg-base rounded-full focus:shadow-md"
               style={{ unset: "all" }}
             />
-          </Slider.Root>
+          </Root>
         </div>
       </figure>
     </article>

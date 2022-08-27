@@ -4,7 +4,7 @@ description: >
   Some of the characteristics good User Experience Designers have (aka what I look for when hiring UX).
 author: Ben Adam
 published: 5/23/2015
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 ---
 
 _The characteristics of a good User Experience Designer_

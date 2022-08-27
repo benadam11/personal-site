@@ -1,6 +1,6 @@
 ---
 # src/pages/index.md
-layout: ../../layouts/post.astro
+layout: ../../layouts/Post.astro
 title: Building A Developer Media Company
 published: 12/11/2021
 ---
