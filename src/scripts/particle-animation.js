@@ -7,7 +7,7 @@ export const animateCanvas = (canvas, count) => {
 
   function setDimensions() {
     width = canvas.width = el.clientWidth;
-    height = canvas.height = Math.min(400, el.clientWidth);
+    height = canvas.height = Math.min(240, el.clientWidth);
   }
 
   setDimensions();

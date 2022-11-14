@@ -1,0 +1,35 @@
+/* buttons */
+.pause,
+.play {
+  border-color: #fff;
+  display: flex;
+  align-items: center;
+  --pauseColor: #fff;
+}
+
+.pause::before,
+.play::before {
+  content: '';
+  width: .7em;
+  height: .7em;
+  display: block;
+  transition: color 300ms ease;
+}
+
+.pause:hover,
+.play:hover {
+  --pauseColor: #fff;
+}
+
+.pause::before {
+  margin-right: .5em;
+  border-left: .2em solid var(--pauseColor);
+  border-right: .2em solid var(--pauseColor);
+}
+
+.play::before {
+  margin-right: .3em;
+  border-top: .4em solid transparent;
+  border-bottom: .4em solid transparent;
+  border-left: .6em solid var(--pauseColor);
+}

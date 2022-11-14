@@ -6,6 +6,7 @@ import PostItem from "../components/PostItem.jsx";
 import ParticleAnimation from "../components/ParticleAnimation.jsx";
 import ImageColors from "../components/ImageColor.jsx";
 import { sortDate } from "../scripts/utils.js";
+import KeyframePlayer from "../components/KeyframePlayer";
 
 const posts = await Astro.glob("./thoughts/*.md");
 const topPosts = posts.sort(sortDate).slice(0, 2);
@@ -51,6 +52,9 @@ const topPosts = posts.sort(sortDate).slice(0, 2);
     <section class="fade-in pt-12">
       <h3 class="uppercase text-sm mb-12 font-bold text-accent">Experiments</h3>
       <main class="flex gap-4 overflow-auto">
+        <KeyframePlayer client:visible>
+          <div class="box"></div>
+        </KeyframePlayer>
         <ImageColors client:visible />
         <ParticleAnimation client:visible />
       </main>

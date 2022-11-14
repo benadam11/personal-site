@@ -1,39 +1,29 @@
-import { useEffect, useRef, useState } from "react";
-import * as Slider from "@radix-ui/react-slider";
+import { useEffect, useRef } from "react";
 import { animateCanvas } from "../scripts/particle-animation";
-const { Root, Track, Range, Thumb } = Slider.default;
 
 export default function ParticleAnimation() {
-  const [count, setCount] = useState(30);
   const canvas = useRef(null);
   useEffect(() => {
-    animateCanvas(canvas.current, count);
-  }, [count]);
+    animateCanvas(canvas.current, 30);
+  }, []);
   return (
-    <article className="default-scheme w-full mb-12 p-8 rounded-xl bg-blue min-w-[328px]">
-      <figure
-        className="grid h-full"
-        style={{ gridTemplateRows: "auto 1fr auto" }}
-      >
-        <figcaption className="text-center font-serif text-base pb-8 text-xl">
-          {`${count} Particles (Animated)`}
-        </figcaption>
+    <article className="default-scheme w-full mb-12 p-8 rounded-xl bg-blue grid grid-rows-[auto_1fr]">
+      <h4 className="text-center font-serif pb-8 text-xl">
+        {`Animated Particles`}
+      </h4>
+      <figure className="grid grid-rows-[auto_1fr] w-full">
         <canvas ref={canvas} id="canvas-demo" />
-        <div className="pt-8">
-          <Root
-            onValueChange={(c) => setCount(c[0])}
-            defaultValue={[count]}
+        <div className="self-end">
+          <input
+            className="w-full appearance-none accent-[#fff] h-[2px] bg-contrast rounded-full cursor-pointer"
             step={1}
-            className="relative flex items-center w-full h-[20px]"
-          >
-            <Track className="bg-[rgba(0,0,0,.2)] relative grow rounded-full h-[3px]">
-              <Range className="absolute rounded-full h-full bg-base" />
-            </Track>
-            <Thumb
-              className="block w-[20px] h-[20px] bg-base rounded-full focus:shadow-md"
-              style={{ unset: "all" }}
-            />
-          </Root>
+            min={10}
+            max={100}
+            type="range"
+            onChange={(e) => {
+              animateCanvas(canvas.current, e.target.value);
+            }}
+          />
         </div>
       </figure>
     </article>

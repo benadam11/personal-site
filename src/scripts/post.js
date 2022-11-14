@@ -1,7 +1,7 @@
 const links = document.querySelectorAll('a[href^="#"]');
 const opts = { threshold: 1, rootMargin: "0px 0px -70% 0px " };
 
-links[0].classList.add("active");
+links?.[0]?.classList.add("active");
 
 function resetActiveElement(match) {
   if (match) {
