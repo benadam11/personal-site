@@ -1,0 +1,108 @@
+<article
+  class="default-scheme bg-purple w-full mb-12 p-8 rounded-xl min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]"
+>
+  <header class="text-base text-center font-serif">
+    <h4 class="text-xl">Game Of Life</h4>
+    <p class="text-xs font-serif text-center mt-2 opacity-70">
+      Conway's game of life starting with a glider gun.
+    </p>
+  </header>
+  <figure class="relative py-8">
+    <canvas id="canvas"></canvas>
+  </figure>
+</article>
+
+<script>
+  type Cell = {
+    x: number;
+    y: number;
+    isAlive: boolean;
+    willBeAlive: boolean;
+    neighbors: Cell[];
+    index?: number;
+  };
+
+  const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+  canvas.style.position = "absolute";
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  const { width, height } = canvas.getBoundingClientRect();
+  canvas.width = width;
+  canvas.height = height;
+  const cellSize = 8;
+  const cellMargin = 2;
+  const cols = Math.round(canvas.width / (cellSize + cellMargin));
+  const rows = Math.round(canvas.height / (cellSize + cellMargin));
+
+  const cells = [] as Cell[];
+
+  // make grid
+  for (let row = 0; row < rows; row++) {
+    const y = row * (cellSize + cellMargin);
+    for (let col = 0; col < cols; col++) {
+      const x = col * (cellSize + cellMargin);
+      cells.push({ x, y, isAlive: false, willBeAlive: false, neighbors: [] });
+      ctx.fillStyle = "rgb(50, 41, 60)";
+      ctx.fillRect(x, y, cellSize, cellSize);
+    }
+  }
+
+  // assign neighbors
+  cells.forEach((cell: Cell, i: number) => {
+    cell.index = i;
+    const tl = i - 1 - cols;
+    const tr = i + 1 - cols;
+    const t = i - cols;
+    const l = i - 1;
+    const r = (i + 1) % cells.length;
+    const bl = (i - 1 + cols) % cells.length;
+    const br = (i + 1 + cols) % cells.length;
+    const b = (i + cols) % cells.length;
+
+    [tl, tr, t, l, r, bl, br, b].forEach((index) => {
+      cell.neighbors.push(cells.at(index) as Cell);
+    });
+  });
+
+  async function draw() {
+    cells.forEach((cell) => {
+      const livingNeighbors = cell.neighbors.filter((n) => n.isAlive).length;
+      cell.willBeAlive = cell.isAlive
+        ? livingNeighbors > 1 && livingNeighbors < 4
+        : livingNeighbors === 3;
+    });
+
+    cells.forEach((cell) => {
+      if (cell.isAlive === cell.willBeAlive) return;
+      cell.isAlive = cell.willBeAlive;
+      ctx.fillStyle = cell.isAlive ? "#7B5EA7" : "rgb(50, 41, 60)";
+      ctx.fillRect(cell.x, cell.y, cellSize, cellSize);
+    });
+    await sleep(100);
+    requestAnimationFrame(draw);
+  }
+
+  async function sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  makeGlider(5).forEach((index) => {
+    const cell = cells[index];
+    cell.isAlive = true;
+    ctx.fillStyle = "#7B5EA7";
+    ctx.fillRect(cell.x, cell.y, cellSize, cellSize);
+  });
+
+  function makeGlider(index: number) {
+    const first = index;
+    const second = first + cols + 1;
+    const third = second + cols;
+    const fourth = third + cols;
+    const fifth = fourth - 1;
+    const sixth = fifth - 1;
+    return [first, second, third, fourth, fifth, sixth];
+  }
+
+  draw();
+</script>

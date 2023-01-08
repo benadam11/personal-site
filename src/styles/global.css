@@ -15,6 +15,7 @@
   --grey3: rgb(134, 130, 121);
   --contrast-alpha: rgba(0,0,0,.2);
   --base: rgb(255, 255, 255);
+  --alt: var(--contrast);
   --accent: var(--blue);
 }
 
@@ -35,6 +36,7 @@
     --grey2: #a9a9a9;
     --grey3: #34373c;
     --base: #1f1f24;
+    --alt: #222528;
     --red: #FF6A67;
     --accent: var(--light-green);
   }

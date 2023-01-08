@@ -191,3 +191,10 @@
 .post-content .twitter-tweet {
   @apply mx-auto my-10 !important;
 }
+
+
+.astro-code {
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--alt) !important;
+}

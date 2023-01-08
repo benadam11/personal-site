@@ -4,6 +4,7 @@ import MainBody from "../../components/MainBody.astro";
 import ParticleAnimation from "../../components/ParticleAnimation.jsx";
 import ImageColors from "../../components/ImageColor.jsx";
 import KeyframePlayer from "../../components/KeyframePlayer";
+import GameOfLife from "../../components/GameOfLife.astro";
 ---
 
 <html lang="en">
@@ -22,9 +23,8 @@ import KeyframePlayer from "../../components/KeyframePlayer";
     </section>
     <section class="fade-in max-w-[960px] mx-auto py-12">
       <main>
-        <KeyframePlayer client:load>
-          <div class="box"></div>
-        </KeyframePlayer>
+        <GameOfLife />
+        <KeyframePlayer client:visible />
         <ImageColors client:visible />
         <ParticleAnimation client:visible />
       </main>

@@ -5,8 +5,8 @@ import "../styles/post.css";
 import "../styles/prisma-light.css";
 import "../styles/prisma-dark.css";
 const { content } = Astro.props;
-
 ---
+
 <html lang={ content.lang || 'en' }>
   <head>
     <MainHead title={content.title} description={content.description} image={content.image} />

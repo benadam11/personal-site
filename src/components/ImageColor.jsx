@@ -29,15 +29,20 @@ export default function ImageColors() {
 
   return (
     <article
-      className={`${isLight? 'default-scheme': 'alt-scheme'} w-full text-contrast mb-12 p-8 rounded-xl relative grid transition-colors min-w-[320px]`}
+      className={`${
+        isLight ? "default-scheme" : "alt-scheme"
+      } w-full text-contrast mb-12 p-8 rounded-xl relative grid transition-colors min-w-[320px]`}
       style={{
         backgroundColor: colors[selected]?.hex || "rgb(200, 200, 200)",
         gridTemplateRows: "auto 1fr auto",
       }}
     >
-      <p className="text-center font-serif text-xl pb-4">
-        Image Color Extraction
-      </p>
+      <header className="text-center font-serif mb-4">
+        <h4 className="text-xl">Image Color Extraction</h4>
+        <p className="text-xs font-serif text-center mt-2 opacity-70">
+          Click image upload your own (or try random)
+        </p>
+      </header>
 
       <figure className="relative image-color-figure aspect-square overflow-hidden rounded-md">
         <label
@@ -47,8 +52,8 @@ export default function ImageColors() {
           {imgUrl && (
             <img
               src={imgUrl}
-              width='667'
-              height='1000'
+              width="667"
+              height="1000"
               alt="Image uploaded by a user"
               className="object-cover object-top aspect-square"
             />
@@ -72,7 +77,6 @@ export default function ImageColors() {
           }}
           className="p-4 absolute w-full text-center font-serif text-sm grid"
         >
-          Click image upload your own or
           <button
             className="font-bold underline cursor-pointer"
             onClick={() =>

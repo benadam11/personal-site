@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  content: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,vue,md}"],
+  content: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,md}"],
   theme: {
     fontFamily: {
       sans: ["raleway", "system-ui"],
@@ -15,6 +15,7 @@ module.exports = {
       grey3: "var(--grey3)",
       base: "var(--base)",
       accent: "var(--accent)",
+      purple: "var(--purple)",
     },
   }
 };

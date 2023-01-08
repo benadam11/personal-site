@@ -63,7 +63,7 @@ class Timeline {
   }
 }
 
-export default function KeyframePlayer({ children }) {
+export default function KeyframePlayer() {
   const [timeline, setTimeline] = useState(null);
 
   const init = (el) => {
@@ -81,7 +81,7 @@ export default function KeyframePlayer({ children }) {
         </p>
       </header>
       <figure ref={init} className="grid grid-rows-[1fr_auto]">
-        {children}
+      <div className="box"></div>
         <div className="w-full justify-start items-center gap-4 self-end">
           <button
             onClick={() => {

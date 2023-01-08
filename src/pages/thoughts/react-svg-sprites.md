@@ -14,7 +14,7 @@ If you have been building user interfaces for any amount of time, you know that 
 
 1. Image + SVG 
 ```html
-  <img src='icon.svg'>
+<img src='icon.svg'>
 ```
 2. Inline SVG
 ```js
