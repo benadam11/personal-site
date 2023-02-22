@@ -82,7 +82,7 @@ export default function KeyframePlayer() {
       </header>
       <figure ref={init} className="grid grid-rows-[1fr_auto]">
       <div className="box"></div>
-        <div className="w-full justify-start items-center gap-4 self-end">
+        <div className="w-full flex justify-start items-center gap-4 self-end">
           <button
             onClick={() => {
               timeline?.togglePlayState();
@@ -91,7 +91,7 @@ export default function KeyframePlayer() {
           />
           <input
             size={300}
-            className="w-full accent-[var(--accent)] appearance-none bg-brand-coal h-[2px] rounded-full cursor-pointer"
+            className="w-full accent-[var(--light-green)] appearance-none bg-brand-coal h-[2px] rounded-full cursor-pointer"
             type="range"
             min="0"
             max="1"

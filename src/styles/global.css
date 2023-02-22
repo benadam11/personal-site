@@ -42,6 +42,15 @@
   }
 }
 
+button, a {
+  transition: all 0.2s ease-in-out;
+}
+
+a:active,
+button:active {
+  transform: translateY(1px);
+}
+
 .intro-animation {
   animation: 1.4s down-enter cubic-bezier(0.25, 1, 0.5, 1) backwards;
 }

@@ -22,9 +22,8 @@
 }
 
 .pause::before {
-  margin-right: .5em;
-  border-left: .2em solid var(--pauseColor);
-  border-right: .2em solid var(--pauseColor);
+  border-left: .15em solid var(--pauseColor);
+  border-right: .15em solid var(--pauseColor);
 }
 
 .play::before {
