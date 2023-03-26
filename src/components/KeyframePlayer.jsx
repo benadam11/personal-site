@@ -73,7 +73,7 @@ export default function KeyframePlayer() {
   };
 
   return (
-    <article className="default-scheme w-full mb-12 p-8 rounded-xl bg-contrast min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]">
+    <article className="default-scheme w-full mb-12 p-8 rounded-2xl bg-contrast min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]">
       <header className="text-base text-center font-serif">
         <h4 className="text-xl">CSS Keyframe Player</h4>
         <p className="text-xs font-serif text-center mt-2 opacity-70">

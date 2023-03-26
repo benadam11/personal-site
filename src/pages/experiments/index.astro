@@ -5,6 +5,7 @@ import ParticleAnimation from "../../components/ParticleAnimation.jsx";
 import ImageColors from "../../components/ImageColor.jsx";
 import KeyframePlayer from "../../components/KeyframePlayer";
 import GameOfLife from "../../components/GameOfLife.astro";
+import QuizCards from "../../components/cards/QuizCards";
 ---
 
 <html lang="en">
@@ -23,6 +24,7 @@ import GameOfLife from "../../components/GameOfLife.astro";
     </section>
     <section class="fade-in max-w-[960px] mx-auto py-12">
       <main>
+        <QuizCards client:only />
         <GameOfLife />
         <KeyframePlayer client:visible />
         <ImageColors client:visible />

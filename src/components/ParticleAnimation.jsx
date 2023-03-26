@@ -7,7 +7,7 @@ export default function ParticleAnimation() {
     animateCanvas(canvas.current, 30);
   }, []);
   return (
-    <article className="default-scheme w-full mb-12 p-8 rounded-xl bg-blue grid grid-rows-[auto_1fr]">
+    <article className="default-scheme w-full mb-12 p-8 rounded-2xl bg-blue grid grid-rows-[auto_1fr]">
       <h4 className="text-center font-serif pb-8 text-xl">
         {`Animated Particles`}
       </h4>

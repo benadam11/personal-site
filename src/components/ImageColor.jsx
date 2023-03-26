@@ -31,7 +31,7 @@ export default function ImageColors() {
     <article
       className={`${
         isLight ? "default-scheme" : "alt-scheme"
-      } w-full text-contrast mb-12 p-8 rounded-xl relative grid transition-colors min-w-[320px]`}
+      } w-full text-contrast mb-12 p-8 rounded-2xl relative grid transition-colors min-w-[320px]`}
       style={{
         backgroundColor: colors[selected]?.hex || "rgb(200, 200, 200)",
         gridTemplateRows: "auto 1fr auto",
@@ -44,7 +44,7 @@ export default function ImageColors() {
         </p>
       </header>
 
-      <figure className="relative image-color-figure aspect-square overflow-hidden rounded-md">
+      <figure className="relative image-color-figure aspect-square overflow-hidden rounded-lg">
         <label
           htmlFor="file-upload-color"
           className="block h-full cursor-pointer"
@@ -55,7 +55,7 @@ export default function ImageColors() {
               width="667"
               height="1000"
               alt="Image uploaded by a user"
-              className="object-cover object-top aspect-square"
+              className="object-cover w-full"
             />
           )}
           <input

@@ -9,13 +9,13 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/markdown-remark": "^2.0.1",
-    "@astrojs/partytown": "^1.0.3",
-    "@astrojs/react": "^2.0.2",
-    "@astrojs/sitemap": "^1.0.1",
-    "@astrojs/tailwind": "^3.0.1",
+    "@astrojs/markdown-remark": "^2.1.2",
+    "@astrojs/partytown": "^1.1.1",
+    "@astrojs/react": "^2.1.0",
+    "@astrojs/sitemap": "^1.2.1",
+    "@astrojs/tailwind": "^3.1.1",
     "@jsdevtools/rehype-toc": "^3.0.2",
-    "astro": "^2.0.13",
+    "astro": "^2.1.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-slug": "^5.1.0",
@@ -23,6 +23,7 @@
     "unified": "^10.1.2"
   },
   "dependencies": {
+    "framer-motion": "^10.9.1",
     "image-pal-canvas": "^1.2.5"
   }
 }
