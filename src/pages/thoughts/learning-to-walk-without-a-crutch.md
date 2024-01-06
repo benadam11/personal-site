@@ -9,8 +9,8 @@ published: 1/06/2024
 Like most people who are extremely online, I have a love / hate relationship with X (Twitter). I created a Twitter account in high school (2006) back when you texted the platform to tweet, but I didn’t really get how to use the platform or have anyone interesting to follow so I gave up. I came back to Twitter as I was at the beginning of my career in 2012. I don’t remember exactly what inspired me to join, but I remember trying to follow all of the designers whose work I admired. After a little while, I realized that many of these people were doing the same thing: following people whose work they admired.
 
 
-![Me back in 2012](/images/ben-google-glass-2012.jpg)
-*Me back in 2012*
+![Early career Ben](/images/ben-google-glass-2012.jpg)
+*Early Career Ben*
 
 Once I realized this, Twitter was unlocked for me. It blew my mind that if you just start with someone who is talented in your field, and follow the people they follow, you will eventually end up following the people who are moving and shaping the industry you work in. And from that moment on I was hooked. It was like being hooked up to a drip system that not only kept me up to date, but ahead of the curve in navigating my career. It helped me choose Sketch over Photoshop for UI design (and then move to Figma when Sketch was still at its peak). It helped me choose React in the very early days. It’s hard to understate how much of a benefit this had on my career.
 
