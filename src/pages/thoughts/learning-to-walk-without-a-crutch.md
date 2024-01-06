@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Post.astro
 title: Learning to walk without a crutch
-image: og_image_og_image_walking-without-a-crutch.jpg
+image: og_image_walking-without-a-crutch.jpg
 description: >
   Taking a Twitter vacation in 2024
 published: 1/06/2024
