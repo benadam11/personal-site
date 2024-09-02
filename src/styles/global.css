@@ -4,49 +4,32 @@
 
 :root,
 .default-scheme {
-  --green: rgb(0, 68, 69);
-  --light-green: rgb(82, 190, 172);
-  --blue: rgb(57, 103, 131);
-  --light-blue: rgb(108, 204, 249);
-  --red: rgb(150, 53, 60);
-  --purple: rgb(50, 41, 60);
-  --contrast: #34373c;
-  --grey2: rgb(110, 108, 110);
-  --grey3: rgb(134, 130, 121);
-  --contrast-alpha: rgba(0,0,0,.2);
-  --base: rgb(255, 255, 255);
-  --alt: var(--contrast);
-  --accent: var(--blue);
-}
+  --stone: #343330;
+  --ghost: #f7f5f1;
+  --ghost-shaded: #eeeae3;
+  --stone-shaded: #282725;
 
-.alt-scheme {
-  --contrast-alpha: rgba(255,255,255,.2);
-  --contrast: #fdfcfe;
-  --grey2: #a9a9a9;
-  --grey3: #34373c;
-  --base: #1f1f24;
-  --red: #FF6A67;
-  --accent: var(--light-green);
+  --base: var(--ghost);
+  --base-shaded: var(--ghost-shaded);
+  --contrast: var(--stone);
+  --accent: var(--stone);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --contrast-alpha: rgba(255,255,255,.5);
-    --contrast: #fdfcfe;
-    --grey2: #a9a9a9;
-    --grey3: #34373c;
-    --base: #1f1f24;
-    --alt: #222528;
-    --red: #FF6A67;
-    --accent: var(--light-green);
+    --base: var(--stone);
+    --base-shaded: var(--stone-shaded);
+    --contrast: var(--ghost);
+    --accent: var(--ghost);
   }
 }
 
-button, a {
+button,
+a {
   transition: all 0.2s ease-in-out;
 }
 
-a:active,
+a:not(.logo-link):active,
 button:active {
   transform: translateY(1px);
 }
@@ -89,23 +72,8 @@ button:active {
   }
 }
 
-
 .nav-link {
-  @apply relative text-sm uppercase font-bold;
-}
-
-.nav-link.active::after {
-  animation: grow 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: currentColor;
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
+  @apply relative;
 }
 
 @keyframes grow {
@@ -118,12 +86,6 @@ button:active {
   100% {
     transform: translateX(-50%) scale(1);
   }
-}
-
-video.show {
-  border-radius: 8px;
-  overflow: visible;
-  animation: scale-up 0.3s ease-in-out;
 }
 
 .icon:hover {
@@ -177,7 +139,6 @@ a:hover .arrow {
   animation-iteration-count: infinite;
   width: 100px;
   height: 100px;
-  background: var(--light-green);
+  background: #D2D6C5;
   margin: auto;
 }
-

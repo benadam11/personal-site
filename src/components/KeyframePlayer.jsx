@@ -73,7 +73,7 @@ export default function KeyframePlayer() {
   };
 
   return (
-    <article className="default-scheme w-full mb-12 p-8 rounded-2xl bg-contrast min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]">
+    <article className="w-full mb-12 p-8 bg-contrast min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]">
       <header className="text-base text-center font-serif">
         <h4 className="text-xl">CSS Keyframe Player</h4>
         <p className="text-xs font-serif text-center mt-2 opacity-70">
@@ -87,11 +87,11 @@ export default function KeyframePlayer() {
             onClick={() => {
               timeline?.togglePlayState();
             }}
-            className={`w-[34px] h-[34px] mx-auto border-2 text-brand-beige bg-brand-coal font-semibold py-1 px-3 rounded-full text-sm uppercase hover:text-brand-coal hover:bg-brand-yellow hover:border-brand-yellow`}
+            className={`w-[34px] h-[34px] mx-auto border-2 text-base bg-contrast font-semibold py-1 px-3 rounded-full text-sm uppercase`}
           />
           <input
             size={300}
-            className="w-full accent-[var(--light-green)] appearance-none bg-brand-coal h-[2px] rounded-full cursor-pointer"
+            className="w-full accent-base appearance-none bg-base h-[2px] rounded-full cursor-pointer"
             type="range"
             min="0"
             max="1"

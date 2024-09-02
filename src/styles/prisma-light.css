@@ -1,8 +1,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
   color: #393a34;
-  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier,
-    monospace;
+  font-family: "Space Mono", monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -30,14 +29,14 @@ pre[class*="language-"]::-moz-selection,
 pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection,
 code[class*="language-"] ::-moz-selection {
-  background: #c1def1;
+  background: var(--base-shaded);
 }
 
 pre[class*="language-"]::selection,
 pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
-  background: #c1def1;
+  background: var(--base-shaded);
 }
 
 /* Code blocks */

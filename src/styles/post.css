@@ -4,15 +4,15 @@
 }
 
 .post-content h1 {
-  @apply text-4xl font-sans font-bold mt-10;
+  @apply text-4xl font-serif font-bold mt-10;
 }
 
 .post-content h2 {
-  @apply text-2xl font-sans font-bold mt-10;
+  @apply text-2xl font-serif font-bold mt-10;
 }
 
 .post-content h3 {
-  @apply text-xl font-sans font-bold mt-10;
+  @apply text-xl font-serif font-bold mt-10;
 }
 
 .post-content p {
@@ -20,7 +20,7 @@
 }
 
 .post-content strong {
-  @apply font-bold font-sans text-xl;
+  @apply font-bold font-serif text-xl;
 }
 
 .post-content blockquote {
@@ -195,8 +195,39 @@
 
 .astro-code {
   padding: 2rem;
-  border-radius: 12px;
-  background-color: var(--alt) !important;
+  background-color: var(--base-shaded) !important;
+  border-bottom: 2px solid var(--contrast);
+  position: relative;
+}
+
+.astro-code[data-language]:after {
+  background-color: var(--contrast);
+  color: var(--base);
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 24px;
+}
+
+.astro-code[data-language='html']:after {
+  content: 'HTML';
+  aspect-ratio: 4/3;
+}
+
+.astro-code[data-language='css']:after {
+  content: 'CSS';
+  aspect-ratio: 4/3;
+}
+
+.astro-code[data-language='js']:after {
+  content: 'JS';
 }
 
 img + em {

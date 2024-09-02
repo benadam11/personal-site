@@ -1,7 +1,7 @@
 <article
-  class="default-scheme bg-purple w-full mb-12 p-8 rounded-2xl min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]"
+  class="bg-baseShaded w-full mb-12 p-8 min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]"
 >
-  <header class="text-base text-center font-serif">
+  <header class="text-contrast text-center font-serif">
     <h4 class="text-xl">Game Of Life</h4>
     <p class="text-xs font-serif text-center mt-2 opacity-70">
       Conway's game of life starting with a glider gun.
@@ -17,9 +17,7 @@
     x: number;
     y: number;
     isAlive: boolean;
-    willBeAlive: boolean;
     neighbors: Cell[];
-    index?: number;
   };
 
   const canvas = document.getElementById("canvas") as HTMLCanvasElement;
@@ -30,79 +28,118 @@
   const { width, height } = canvas.getBoundingClientRect();
   canvas.width = width;
   canvas.height = height;
-  const cellSize = 8;
+
+  const cellSize = 4;
   const cellMargin = 2;
-  const cols = Math.round(canvas.width / (cellSize + cellMargin));
-  const rows = Math.round(canvas.height / (cellSize + cellMargin));
+  const cols = Math.floor(canvas.width / (cellSize + cellMargin));
+  const rows = Math.floor(canvas.height / (cellSize + cellMargin));
+  const cells: Cell[][] = [];
+  const stateHistory: Set<string> = new Set();
+  const maxHistoryLength = 10; // Number of generations to track for oscillation
 
-  const cells = [] as Cell[];
+  // Access CSS variables
+  const rootStyles = getComputedStyle(document.documentElement);
+  const cellAliveColor = rootStyles.getPropertyValue("--contrast").trim();
+  const cellDeadColor = rootStyles.getPropertyValue("--base").trim();
 
-  // make grid
-  for (let row = 0; row < rows; row++) {
-    const y = row * (cellSize + cellMargin);
-    for (let col = 0; col < cols; col++) {
-      const x = col * (cellSize + cellMargin);
-      cells.push({ x, y, isAlive: false, willBeAlive: false, neighbors: [] });
-      ctx.fillStyle = "rgb(50, 41, 60)";
-      ctx.fillRect(x, y, cellSize, cellSize);
+  // Initialize the grid with cells
+  function initializeGrid() {
+    for (let row = 0; row < rows; row++) {
+      cells[row] = [];
+      for (let col = 0; col < cols; col++) {
+        cells[row].push({
+          x: col * (cellSize + cellMargin),
+          y: row * (cellSize + cellMargin),
+          isAlive: Math.random() < 0.1,
+          neighbors: [],
+        });
+      }
+    }
+
+    // Assign neighbors with wrapping
+    cells.forEach((row, rowIndex) => {
+      row.forEach((cell, colIndex) => {
+        const neighborIndices = [
+          [(rowIndex - 1 + rows) % rows, (colIndex - 1 + cols) % cols],
+          [(rowIndex - 1 + rows) % rows, colIndex],
+          [(rowIndex - 1 + rows) % rows, (colIndex + 1) % cols],
+          [rowIndex, (colIndex - 1 + cols) % cols],
+          [rowIndex, (colIndex + 1) % cols],
+          [(rowIndex + 1) % rows, (colIndex - 1 + cols) % cols],
+          [(rowIndex + 1) % rows, colIndex],
+          [(rowIndex + 1) % rows, (colIndex + 1) % cols],
+        ];
+
+        neighborIndices.forEach(([r, c]) => {
+          cell.neighbors.push(cells[r][c]);
+        });
+      });
+    });
+  }
+
+  // Convert the current grid state to a string
+  function gridToString(): string {
+    return cells
+      .map((row) => row.map((cell) => (cell.isAlive ? "1" : "0")).join(""))
+      .join("");
+  }
+
+  // Update the grid based on the rules of life
+  function updateGrid() {
+    const changes: (() => void)[] = [];
+    cells.forEach((row) => {
+      row.forEach((cell) => {
+        const livingNeighbors = cell.neighbors.filter((n) => n.isAlive).length;
+        const willBeAlive = cell.isAlive
+          ? livingNeighbors === 2 || livingNeighbors === 3
+          : livingNeighbors === 3;
+
+        if (cell.isAlive !== willBeAlive) {
+          changes.push(() => {
+            cell.isAlive = willBeAlive;
+            ctx.fillStyle = cell.isAlive ? cellAliveColor : cellDeadColor;
+            ctx.fillRect(cell.x, cell.y, cellSize, cellSize);
+          });
+        }
+      });
+    });
+
+    changes.forEach((change) => change());
+  }
+
+  // Detect if the current grid state matches any previous states (oscillation detection)
+  function detectOscillation() {
+    const currentState = gridToString();
+
+    if (stateHistory.has(currentState)) {
+      initializeGrid();
+    } else {
+      stateHistory.add(currentState);
+
+      // Remove the oldest state if we're tracking too many
+      if (stateHistory.size > maxHistoryLength) {
+        const firstKey = Array.from(stateHistory)[0];
+        stateHistory.delete(firstKey);
+      }
     }
   }
 
-  // assign neighbors
-  cells.forEach((cell: Cell, i: number) => {
-    cell.index = i;
-    const tl = i - 1 - cols;
-    const tr = i + 1 - cols;
-    const t = i - cols;
-    const l = i - 1;
-    const r = (i + 1) % cells.length;
-    const bl = (i - 1 + cols) % cells.length;
-    const br = (i + 1 + cols) % cells.length;
-    const b = (i + cols) % cells.length;
+  const framesPerUpdate = 10; // Number of frames to wait before updating
+  let frameCount = 0;
 
-    [tl, tr, t, l, r, bl, br, b].forEach((index) => {
-      cell.neighbors.push(cells.at(index) as Cell);
-    });
-  });
+  function gameLoop() {
+    frameCount++;
 
-  async function draw() {
-    cells.forEach((cell) => {
-      const livingNeighbors = cell.neighbors.filter((n) => n.isAlive).length;
-      cell.willBeAlive = cell.isAlive
-        ? livingNeighbors > 1 && livingNeighbors < 4
-        : livingNeighbors === 3;
-    });
+    if (frameCount >= framesPerUpdate) {
+      updateGrid();
+      detectOscillation();
+      frameCount = 0; // Reset the frame counter
+    }
 
-    cells.forEach((cell) => {
-      if (cell.isAlive === cell.willBeAlive) return;
-      cell.isAlive = cell.willBeAlive;
-      ctx.fillStyle = cell.isAlive ? "#7B5EA7" : "rgb(50, 41, 60)";
-      ctx.fillRect(cell.x, cell.y, cellSize, cellSize);
-    });
-    await sleep(100);
-    requestAnimationFrame(draw);
+    requestAnimationFrame(gameLoop);
   }
 
-  async function sleep(ms: number) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
-  makeGlider(5).forEach((index) => {
-    const cell = cells[index];
-    cell.isAlive = true;
-    ctx.fillStyle = "#7B5EA7";
-    ctx.fillRect(cell.x, cell.y, cellSize, cellSize);
-  });
-
-  function makeGlider(index: number) {
-    const first = index;
-    const second = first + cols + 1;
-    const third = second + cols;
-    const fourth = third + cols;
-    const fifth = fourth - 1;
-    const sixth = fifth - 1;
-    return [first, second, third, fourth, fifth, sixth];
-  }
-
-  draw();
+  // Initialize and start the game
+  initializeGrid();
+  gameLoop();
 </script>

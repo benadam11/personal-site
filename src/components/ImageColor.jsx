@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState } from "react";
 import getColors from "image-pal-canvas";
+import { useEffect, useRef, useState } from "react";
 
 export default function ImageColors() {
   const input = useRef(null);
@@ -31,9 +31,9 @@ export default function ImageColors() {
     <article
       className={`${
         isLight ? "default-scheme" : "alt-scheme"
-      } w-full text-contrast mb-12 p-8 rounded-2xl relative grid transition-colors min-w-[320px]`}
+      } w-full text-contrast mb-12 p-8 relative grid transition-colors min-w-[320px]`}
       style={{
-        backgroundColor: colors[selected]?.hex || "rgb(200, 200, 200)",
+        backgroundColor: colors[selected]?.hex || "var(--baseShaded)",
         gridTemplateRows: "auto 1fr auto",
       }}
     >
@@ -81,9 +81,7 @@ export default function ImageColors() {
             className="font-bold underline cursor-pointer"
             onClick={() =>
               setImgUrl(
-                `https://source.unsplash.com/random/?width=667&height=1000&key${Math.floor(
-                  Math.random() * 100
-                )}`
+                `https://bingw.jasonzeng.dev/?index=random`
               )
             }
           >

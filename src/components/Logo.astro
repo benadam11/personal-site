@@ -1,0 +1,212 @@
+---
+import DecorativeHr from "./DecorativeHr.astro";
+---
+
+<div class="logo relative">
+  <DecorativeHr />
+  <a href="/" class="logo-link absolute top-0 left-1/2 transform -translate-x-1/2">
+    <canvas
+      class="w-[200px] h-[48px] relative top-[-24px] border-contrast border-2 bg-base text-contrast"
+      id="logo-canvas"></canvas>
+    <span
+      class="absolute top-[-12px] left-1/2 transform -translate-x-1/2 uppercase font-bold"
+      >Ben Adam</span
+    >
+  </a>
+</div>
+
+<script>
+  const canvas = document.getElementById("logo-canvas") as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+
+  let backgroundColor: string;
+  let textColor: string;
+
+  function applyColorScheme() {
+    const styles = getComputedStyle(canvas);
+    backgroundColor = styles.getPropertyValue("background-color").trim();
+    textColor = styles.getPropertyValue("color").trim();
+  }
+
+  function handleColorSchemeChange(event: MediaQueryListEvent) {
+    applyColorScheme();
+  }
+
+  function initializeCanvas() {
+    canvas.width = 200;
+    canvas.height = 48;
+
+    const squareSize = 4;
+    const clusters: Cluster[] = [];
+    const moveInterval = 300; // Time between moves in milliseconds
+    let lastMoveTime = 0;
+
+    // Define the central rectangle
+    const rect = {
+      x: canvas.width / 2 - 60,
+      y: canvas.height / 2 - 24,
+      width: 120,
+      height: 48,
+    };
+
+    interface Square {
+      x: number;
+      y: number;
+    }
+
+    class Cluster {
+      squares: Square[] = [];
+      size: number;
+      startX: number;
+      startY: number;
+      moveIndex: number;
+
+      constructor(size: number, startX: number, startY: number) {
+        this.size = size;
+        this.startX = startX;
+        this.startY = startY;
+        this.moveIndex = 0;
+        this.generateSquares();
+      }
+
+      generateSquares() {
+        let x = this.startX;
+        let y = this.startY;
+
+        this.squares.push({ x, y });
+
+        for (let i = 1; i < this.size; i++) {
+          const direction = Math.floor(Math.random() * 4);
+          switch (direction) {
+            case 0: // top-left corner
+              x -= squareSize;
+              y -= squareSize;
+              break;
+            case 1: // top-right corner
+              x += squareSize;
+              y -= squareSize;
+              break;
+            case 2: // bottom-left corner
+              x -= squareSize;
+              y += squareSize;
+              break;
+            case 3: // bottom-right corner
+              x += squareSize;
+              y += squareSize;
+              break;
+          }
+          this.squares.push({ x, y });
+        }
+      }
+
+      moveSquare() {
+        const square = this.squares[this.moveIndex];
+        const prevSquare =
+          this.squares[(this.moveIndex - 1 + this.size) % this.size];
+
+        const direction = Math.floor(Math.random() * 4);
+        let newX = square.x;
+        let newY = square.y;
+
+        switch (direction) {
+          case 0: // top-left corner
+            newX = prevSquare.x - squareSize;
+            newY = prevSquare.y - squareSize;
+            break;
+          case 1: // top-right corner
+            newX = prevSquare.x + squareSize;
+            newY = prevSquare.y - squareSize;
+            break;
+          case 2: // bottom-left corner
+            newX = prevSquare.x - squareSize;
+            newY = prevSquare.y + squareSize;
+            break;
+          case 3: // bottom-right corner
+            newX = prevSquare.x + squareSize;
+            newY = prevSquare.y + squareSize;
+            break;
+        }
+
+        // Check for collision with the central rectangle
+        if (
+          newX < rect.x + rect.width &&
+          newX + squareSize > rect.x &&
+          newY < rect.y + rect.height &&
+          newY + squareSize > rect.y
+        ) {
+          // Reverse direction if collision occurs
+          newX = square.x;
+          newY = square.y;
+        }
+
+        // Ensure the square stays within the canvas boundaries
+        if (newX < 0) newX = 0;
+        if (newX > canvas.width - squareSize) newX = canvas.width - squareSize;
+        if (newY < 0) newY = 0;
+        if (newY > canvas.height - squareSize)
+          newY = canvas.height - squareSize;
+
+        square.x = newX;
+        square.y = newY;
+
+        this.moveIndex = (this.moveIndex + 1) % this.size;
+      }
+
+      draw() {
+        this.squares.forEach((square) => {
+          ctx.fillStyle = textColor;
+          ctx.fillRect(square.x, square.y, squareSize, squareSize);
+        });
+      }
+    }
+
+    // Start positions for each corner
+    const corners = [
+      { startX: 0, startY: 0 }, // Top-left corner
+      { startX: canvas.width - squareSize, startY: 0 }, // Top-right corner
+      { startX: 0, startY: canvas.height - squareSize }, // Bottom-left corner
+      { startX: canvas.width - squareSize, startY: canvas.height - squareSize }, // Bottom-right corner
+    ];
+
+    // Create clusters starting in each corner
+    clusters.push(new Cluster(3, corners[0].startX, corners[0].startY));
+    clusters.push(new Cluster(3, corners[1].startX, corners[1].startY));
+    clusters.push(new Cluster(3, corners[2].startX, corners[2].startY));
+    clusters.push(new Cluster(3, corners[3].startX, corners[3].startY));
+
+    function animate(timestamp: number) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the central rectangle
+      ctx.fillStyle = backgroundColor;
+      ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+
+      if (timestamp - lastMoveTime > moveInterval) {
+        clusters.forEach((cluster) => {
+          cluster.moveSquare();
+        });
+        lastMoveTime = timestamp;
+      }
+
+      clusters.forEach((cluster) => {
+        cluster.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  // Set up media query to detect system color scheme preference
+  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // Apply initial color scheme based on the current preference
+  applyColorScheme();
+
+  // Listen for changes in the color scheme preference
+  darkModeMediaQuery.addEventListener("change", handleColorSchemeChange);
+
+  // Initialize the canvas with the current color scheme
+  initializeCanvas();
+</script>

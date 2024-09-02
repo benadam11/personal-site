@@ -3,19 +3,14 @@ module.exports = {
   content: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,md}"],
   theme: {
     fontFamily: {
-      sans: ["raleway", "system-ui"],
-      serif: ["Libre Baskerville", "Georgia"],
+      sans: ["Space Mono", "monospace"],
+      serif: ["Space Grotesk", "monspace"],
     },
     colors: {
-      green: "var(--green)",
-      blue: "var(--blue)",
-      red: "var(--red)",
-      contrast: "var(--contrast)",
-      grey2: "var(--grey2)",
-      grey3: "var(--grey3)",
       base: "var(--base)",
+      baseShaded: "var(--base-shaded)",
+      contrast: "var(--contrast)",
       accent: "var(--accent)",
-      purple: "var(--purple)",
     },
   }
 };

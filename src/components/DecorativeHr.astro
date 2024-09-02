@@ -1,0 +1,33 @@
+<div class="relative">
+  <hr />
+</div>
+
+<style>
+  hr {
+    border: none;
+    border-bottom: 2px solid var(--contrast);
+    margin: 0;
+    width: 100%;
+  }
+
+  hr:before,
+  hr:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4px;
+    width: 9px;
+    height: 9px;
+    background: var(--base);
+    border: 2px solid var(--contrast);
+    z-index: 1;
+  }
+
+  hr:before {
+    left: 0px;
+  }
+
+  hr:after {
+    right: 0;
+  }
+</style>
