@@ -23,17 +23,26 @@
   const canvas = document.getElementById("canvas") as HTMLCanvasElement;
   const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 
+  // Set up canvas styling
   canvas.style.position = "absolute";
   canvas.style.width = "100%";
   canvas.style.height = "100%";
+
+  // Get device pixel ratio (DPR)
+  const dpr = window.devicePixelRatio || 1;
+
+  // Set canvas size in CSS pixels
   const { width, height } = canvas.getBoundingClientRect();
-  canvas.width = width;
-  canvas.height = height;
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+
+  // Scale the drawing context to handle Retina displays
+  ctx.scale(dpr, dpr);
 
   const cellSize = 4;
   const cellMargin = 2;
-  const cols = Math.floor(canvas.width / (cellSize + cellMargin));
-  const rows = Math.floor(canvas.height / (cellSize + cellMargin));
+  const cols = Math.floor(canvas.width / dpr / (cellSize + cellMargin));
+  const rows = Math.floor(canvas.height / dpr / (cellSize + cellMargin));
   const cells: Cell[][] = [];
   const stateHistory: Set<string> = new Set();
   const maxHistoryLength = 10; // Number of generations to track for oscillation
