@@ -197,12 +197,16 @@
   padding: 2rem;
   background-color: var(--base-shaded) !important;
   border-bottom: 2px solid var(--contrast);
+}
+
+.code-wrapper {
   position: relative;
 }
 
-.astro-code[data-language]:after {
+.code-wrapper:has(.astro-code[data-language]):after {
   background-color: var(--contrast);
   color: var(--base);
+  display: inline-block;
   aspect-ratio: 1/1;
   position: absolute;
   top: 8px;
@@ -214,19 +218,20 @@
   text-align: center;
   vertical-align: middle;
   line-height: 24px;
+  z-index: 1;
 }
 
-.astro-code[data-language='html']:after {
+.code-wrapper:has(.astro-code[data-language='html']):after {
   content: 'HTML';
   aspect-ratio: 4/3;
 }
 
-.astro-code[data-language='css']:after {
+.code-wrapper:has(.astro-code[data-language='css']):after {
   content: 'CSS';
   aspect-ratio: 4/3;
 }
 
-.astro-code[data-language='js']:after {
+.code-wrapper:has(.astro-code[data-language='js']):after {
   content: 'JS';
 }
 
@@ -236,4 +241,15 @@ img + em {
   font-size: 1rem;
   opacity: .75;
   margin-top: -1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    /* Optional, if you also want font styles */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }

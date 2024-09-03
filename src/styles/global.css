@@ -8,12 +8,13 @@
   --ghost: #f7f5f1;
   --ghost-shaded: #eeeae3;
   --lichen: #D2D6C5;
+  --eggplant: #35313D;
   
   --base: var(--ghost);
   --base-shaded: var(--ghost-shaded);
   --contrast: var(--stone);
   --contrast-shaded: var(--stone-shaded);
-  --accent: var(--lichen);
+  --accent: var(--eggplant);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -106,7 +107,7 @@ button:active {
 }
 
 .more-link {
-  @apply flex items-center gap-1 font-semibold hover:text-accent opacity-80 hover:opacity-100;
+  @apply flex items-center gap-1 text-sm hover:text-accent text-contrastShaded hover:text-contrast;
 }
 
 .arrow {

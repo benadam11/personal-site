@@ -2,36 +2,40 @@
 import Logo from "./Logo.astro";
 ---
 
-<nav class="max-w-[1200px] mx-auto">
-  <div class="flex justify-between px-8">
-    <div class="align-center gap-8 hidden lg:flex mb-5">
+<nav class="max-w-[1200px] mx-auto px-8">
+  <div class="flex justify-between px-8 mb-10 lg:mb-5 text-xs md:text-[14px]">
+    <div class="align-center gap-2 md:gap-8 flex ">
       <a class="nav-link" href="/thoughts"> Thoughts </a>
       <a class="nav-link" href="/experiments"> Experiments </a>
       <a class="nav-link" href="/work"> Work </a>
     </div>
 
-    <div class="self-end justify-end align-center gap-8 hidden lg:flex mb-5">
+    <div class="justify-end align-center gap-2 lg:gap-8 flex">
       <a
-         class="nav-link cursor-alias"
+        class="nav-link cursor-alias"
         href="https://x.com/benadam11"
         target="_blank"
         rel="noreferrer"
-        href="">Twitter</a
       >
+        Twitter
+      </a>
       <a
         class="nav-link cursor-alias"
         href="https://github.com/benadam11"
         target="_blank"
         rel="noreferrer"
-        >Github
+      >
+        Github
       </a>
       <a
-         class="nav-link cursor-alias"
+        class="nav-link cursor-alias"
         href="https://www.linkedin.com/in/benjaminadam/"
         target="_blank"
         rel="noreferrer"
-        href="/work">LinkedIn</a
+        href="/work"
       >
+        LinkedIn
+      </a>
     </div>
   </div>
 

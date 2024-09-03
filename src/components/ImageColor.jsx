@@ -8,8 +8,6 @@ export default function ImageColors() {
   const [selected, setSelected] = useState(0);
   const isLight = colors?.[selected]?.distance > 50 || 87 > 50;
 
-  console.log(isLight);
-
   useEffect(() => {
     const img = new Image();
     img.src = imgUrl;

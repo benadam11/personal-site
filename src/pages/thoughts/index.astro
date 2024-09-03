@@ -5,6 +5,7 @@ import PostItem from "../../components/PostItem.jsx";
 import { sortDate } from "../../scripts/utils.js";
 const posts = await Astro.glob("./*.md");
 const postData = posts.sort(sortDate);
+console.log(postData);
 ---
 
 <html lang="en">

@@ -25,7 +25,7 @@ import PulsingActionButton from "../../components/PulsingActionButton.astro";
     </section>
     <section class="fade-in max-w-[960px] mx-auto py-12">
       <main>
-        <QuizCards client:only />
+        <QuizCards client:only="react" />
         <GameOfLife />
         <KeyframePlayer client:visible />
         <ParticleAnimation client:visible />
