@@ -1,6 +1,7 @@
 .post-content {
   max-width: 80ch;
   margin: auto;
+  min-height: 75vh;
 }
 
 .post-content h1 {
