@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root,
-.default-scheme {
+:root {
   --stone: #343330;
+  --stone-shaded: #282725;
   --ghost: #f7f5f1;
   --ghost-shaded: #eeeae3;
-  --stone-shaded: #282725;
+  
 
   --base: var(--ghost);
   --base-shaded: var(--ghost-shaded);
   --contrast: var(--stone);
+  --contrast-shaded: var(--stone-shaded);
   --accent: var(--stone);
 }
 
@@ -20,6 +21,7 @@
     --base: var(--stone);
     --base-shaded: var(--stone-shaded);
     --contrast: var(--ghost);
+    --contrast-shaded: var(--ghost-shaded);
     --accent: var(--ghost);
   }
 }

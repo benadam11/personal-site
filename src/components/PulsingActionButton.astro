@@ -1,0 +1,85 @@
+<article
+  class="bg-baseShaded w-full mb-12 p-8 min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]"
+>
+  <header class="text-contrast text-center font-serif">
+    <h4 class="text-xl">Pulsing Action Button</h4>
+    <p class="text-xs font-serif text-center mt-2 text-contrastShaded">
+      Used to highlight actions for first time users on GoDaddy's website builder.
+    </p>
+  </header>
+  <div class="grid items-center justify-center">
+    <button class="action-button pulse-btn">
+      <span class="action-button-icon">+</span>
+      <span class="action-button-text"> Action Button </span>
+    </button>
+  </div>
+</article>
+
+<style>
+  .action-button {
+    position: relative;
+    display: flex;
+    place-items: center;
+    border-radius: 1000px;
+    width: 50px;
+    height: 50px;
+    background-color: #1FA647;
+    color: #fff;
+    border: none;
+    transition: width 0.3s ease;
+    font-size: 16px;
+    overflow: hidden;
+  }
+
+  .action-button:hover {
+    width: 190px;
+  }
+
+  .action-button-text {
+    visibility: hidden;
+    white-space: nowrap;
+  }
+
+  .action-button-icon {
+    font-size: 24px;
+    position: relative;
+    padding-left: 17px;
+  }
+
+  .action-button:hover {
+    transition: width 0.5s ease;
+  }
+
+  .action-button:hover.pulse-btn {
+    animation: none;
+  }
+
+  .action-button:hover .action-button-text {
+    visibility: visible;
+    padding-left: 12px;
+  }
+
+  .pulse-btn {
+    animation: pulse 1.75s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow:
+        0px 0px 0px 0px rgba(0, 166, 63, 0),
+        0px 0px 0px 0px rgba(0, 166, 63, 0);
+    }
+
+    50% {
+      box-shadow:
+        0px 0px 0px 5px rgba(0, 166, 63, 0.25),
+        0px 0px 0px 10px rgba(0, 166, 63, 0.15);
+    }
+
+    100% {
+      box-shadow:
+        0px 0px 0px 0px rgba(0, 166, 63, 0),
+        0px 0px 0px 0px rgba(0, 166, 63, 0);
+    }
+  }
+</style>

@@ -3,7 +3,7 @@
 >
   <header class="text-contrast text-center font-serif">
     <h4 class="text-xl">Game Of Life</h4>
-    <p class="text-xs font-serif text-center mt-2 opacity-70">
+    <p class="text-xs font-serif text-center mt-2 text-contrastShaded">
       Conway's game of life starting with a glider gun.
     </p>
   </header>
@@ -22,6 +22,7 @@
 
   const canvas = document.getElementById("canvas") as HTMLCanvasElement;
   const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+
   canvas.style.position = "absolute";
   canvas.style.width = "100%";
   canvas.style.height = "100%";
@@ -40,7 +41,9 @@
   // Access CSS variables
   const rootStyles = getComputedStyle(document.documentElement);
   const cellAliveColor = rootStyles.getPropertyValue("--contrast").trim();
-  const cellDeadColor = rootStyles.getPropertyValue("--base").trim();
+  const cellDeadColor = rootStyles.getPropertyValue("--base-shaded").trim();
+
+  ctx.fillStyle = cellDeadColor;
 
   // Initialize the grid with cells
   function initializeGrid() {
@@ -133,7 +136,7 @@
     if (frameCount >= framesPerUpdate) {
       updateGrid();
       detectOscillation();
-      frameCount = 0; // Reset the frame counter
+      frameCount = 0;
     }
 
     requestAnimationFrame(gameLoop);

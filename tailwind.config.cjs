@@ -10,6 +10,7 @@ module.exports = {
       base: "var(--base)",
       baseShaded: "var(--base-shaded)",
       contrast: "var(--contrast)",
+      contrastShaded: "var(--contrast-shaded)",
       accent: "var(--accent)",
     },
   }

@@ -4,14 +4,18 @@ import DecorativeHr from "./DecorativeHr.astro";
 
 <div class="logo relative">
   <DecorativeHr />
-  <a href="/" class="logo-link absolute top-0 left-1/2 transform -translate-x-1/2">
+  <a
+    href="/"
+    class="logo-link absolute top-0 left-1/2 transform -translate-x-1/2"
+  >
     <canvas
       class="w-[200px] h-[48px] relative top-[-24px] border-contrast border-2 bg-base text-contrast"
       id="logo-canvas"></canvas>
     <span
-      class="absolute top-[-12px] left-1/2 transform -translate-x-1/2 uppercase font-bold"
-      >Ben Adam</span
+      class="absolute top-[-12px] left-1/2 transform -translate-x-1/2 uppercase"
     >
+      Ben Adam
+    </span>
   </a>
 </div>
 
@@ -43,9 +47,9 @@ import DecorativeHr from "./DecorativeHr.astro";
 
     // Define the central rectangle
     const rect = {
-      x: canvas.width / 2 - 60,
+      x: canvas.width / 2 - 70,
       y: canvas.height / 2 - 24,
-      width: 120,
+      width: 140,
       height: 48,
     };
 
@@ -169,10 +173,10 @@ import DecorativeHr from "./DecorativeHr.astro";
     ];
 
     // Create clusters starting in each corner
-    clusters.push(new Cluster(3, corners[0].startX, corners[0].startY));
-    clusters.push(new Cluster(3, corners[1].startX, corners[1].startY));
-    clusters.push(new Cluster(3, corners[2].startX, corners[2].startY));
-    clusters.push(new Cluster(3, corners[3].startX, corners[3].startY));
+    clusters.push(new Cluster(5, corners[0].startX, corners[0].startY));
+    clusters.push(new Cluster(5, corners[1].startX, corners[1].startY));
+    clusters.push(new Cluster(5, corners[2].startX, corners[2].startY));
+    clusters.push(new Cluster(5, corners[3].startX, corners[3].startY));
 
     function animate(timestamp: number) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);

@@ -6,6 +6,7 @@ import ImageColors from "../../components/ImageColor.jsx";
 import KeyframePlayer from "../../components/KeyframePlayer";
 import GameOfLife from "../../components/GameOfLife.astro";
 import QuizCards from "../../components/cards/QuizCards";
+import PulsingActionButton from "../../components/PulsingActionButton.astro";
 ---
 
 <html lang="en">
@@ -27,8 +28,9 @@ import QuizCards from "../../components/cards/QuizCards";
         <QuizCards client:only />
         <GameOfLife />
         <KeyframePlayer client:visible />
-        <ImageColors client:visible />
         <ParticleAnimation client:visible />
+        <ImageColors client:visible />
+        <PulsingActionButton />
       </main>
     </section>
   </MainBody>
