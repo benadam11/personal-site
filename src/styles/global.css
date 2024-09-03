@@ -22,7 +22,7 @@
     --base-shaded: var(--stone-shaded);
     --contrast: var(--ghost);
     --contrast-shaded: var(--ghost-shaded);
-    --accent: var(--ghost);
+    --accent: var(--lichen);
   }
 }
 
