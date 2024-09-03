@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --stone: #343330;
-  --stone-shaded: #282725;
+  --stone: #282725;
+  --stone-shaded: #343330;
   --ghost: #f7f5f1;
   --ghost-shaded: #eeeae3;
   --lichen: #D2D6C5;
