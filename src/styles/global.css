@@ -7,13 +7,13 @@
   --stone-shaded: #282725;
   --ghost: #f7f5f1;
   --ghost-shaded: #eeeae3;
+  --lichen: #D2D6C5;
   
-
   --base: var(--ghost);
   --base-shaded: var(--ghost-shaded);
   --contrast: var(--stone);
   --contrast-shaded: var(--stone-shaded);
-  --accent: var(--stone);
+  --accent: var(--lichen);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -141,6 +141,6 @@ a:hover .arrow {
   animation-iteration-count: infinite;
   width: 100px;
   height: 100px;
-  background: #D2D6C5;
+  background: var(--accent);
   margin: auto;
 }

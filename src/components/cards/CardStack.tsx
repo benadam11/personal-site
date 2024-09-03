@@ -5,7 +5,9 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { useState, Children, ReactElement, useMemo } from "react";
+import * as React from "react";
+
+const { useState, Children, useMemo } = React;
 
 const springConfig = {
   damping: 15,
@@ -113,7 +115,7 @@ export default function CardStack({ children }: { children: React.ReactNode }) {
 
   return (
     <LayoutGroup>
-      {cards.map((card: ReactElement, i) => (
+      {cards.map((card: any, i) => (
         <CardWrapper
           key={card.key}
           i={i}

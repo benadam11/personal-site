@@ -6,7 +6,9 @@ export default function ImageColors() {
   const [imgUrl, setImgUrl] = useState("/winter-building.jpg");
   const [colors, setColors] = useState([]);
   const [selected, setSelected] = useState(0);
-  const isLight = colors?.[selected]?.distance || 87 > 50;
+  const isLight = colors?.[selected]?.distance > 50 || 87 > 50;
+
+  console.log(isLight);
 
   useEffect(() => {
     const img = new Image();
@@ -30,8 +32,8 @@ export default function ImageColors() {
   return (
     <article
       className={`${
-        isLight ? "default-scheme" : "alt-scheme"
-      } w-full text-contrast mb-12 p-8 relative grid transition-colors min-w-[320px]`}
+        isLight ? "text-base" : "text-contrast"
+      } w-full mb-12 p-8 relative grid transition-colors min-w-[320px]`}
       style={{
         backgroundColor: colors[selected]?.hex || "var(--baseShaded)",
         gridTemplateRows: "auto 1fr auto",
@@ -80,9 +82,7 @@ export default function ImageColors() {
           <button
             className="font-bold underline cursor-pointer"
             onClick={() =>
-              setImgUrl(
-                `https://bingw.jasonzeng.dev/?index=random`
-              )
+              setImgUrl(`https://bingw.jasonzeng.dev/?index=random`)
             }
           >
             Try Random

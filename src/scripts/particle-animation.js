@@ -75,7 +75,7 @@ export const animateCanvas = (canvas, count) => {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, 2.2, 2.2 * Math.PI, false);
-      ctx.fillStyle = "#fff";
+      ctx.fillStyle = window.getComputedStyle(document.documentElement).getPropertyValue("--contrast").trim();
       ctx.fill();
     }
 
