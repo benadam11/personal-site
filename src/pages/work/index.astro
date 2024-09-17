@@ -2,6 +2,7 @@
 import HeadingSlider from "../../components/HeadingSlider";
 import MainBody from "../../components/MainBody.astro";
 import MainHead from "../../components/MainHead.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
 import { sortDate } from "../../scripts/utils.js";
 const posts = await Astro.glob("./*.md");
 const work = posts
@@ -39,10 +40,10 @@ const sideProjects = posts
     </section>
 
     <section class="fade-in max-w-[960px] mx-auto">
-      <h3 class="uppercase text-sm mb-8 font-bold text-contrast">
+      <SectionHeading>
         Work
-      </h3>
-      <ul class="grid grid-cols-2 gap-8">
+      </SectionHeading>
+      <ul class="grid md:grid-cols-2 gap-8">
         {
           work.map((post) => {
             return (
@@ -58,10 +59,10 @@ const sideProjects = posts
     </section>
 
     <section class="fade-in max-w-[960px] mx-auto mt-12">
-      <h3 class="uppercase text-sm mb-8 font-bold text-contrast">
+      <SectionHeading>
         Side Projects
-      </h3>
-      <ul class="grid grid-cols-2 gap-8">
+      </SectionHeading>
+      <ul class="grid md:grid-cols-2 gap-8">
         {
           sideProjects.map((post) => {
             return (

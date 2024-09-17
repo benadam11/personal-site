@@ -1,12 +1,12 @@
 ---
 // Component Imports
-import MainHead from "../components/MainHead.astro";
-import MainBody from "../components/MainBody.astro";
-import PostItem from "../components/PostItem.jsx";
-import ImageColors from "../components/ImageColor.jsx";
-import { sortDate } from "../scripts/utils.js";
 import GameOfLife from "../components/GameOfLife.astro";
-import HeadingSlider from "../components/HeadingSlider.jsx";
+import ImageColors from "../components/ImageColor.jsx";
+import MainBody from "../components/MainBody.astro";
+import MainHead from "../components/MainHead.astro";
+import PostItem from "../components/PostItem.jsx";
+import SectionHeading from "../components/SectionHeading.astro";
+import { sortDate } from "../scripts/utils.js";
 
 const posts = await Astro.glob("./thoughts/*.md");
 const topPosts = posts.sort(sortDate).slice(0, 2);
@@ -32,9 +32,9 @@ const topPosts = posts.sort(sortDate).slice(0, 2);
 
     </section>
     <section class="fade-in pb-12">
-      <h3 class="uppercase text-sm mb-12 font-bold text-contrast">
+      <SectionHeading>
         Recent Thoughts
-      </h3>
+      </SectionHeading>
       <ul>
         {
           topPosts.map(({ frontmatter, url }) => (
@@ -51,7 +51,7 @@ const topPosts = posts.sort(sortDate).slice(0, 2);
       </a>
     </section>
     <section class="fade-in pt-12">
-      <h3 class="uppercase text-sm mb-12 font-bold text-contrast">Experiments</h3>
+      <SectionHeading>Experiments</SectionHeading>
       <main class="flex gap-4 overflow-auto">
         <GameOfLife />
         <ImageColors client:visible />

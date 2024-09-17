@@ -96,7 +96,7 @@ export default function HeadingSlider() {
   }, []);
 
   return (
-    <div className="text-center p-12">
+    <div className="text-center px-4 py-12 md:p-12">
       <AnimatePresence mode="popLayout">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
@@ -104,7 +104,7 @@ export default function HeadingSlider() {
           exit={{ opacity: 0, y: -20 }}
           transition={{ ...springConfig }}
           key={index}
-          className="text-xl mb-4"
+          className="md:text-xl mb-4"
         >
           {history[index].event}
         </motion.h3>
