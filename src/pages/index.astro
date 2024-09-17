@@ -6,6 +6,7 @@ import PostItem from "../components/PostItem.jsx";
 import ImageColors from "../components/ImageColor.jsx";
 import { sortDate } from "../scripts/utils.js";
 import GameOfLife from "../components/GameOfLife.astro";
+import HeadingSlider from "../components/HeadingSlider.jsx";
 
 const posts = await Astro.glob("./thoughts/*.md");
 const topPosts = posts.sort(sortDate).slice(0, 2);
@@ -28,6 +29,7 @@ const topPosts = posts.sort(sortDate).slice(0, 2);
           href="https://ui.dev">ui.dev</a
         > helping folks level up with JavaScript.
       </h2>
+
     </section>
     <section class="fade-in pb-12">
       <h3 class="uppercase text-sm mb-12 font-bold text-contrast">

@@ -1,0 +1,125 @@
+import { useState, useLayoutEffect, useRef } from "react";
+
+const history = [
+  {
+    year: 2010,
+    event: "Graduated from ASU.",
+  },
+  {
+    year: 2011,
+    event: "Worked a number of 'character building' jobs.",
+  },
+  {
+    year: 2012,
+    event: "Started a creative agency called Blinktank.",
+  },
+  {
+    year: 2013,
+    event: "Closed Blinktank and joined Strongmind.",
+  },
+  {
+    year: 2014,
+    event: "Joined LaneTerralever as a UX Designer.",
+  },
+  {
+    year: 2015,
+    event: "Joined a startup called Vizzda as a Product Designer",
+  },
+  {
+    year: 2016,
+    event: "Joined GoDaddy as a UX Engineer",
+  },
+  {
+    year: 2017,
+    event: "Was promoted to UX Engineer III at GoDaddy.",
+  },
+  {
+    year: 2019,
+    event: "Was promoted to UX Engineer IV at GoDaddy.",
+  },
+  {
+    year: 2021,
+    event: "Joined Amazon as a Senior Design Technologist.",
+  },
+  {
+    year: 2022,
+    event: "Joined uidotdev as a Staff Engineer.",
+  },
+];
+
+export default function HeadingSlider() {
+  const [isDragging, setIsDragging] = useState(false);
+  const [width, setWidth] = useState(0);
+  const [x, setX] = useState(0);
+  const el = useRef(null);
+
+  const index = width > 0 ? Math.floor((x / width) * (history.length - 1)) : 0;
+
+  function handleMouseDown() {
+    setIsDragging(true);
+    window.addEventListener("mousemove", handleChange);
+    window.addEventListener("mouseup", handleMouseUp);
+  }
+
+  function handleChange(e) {
+    const { left } = el.current.getBoundingClientRect();
+    setX(Math.max(0, Math.min(e.clientX - left, width)));
+  }
+
+  function handleMouseUp() {
+    setIsDragging(false);
+    unbindEventListeners();
+  }
+
+  function unbindEventListeners() {
+    window.removeEventListener("mousemove", handleChange);
+    window.removeEventListener("mouseup", handleMouseUp);
+  }
+
+  useLayoutEffect(() => {
+    setWidth(el.current.offsetWidth);
+
+    return () => {
+      unbindEventListeners();
+    };
+  }, []);
+
+  return (
+    <article className="text-center border border-contrast p-12">
+      <h1 className="text-2xl mb-4 font-bold">{history[index].event}</h1>
+      <div className="flex justify-center mt-8">
+        <div
+          ref={el}
+          className="inline-flex items-center justify-between gap-2 relative ml-[-1px]"
+          style={{ cursor: isDragging ? "grabbing" : "pointer" }}
+          onMouseDown={handleMouseDown}
+        >
+          {history.map((item, i) => (
+            <div
+              key={i}
+              className={`${
+                i === index ? "bg-contrast" : "bg-[#D2D6C5]"
+              } w-[1px] rounded-full transition-all`}
+              style={{ height: i % 2 === 0 ? "18px" : "12px" }}
+              onClick={() => setIndex(i)}
+            />
+          ))}
+          <div
+            className="absolute w-[1px] bg-contrast rounded-full"
+            style={{
+              height: 32,
+              left: Math.max(0, Math.min(x, width)),
+            }}
+          >
+            <span
+              className="absolute bottom-[-24px] text-xs text-contrast"
+              style={{ left: "50%", transform: "translateX(-50%)" }}
+            >
+              {history[index].year}
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}

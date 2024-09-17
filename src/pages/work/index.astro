@@ -2,6 +2,7 @@
 import MainHead from "../../components/MainHead.astro";
 import MainBody from "../../components/MainBody.astro";
 import { sortDate } from "../../scripts/utils.js";
+import HeadingSlider from "../../components/HeadingSlider";
 const posts = await Astro.glob("./*.md");
 const postData = posts.sort(sortDate);
 ---
@@ -19,6 +20,7 @@ const postData = posts.sort(sortDate);
       <h2 class="font-serif italic text-2xl">
         Thing's I've made or learned at the companies I have worked for.
       </h2>
+      <HeadingSlider client:load />
     </section>
     <section class="fade-in max-w-[960px] mx-auto">
       {
