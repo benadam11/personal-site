@@ -30,11 +30,11 @@ const history = [
   },
   {
     year: 2015,
-    event: "Joined a startup called Vizzda as a Product Designer",
+    event: "Joined a startup called Vizzda as a Product Designer.",
   },
   {
     year: 2016,
-    event: "Joined GoDaddy as a UX Engineer",
+    event: "Joined GoDaddy as a UX Engineer.",
   },
   {
     year: 2017,
