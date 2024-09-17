@@ -12,6 +12,8 @@ module.exports = {
       contrast: "var(--contrast)",
       contrastShaded: "var(--contrast-shaded)",
       accent: "var(--accent)",
+      shadow: "var(--shadow)",
+      faint: "var(--faint)",
     },
   }
 };

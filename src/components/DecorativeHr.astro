@@ -11,7 +11,7 @@ const rightVisibility = right ? "block" : "none";
 <style define:vars={{ leftVisibility, rightVisibility }}>
   hr {
     border: none;
-    border-bottom: 2px solid var(--contrast);
+    border-bottom: 1px solid var(--shadow);
     margin: 0;
     width: 100%;
   }
@@ -21,11 +21,11 @@ const rightVisibility = right ? "block" : "none";
     content: "";
     display: block;
     position: absolute;
-    top: -4px;
-    width: 9px;
-    height: 9px;
+    top: -2px;
+    width: 5px;
+    height: 5px;
     background: var(--base);
-    border: 2px solid var(--contrast);
+    border: 1px solid var(--shadow);
     z-index: 1;
   }
 

@@ -1,9 +1,10 @@
 ---
 layout: ../../layouts/Post.astro
-title: uidotdev
+title: dayofthedead.holiday
 description: >
   Personal areas of focus for the new year
-published: 9/17/24
+published: 12/28/2023
+type: sideproject
 ---
 
 ## Test

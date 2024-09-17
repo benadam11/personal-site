@@ -1,10 +1,15 @@
 ---
-import MainHead from "../../components/MainHead.astro";
-import MainBody from "../../components/MainBody.astro";
-import { sortDate } from "../../scripts/utils.js";
 import HeadingSlider from "../../components/HeadingSlider";
+import MainBody from "../../components/MainBody.astro";
+import MainHead from "../../components/MainHead.astro";
+import { sortDate } from "../../scripts/utils.js";
 const posts = await Astro.glob("./*.md");
-const postData = posts.sort(sortDate);
+const work = posts
+  .filter((post) => post.frontmatter.type !== "sideproject")
+  .sort(sortDate);
+const sideProjects = posts
+  .filter((post) => post.frontmatter.type === "sideproject")
+  .sort(sortDate);
 ---
 
 <html lang="en">
@@ -15,19 +20,60 @@ const postData = posts.sort(sortDate);
     />
   </head>
   <MainBody>
-    <section class="intro-animation max-w-[960px] mx-auto py-24">
+    <section class="intro-animation max-w-[960px] mx-auto py-12">
       <h1 class="text-4xl mb-4 font-bold">Work</h1>
-      <h2 class="font-serif italic text-2xl">
+      <h2 class="font-serif text-2xl">
         Thing's I've made or learned at the companies I have worked for.
       </h2>
-      <HeadingSlider client:load />
     </section>
+
+    <section class="fade-in max-w-[960px] mx-auto my-24">
+      <article class="border border-shadow relative">
+        <span
+          class="border border-shadow bg-base p-1 px-2 absolute top-[-14px] left-[14px] text-xs"
+        >
+          Work History
+        </span>
+        <HeadingSlider client:load />
+      </article>
+    </section>
+
     <section class="fade-in max-w-[960px] mx-auto">
-      {
-        postData.map((post) => {
-          return <li>{post.frontmatter.title}</li>;
-        })
-      }
+      <h3 class="uppercase text-sm mb-8 font-bold text-contrast">
+        Work
+      </h3>
+      <ul class="grid grid-cols-2 gap-8">
+        {
+          work.map((post) => {
+            return (
+              <li class="border border-shadow p-8 aspect-video relative flex flex-col justify-end">
+                <span class="text-contrastShaded">
+                  {post.frontmatter.title}
+                </span>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+
+    <section class="fade-in max-w-[960px] mx-auto mt-12">
+      <h3 class="uppercase text-sm mb-8 font-bold text-contrast">
+        Side Projects
+      </h3>
+      <ul class="grid grid-cols-2 gap-8">
+        {
+          sideProjects.map((post) => {
+            return (
+              <li class="border border-shadow p-8 aspect-video relative flex flex-col justify-end">
+                <span class="text-contrastShaded">
+                  {post.frontmatter.title}
+                </span>
+              </li>
+            );
+          })
+        }
+      </ul>
     </section>
   </MainBody>
 </html>

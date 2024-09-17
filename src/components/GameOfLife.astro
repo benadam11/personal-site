@@ -49,8 +49,8 @@
 
   // Access CSS variables
   const rootStyles = getComputedStyle(document.documentElement);
-  const cellAliveColor = rootStyles.getPropertyValue("--contrast").trim();
-  const cellDeadColor = rootStyles.getPropertyValue("--base-shaded").trim();
+  let cellAliveColor = rootStyles.getPropertyValue("--contrast").trim();
+  let cellDeadColor = rootStyles.getPropertyValue("--base-shaded").trim();
 
   ctx.fillStyle = cellDeadColor;
 
@@ -154,4 +154,11 @@
   // Initialize and start the game
   initializeGrid();
   gameLoop();
+
+  const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  darkModeQuery.addEventListener("change", (e) => {
+    // Update canvas when the theme changes
+    cellAliveColor = rootStyles.getPropertyValue("--contrast").trim();
+    cellDeadColor = rootStyles.getPropertyValue("--base-shaded").trim();
+  });
 </script>

@@ -1,17 +1,24 @@
-import { useState, useLayoutEffect, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+const springConfig = {
+  damping: 15,
+  stiffness: 180,
+  mass: 0.15,
+};
 
 const history = [
   {
     year: 2010,
-    event: "Graduated from ASU.",
+    event: "Graduated from ASU",
   },
   {
     year: 2011,
-    event: "Worked a number of 'character building' jobs.",
+    event: "Worked a number of ＂character building＂ jobs.",
   },
   {
     year: 2012,
-    event: "Started a creative agency called Blinktank.",
+    event: "Cofounded a creative agency called Blinktank.",
   },
   {
     year: 2013,
@@ -45,6 +52,10 @@ const history = [
     year: 2022,
     event: "Joined uidotdev as a Staff Engineer.",
   },
+  {
+    year: 2024,
+    event: "Designer / Engineer based in Tempe, Arizona.",
+  },
 ];
 
 export default function HeadingSlider() {
@@ -53,7 +64,7 @@ export default function HeadingSlider() {
   const [x, setX] = useState(0);
   const el = useRef(null);
 
-  const index = width > 0 ? Math.floor((x / width) * (history.length - 1)) : 0;
+  const index = width > 0 ? Math.round((x / width) * (history.length - 1)) : 0;
 
   function handleMouseDown() {
     setIsDragging(true);
@@ -76,7 +87,7 @@ export default function HeadingSlider() {
     window.removeEventListener("mouseup", handleMouseUp);
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setWidth(el.current.offsetWidth);
 
     return () => {
@@ -85,8 +96,19 @@ export default function HeadingSlider() {
   }, []);
 
   return (
-    <article className="text-center border border-contrast p-12">
-      <h1 className="text-2xl mb-4 font-bold">{history[index].event}</h1>
+    <div className="text-center p-12">
+      <AnimatePresence mode="popLayout">
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ ...springConfig }}
+          key={index}
+          className="text-xl mb-4"
+        >
+          {history[index].event}
+        </motion.h3>
+      </AnimatePresence>
       <div className="flex justify-center mt-8">
         <div
           ref={el}
@@ -94,14 +116,14 @@ export default function HeadingSlider() {
           style={{ cursor: isDragging ? "grabbing" : "pointer" }}
           onMouseDown={handleMouseDown}
         >
-          {history.map((item, i) => (
+          {history.map((_, i) => (
             <div
               key={i}
               className={`${
-                i === index ? "bg-contrast" : "bg-[#D2D6C5]"
+                i === index ? "bg-contrast" : "bg-shadow"
               } w-[1px] rounded-full transition-all`}
               style={{ height: i % 2 === 0 ? "18px" : "12px" }}
-              onClick={() => setIndex(i)}
+              onClick={() => setX((width / (history.length - 1)) * i)}
             />
           ))}
           <div
@@ -120,6 +142,6 @@ export default function HeadingSlider() {
           </div>
         </div>
       </div>
-    </article>
+    </div>
   );
 }

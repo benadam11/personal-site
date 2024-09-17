@@ -9,7 +9,7 @@ import DecorativeHr from "./DecorativeHr.astro";
     class="logo-link absolute top-0 left-1/2 transform -translate-x-1/2"
   >
     <canvas
-      class="w-[160px] h-[40px] relative top-[-20px] border-contrast border-2 bg-base text-contrast"
+      class="w-[160px] h-[40px] relative top-[-20px] border-shadow border bg-base text-contrast"
       id="logo-canvas"></canvas>
     <!-- <span
       class="absolute top-[-12px] left-1/2 transform -translate-x-1/2 uppercase"
@@ -39,6 +39,9 @@ import DecorativeHr from "./DecorativeHr.astro";
   // Scale the context to match the device pixel ratio
   ctx.scale(dpr, dpr);
 
+  const rootStyles = getComputedStyle(document.documentElement);
+  let contrast = rootStyles.getPropertyValue("--contrast").trim();
+
   const gridCols = 32; // number of columns for grid squares
   const gapSize = 1; // gap size between squares
 
@@ -51,7 +54,7 @@ import DecorativeHr from "./DecorativeHr.astro";
   const messages = [
     { text: " BEN ADAM " },
     { text: "WELCOME TO MY SITE" },
-    { text: "THIS MESSAGE IS TOO LONG AND SHOULD SCROLL" },
+    { text: " BEN ADAM " },
   ];
 
   // Full Character-to-grid mapping for letters (A-Z), numbers (0-9), and punctuation (.,!?)
@@ -360,7 +363,7 @@ import DecorativeHr from "./DecorativeHr.astro";
     if (pattern) {
       for (let row = 0; row < pattern.length; row++) {
         for (let col = 0; col < pattern[row].length; col++) {
-          const color = pattern[row][col] === 1 ? "white" : "transparent";
+          const color = pattern[row][col] === 1 ? contrast : "transparent";
           drawSquare(startCol + col, startRow + row, color);
         }
       }
@@ -381,7 +384,7 @@ import DecorativeHr from "./DecorativeHr.astro";
 
   // Marquee effect: Scroll text from right to left
   function createMarqueeEffect(text, callback) {
-    let currentOffset = canvasWidth;
+    let currentOffset = 100;
 
     function animateMarquee() {
       // Clear the canvas
@@ -418,7 +421,7 @@ import DecorativeHr from "./DecorativeHr.astro";
 
       if (pattern) {
         // Draw the individual square within the letter's grid
-        const color = pattern[row][col] === 1 ? "white" : "transparent";
+        const color = pattern[row][col] === 1 ? contrast : "transparent";
         drawSquare(currentCol + col, 4 + row, color); // Center vertically by using row offset of 3
 
         // Move to the next square in the grid (left-to-right, top-to-bottom)
@@ -482,4 +485,10 @@ import DecorativeHr from "./DecorativeHr.astro";
 
   // Start the cycle
   cycleMessages();
+
+  const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  darkModeQuery.addEventListener("change", (e) => {
+    // Update canvas when the theme changes
+    contrast = rootStyles.getPropertyValue("--contrast").trim();
+  });
 </script>

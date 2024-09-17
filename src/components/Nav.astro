@@ -1,12 +1,10 @@
 ---
-import DecorativeHr from "./DecorativeHr.astro";
-import FooterLogo from "./FooterLogo.astro";
 import Logo from "./Logo.astro";
 ---
 
 <nav class="max-w-[1200px] mx-auto px-8">
   <div class="flex justify-between px-8 mb-10 lg:mb-5 text-xs md:text-[14px]">
-    <div class="align-center gap-2 md:gap-8 flex ">
+    <div class="align-center gap-2 md:gap-8 flex">
       <a class="nav-link" href="/thoughts"> Thoughts </a>
       <a class="nav-link" href="/experiments"> Experiments </a>
       <a class="nav-link" href="/work"> Work </a>
@@ -41,17 +39,7 @@ import Logo from "./Logo.astro";
     </div>
   </div>
 
-  <!-- <Logo /> -->
-  <div class="relative flex items-center justify-center gap-4">
-    <DecorativeHr right={false} />
-    <a
-      href="/"
-      class=""
-    >
-      <FooterLogo />
-    </a>
-    <DecorativeHr left={false} />
-  </div>
+  <Logo />
 </nav>
 
 <script>

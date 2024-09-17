@@ -7,14 +7,16 @@
   --stone-shaded: #343330;
   --ghost: #f7f5f1;
   --ghost-shaded: #eeeae3;
-  --lichen: #D2D6C5;
-  --eggplant: #35313D;
-  
+  --lichen: #d2d6c5;
+  --eggplant: #35313d;
+  --shadow: rgba(60, 64, 43, 20);
+
   --base: var(--ghost);
   --base-shaded: var(--ghost-shaded);
   --contrast: var(--stone);
   --contrast-shaded: var(--stone-shaded);
   --accent: var(--eggplant);
+  --faint: var(--lichen);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +26,7 @@
     --contrast: var(--ghost);
     --contrast-shaded: var(--ghost-shaded);
     --accent: var(--lichen);
+    --shadow: rgba(62, 61, 58, 50);
   }
 }
 
