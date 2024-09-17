@@ -10,7 +10,7 @@ const springConfig = {
 const history = [
   {
     year: 2010,
-    event: "Graduated from ASU",
+    event: "Graduated from ASU.",
   },
   {
     year: 2011,
