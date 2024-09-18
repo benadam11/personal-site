@@ -115,6 +115,8 @@ export default function HeadingSlider() {
           className="inline-flex items-center justify-between gap-2 relative ml-[-1px]"
           style={{ cursor: isDragging ? "grabbing" : "pointer" }}
           onMouseDown={handleMouseDown}
+          onTouchMove={handleChange}
+          onTouchStart={handleChange}
         >
           {history.map((_, i) => (
             <div
