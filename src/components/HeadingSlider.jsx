@@ -74,7 +74,8 @@ export default function HeadingSlider() {
 
   function handleChange(e) {
     const { left } = el.current.getBoundingClientRect();
-    setX(Math.max(0, Math.min(e.clientX - left, width)));
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    setX(Math.max(0, Math.min(clientX - left, width)));
   }
 
   function handleMouseUp() {
