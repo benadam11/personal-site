@@ -3,7 +3,6 @@ import HeadingSlider from "../../components/HeadingSlider";
 import MainBody from "../../components/MainBody.astro";
 import MainHead from "../../components/MainHead.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
-import Test from "../../components/Test.astro";
 import { sortDate } from "../../scripts/utils.js";
 const posts = await Astro.glob("./*.md");
 const work = posts
@@ -27,7 +26,6 @@ const sideProjects = posts
       <h2 class="font-serif text-2xl">
         Thing's I've made or learned at the companies I have worked for.
       </h2>
-      <Test />
     </section>
 
     <section class="fade-in max-w-[960px] mx-auto my-24">
