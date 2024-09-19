@@ -97,7 +97,7 @@ export default function HeadingSlider() {
   }, []);
 
   return (
-    <div className="text-center px-4 py-12 md:p-12">
+    <div className="text-center h-full relative flex items-center justify-center">
       <AnimatePresence mode="popLayout">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
@@ -110,39 +110,37 @@ export default function HeadingSlider() {
           {history[index].event}
         </motion.h3>
       </AnimatePresence>
-      <div className="flex justify-center mt-8">
-        <div
-          ref={el}
-          className="inline-flex items-center justify-between gap-2 relative ml-[-1px]"
-          style={{ cursor: isDragging ? "grabbing" : "pointer" }}
-          onMouseDown={handleMouseDown}
-          onTouchMove={handleChange}
-          onTouchStart={handleChange}
-        >
-          {history.map((_, i) => (
-            <div
-              key={i}
-              className={`${
-                i === index ? "bg-contrast" : "bg-shadow"
-              } w-[1px] rounded-full transition-all`}
-              style={{ height: i % 2 === 0 ? "18px" : "12px" }}
-              onClick={() => setX((width / (history.length - 1)) * i)}
-            />
-          ))}
+      <div
+        ref={el}
+        className="inline-flex items-end justify-between gap-2 ml-[-1px] absolute bottom-0"
+        style={{ cursor: isDragging ? "grabbing" : "pointer" }}
+        onMouseDown={handleMouseDown}
+        onTouchMove={handleChange}
+        onTouchStart={handleChange}
+      >
+        {history.map((_, i) => (
           <div
-            className="absolute w-[1px] bg-contrast rounded-full"
-            style={{
-              height: 32,
-              left: Math.max(0, Math.min(x, width)),
-            }}
+            key={i}
+            className={`${
+              i === index ? "bg-contrast" : "bg-shadow"
+            } w-[1px] rounded-full transition-all`}
+            style={{ height: i % 2 === 0 ? "18px" : "12px" }}
+            onClick={() => setX((width / (history.length - 1)) * i)}
+          />
+        ))}
+        <div
+          className="absolute w-[1px] bg-contrast rounded-full before:content-[''] before:absolute before:top-[0px] before:left-[-4px] before:text-xs before:text-contrast before:w-[9px] before:h-[9px]  before:rounded-full before:border-shadow before:border before:bg-base"
+          style={{
+            height: 32,
+            left: Math.max(0, Math.min(x, width)),
+          }}
+        >
+          <span
+            className="absolute top-[-24px] text-xs text-contrast"
+            style={{ left: "50%", transform: "translateX(-50%)" }}
           >
-            <span
-              className="absolute bottom-[-24px] text-xs text-contrast"
-              style={{ left: "50%", transform: "translateX(-50%)" }}
-            >
-              {history[index].year}
-            </span>
-          </div>
+            {history[index].year}
+          </span>
         </div>
       </div>
     </div>
