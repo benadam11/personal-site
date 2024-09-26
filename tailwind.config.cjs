@@ -3,7 +3,7 @@ module.exports = {
   content: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,md}"],
   theme: {
     fontFamily: {
-      sans: ["Space Mono", "monospace"],
+      mono: ["Departure Mono", "monospace"],
       serif: ["Space Grotesk", "monspace"],
     },
     colors: {
@@ -14,6 +14,7 @@ module.exports = {
       accent: "var(--accent)",
       shadow: "var(--shadow)",
       faint: "var(--faint)",
+      acid: "var(--acid)",
     },
   }
 };

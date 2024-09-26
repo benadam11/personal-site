@@ -5,7 +5,7 @@
 }
 
 .post-content h1 {
-  @apply text-4xl font-serif font-bold mt-10;
+  @apply text-4xl font-bold mt-10;
 }
 
 .post-content h2 {
@@ -78,18 +78,20 @@
   max-width: 280px;
   transform: translateY(calc(-50% + 40px));
   z-index: 2;
+  
 }
 
 .toc::before {
   content: 'Table of Contents';
-  top: -8px;
+  top: 0px;
+  padding-top: 8px;
   font-weight: 800;
   transform: translateX(-24px);
   @apply text-sm absolute invisible uppercase;
 }
 
 .toc:hover {
-  @apply bg-base;
+  @apply bg-base border border-contrast;
 }
 
 .toc:hover::before {
@@ -101,6 +103,10 @@
   visibility: visible;
 }
 
+.toc:hover > ol {
+  padding-top: 8px;
+}
+
 .toc ol {
   @apply relative pl-0 invisible;
 }
@@ -110,7 +116,7 @@
 }
 
 .toc li {
-  @apply block text-sm font-sans not-italic font-bold pl-0 my-0;
+  @apply block text-sm font-serif not-italic font-bold pl-0 my-0;
 }
 .toc li + li {
   @apply mt-2;
@@ -205,8 +211,10 @@
 }
 
 .code-wrapper:has(.astro-code[data-language]):after {
-  background-color: var(--contrast);
-  color: var(--base);
+  font-family: var(--font-mono);
+  background-color: var(--acid);
+  border: 2px solid var(--contrast);
+  color: var(--contrast);
   display: inline-block;
   aspect-ratio: 1/1;
   position: absolute;
@@ -218,8 +226,10 @@
   height: 24px;
   text-align: center;
   vertical-align: middle;
-  line-height: 24px;
+  line-height: 22px;
   z-index: 1;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .code-wrapper:has(.astro-code[data-language='html']):after {

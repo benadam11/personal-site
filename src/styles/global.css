@@ -9,14 +9,24 @@
   --ghost-shaded: #eeeae3;
   --lichen: #d2d6c5;
   --eggplant: #35313d;
-  --shadow: rgba(60, 64, 43, 20);
+  --vellum: #EEEAE3;
+  --shadow: var(--vellum);
+  --acid: #dfff56;
 
   --base: var(--ghost);
   --base-shaded: var(--ghost-shaded);
   --contrast: var(--stone);
   --contrast-shaded: var(--stone-shaded);
   --accent: var(--eggplant);
-  --faint: var(--lichen);
+  --faint: var(--vellum);
+  --font-mono: "Departure Mono", monospace;
+}
+
+@font-face {
+  font-family: "Departure Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/DepartureMono-Regular.woff2") format("woff2");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,7 +37,21 @@
     --contrast-shaded: var(--ghost-shaded);
     --accent: var(--lichen);
     --shadow: rgba(62, 61, 58, 50);
+    --faint: var(--stone-shaded);
   }
+}
+
+body {
+  @apply font-serif;
+}
+
+h1 {
+  --contrast: #000;
+  @apply font-mono;
+  color: var(--acid);
+  text-shadow: -1px -1px 0 var(--contrast), 1px -1px 0 var(--contrast),
+    -1px 1px 0 var(--contrast), 1px 1px 0 var(--contrast),
+    0px 0px 0 var(--contrast), 2px 2px 0 var(--contrast);
 }
 
 button,
@@ -110,7 +134,7 @@ button:active {
 }
 
 .more-link {
-  @apply flex items-center gap-1 text-sm hover:text-accent text-contrastShaded hover:text-contrast;
+  @apply flex items-center gap-1 text-sm font-mono text-contrastShaded hover:text-contrast;
 }
 
 .arrow {
@@ -145,6 +169,12 @@ a:hover .arrow {
   animation-iteration-count: infinite;
   width: 100px;
   height: 100px;
-  background: var(--accent);
+  background: var(--acid);
+  border: 2px solid #000;
   margin: auto;
+}
+
+
+pre,code{
+  font-family: monospace;
 }

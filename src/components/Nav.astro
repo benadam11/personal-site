@@ -1,45 +1,19 @@
 ---
-import Logo from "./Logo.astro";
+import DecorativeHr from "./DecorativeHr.astro";
 ---
 
 <nav class="max-w-[1200px] mx-auto px-8">
-  <div class="flex  justify-center md:justify-between px-8 mb-10 lg:mb-5 text-xs md:text-[14px]">
+  <div
+    class="flex justify-between mb-10 pb-4 lg:mb-5 text-xs md:text-[14px]"
+  >
+    <a href="/" class="site-logo">benadam ></a>
     <div class="align-center gap-4 md:gap-8 flex justify-center">
       <a class="nav-link" href="/thoughts"> Thoughts </a>
       <a class="nav-link" href="/experiments"> Experiments </a>
       <a class="nav-link" href="/work"> Work </a>
     </div>
-
-    <div class="justify-end align-center gap-2 lg:gap-8  hidden lg:flex">
-      <a
-        class="nav-link cursor-alias"
-        href="https://x.com/benadam11"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Twitter
-      </a>
-      <a
-        class="nav-link cursor-alias"
-        href="https://github.com/benadam11"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Github
-      </a>
-      <a
-        class="nav-link cursor-alias"
-        href="https://www.linkedin.com/in/benjaminadam/"
-        target="_blank"
-        rel="noreferrer"
-        href="/work"
-      >
-        LinkedIn
-      </a>
-    </div>
   </div>
-
-  <Logo />
+  <DecorativeHr />
 </nav>
 
 <script>
@@ -54,6 +28,10 @@ import Logo from "./Logo.astro";
 </script>
 
 <style>
+  .site-logo {
+    font-family: "Departure Mono", monospace;
+    border: 1px solid var(--base);
+  }
   .nav-link.active {
     font-weight: bold;
   }

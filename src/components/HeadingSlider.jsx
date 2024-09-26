@@ -97,7 +97,7 @@ export default function HeadingSlider() {
   }, []);
 
   return (
-    <div className="text-center h-full relative flex items-center justify-center">
+    <div className="text-center h-full relative flex items-center justify-center font-serif">
       <AnimatePresence mode="popLayout">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
@@ -122,14 +122,14 @@ export default function HeadingSlider() {
           <div
             key={i}
             className={`${
-              i === index ? "bg-contrast" : "bg-shadow"
-            } w-[1px] rounded-full transition-all`}
+              i === index ? "opacity-100" : "opacity-25"
+            } w-[1px] rounded-full transition-all bg-contrast`}
             style={{ height: i % 2 === 0 ? "18px" : "12px" }}
             onClick={() => setX((width / (history.length - 1)) * i)}
           />
         ))}
         <div
-          className="absolute w-[1px] bg-contrast rounded-full before:content-[''] before:absolute before:top-[0px] before:left-[-4px] before:text-xs before:text-contrast before:w-[9px] before:h-[9px]  before:rounded-full before:border-shadow before:border before:bg-base"
+          className="absolute w-[1px] bg-contrast rounded-full before:content-[''] before:absolute before:top-[0px] before:left-[-4px] before:text-xs before:text-contrast before:w-[9px] before:h-[9px]  before:rounded-full before:border-[#000] before:border before:bg-acid"
           style={{
             height: 32,
             left: Math.max(0, Math.min(x, width)),
