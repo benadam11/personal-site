@@ -22,7 +22,14 @@ Building the course dashboard for [ui.dev](https://ui.dev) was a fun project. I 
 
 ### Code Challenges
 
-### Code Previews
+One of the core features I built for our course platform was an interactive code challege experience. Built on top of [Sandpack](https://sandpack.codesandbox.io/), the challenge editor allowed students to test their knowledge from the lesson with real time visual feedback. Once they complete their tasks, I wrote a series of automated tests to assess their solution. Many technical challenges to overcome building this feature, but it was worth the effort. In addition to the code editor we also designed a custom code theme, and added integrations for `prettier` and `autosave` to make the experience as seamless as possible.
+
+<div class="overflow-hidden my-8">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+    <source src="/video/challenge-editor.mp4" type="video/mp4" />
+  </video>
+</div>
+
 
 ### React Interview Questions
 
