@@ -101,7 +101,7 @@ In contrast, companies such as Kodak were not able to make the transition to dig
 
 Content creation is a flywheel (create valuable content → audience shares content → new audience members). Building distribution is always a factor of quality content, but it is possible to be strategic about how to create quality content that will maximize your distribution. The most savvy marketers are able to build bridges between content that reinforces the content flywheel across platforms.
 
-_Strategy 1: Pillar Cluster Content_
+__Strategy 1: Pillar Cluster Content__
 
 ![Pillar Cluster Model - Hubspot](https://paper-attachments.dropbox.com/s_3F798FE0CB85D30A1897D23F34FB13FE6F9111A017A25F1325FD2241D2E2441B_1638916242148_image.png)
 
@@ -111,7 +111,7 @@ For developer media companies, pillar cluster is the ideal because there are var
 
 The reward for a well executed pillar cluster content strategy is distribution (in for form of inbound traffic). As you produce well crafted content, platforms such as Google Search (and social networks like Twitter & LinkedIn) will promote your content and expose it to more users.
 
-_Strategy 2: Newsletters_
+__Strategy 2: Newsletters__
 
 ![David Perell Newsletter Centric Business Model](https://paper-attachments.dropbox.com/s_3F798FE0CB85D30A1897D23F34FB13FE6F9111A017A25F1325FD2241D2E2441B_1638916255671_image.png)
 
@@ -128,7 +128,7 @@ There are 2 engines that will drive the newsletter flywheel:
 
 The reward for successfully executing a newsletter strategy is, you guessed it, distribution. One unique property of a developer oriented newsletter is that there are very few places to get consolidated “news” around what’s happening in the tech world. As we have seen with traditional media, eventually the “network” or distribution of the news heavily shapes what is considered “news worthy”. In the olden days this was called “tastemaking”.
 
-_Strategy 3: Youtube_
+__Strategy 3: Youtube__
 
 Good video content is gold. Youtube, in a similar way to Google search, rewards content creators that drive engagement. There are not many Youtubers who are able to create interesting content for developers. One formula for success on youtube (outlined here by Paddy Galloway) shows how combining the right ingredients can lead to outsized success.
 
@@ -191,7 +191,8 @@ For product companies, building distribution is usually secondary to building pr
 
 _Merchandise_
 
-Merchandise is a smaller but significant revenue stream that can be leveraged. This stream is particularly useful when you have already established a sense of belonging. People buy apparel (or related items) because they are making a value statement. They want others to know their values.  
+Merchandise is a smaller but significant revenue stream that can be leveraged. This stream is particularly useful when you have already established a sense of belonging. People buy apparel (or related items) because they are making a value statement. They want others to know their values.
+
 _Investments_
 
 The long tail of building distribution is access to investment opportunities. Rolling funds, or even direct investment in startup companies are much more accessible when you have the value add offering your distbrution and ability to promote the investement. This has the highest margin upside (assuming a level of skill in picking deals). This is also the longest time horizon of the various revenue streams.

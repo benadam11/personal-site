@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Post.astro
+layout: ../../layouts/Work.astro
 title: ui.dev
 description: >
   Personal areas of focus for the new year

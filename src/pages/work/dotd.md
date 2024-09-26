@@ -9,4 +9,9 @@ logo: /images/dotd-logo.svg
 year: 2018
 ---
 
-Coming soon...
+
+Day of the Dead was a fun side project I worked on with Caleb Barclay.
+ 
+![https://dayofthedead.holiday hero image](/images/dotd-hero.jpg)
+
+[View Project](https://dayofthedead.holiday/)

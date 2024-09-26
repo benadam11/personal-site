@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Post.astro
+layout: ../../layouts/Work.astro
 title: Vizzda
 description: >
   Personal areas of focus for the new year

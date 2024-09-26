@@ -8,4 +8,8 @@ type: sideproject
 logo: /images/ic-logo.svg
 ---
 
-Coming soon...
+[Investment Calculator](https://investmentcalculator.io/) is a beautifully simple calculator to help you calculate the potential value of your retirement investments and visualize their growth.
+
+![Investment Calculator](/images/ic-thumb.jpg)
+
+![Investment Calculator](/images/ic-home-2x.jpg)
