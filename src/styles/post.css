@@ -214,8 +214,8 @@
 .code-wrapper:has(.astro-code[data-language]):after {
   font-family: var(--font-mono);
   background-color: var(--acid);
-  border: 2px solid var(--contrast);
-  color: var(--contrast);
+  border: 2px solid var(--stone);
+  color: var(--stone);
   display: inline-block;
   aspect-ratio: 1/1;
   position: absolute;
