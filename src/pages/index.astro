@@ -1,14 +1,16 @@
 ---
 // Component Imports
-import MainHead from "../components/MainHead.astro";
-import MainBody from "../components/MainBody.astro";
-import PostItem from "../components/PostItem.jsx";
-import ImageColors from "../components/ImageColor.jsx";
-import { sortDate } from "../scripts/utils.js";
 import GameOfLife from "../components/GameOfLife.astro";
+import HeadingSlider from "../components/HeadingSlider";
+import ImageColors from "../components/ImageColor.jsx";
+import MainBody from "../components/MainBody.astro";
+import MainHead from "../components/MainHead.astro";
+import PostItem from "../components/PostItem.jsx";
+import SectionHeading from "../components/SectionHeading.astro";
+import { sortDate } from "../scripts/utils.js";
 
 const posts = await Astro.glob("./thoughts/*.md");
-const topPosts = posts.sort(sortDate).slice(0, 2);
+const topPosts = posts.sort(sortDate).slice(0, 5);
 ---
 
 <html lang="en">
@@ -20,36 +22,78 @@ const topPosts = posts.sort(sortDate).slice(0, 2);
   </head>
   <MainBody>
     <section id="hero" class="py-24 intro-animation relative">
-      <h1 class="text-4xl mb-4 font-bold">Hello, my name is Ben.</h1>
-      <h2 class="font-serif italic text-2xl">
+      <h1 class="text-4xl mb-4 text-acid">Hello, my name is Ben.</h1>
+      <h2 class="font-serif text-2xl">
         I am a Software Designer / Engineer based in Tempe, AZ.
         <br />Currently I'm working at <a
           class="opacity-80 underline"
           href="https://ui.dev">ui.dev</a
         > helping folks level up with JavaScript.
       </h2>
+
+      <div class="align-center gap-2 lg:gap-8 hidden lg:flex mt-8">
+        <a
+          class="nav-link cursor-alias underline"
+          href="https://x.com/benadam11"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Twitter
+        </a>
+        <a
+          class="nav-link cursor-alias underline"
+          href="https://github.com/benadam11"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>
+        <a
+          class="nav-link cursor-alias underline"
+          href="https://www.linkedin.com/in/benjaminadam/"
+          target="_blank"
+          rel="noreferrer"
+          href="/work"
+        >
+          LinkedIn
+        </a>
+      </div>
     </section>
     <section class="fade-in pb-12">
-      <h3 class="uppercase text-sm mb-12 font-bold text-accent">
-        Recent Thoughts
-      </h3>
-      <ul>
-        {
-          topPosts.map(({ frontmatter, url }) => (
-            <PostItem
-              title={frontmatter.title}
-              published={frontmatter.published}
-              url={url}
-            />
-          ))
-        }
-      </ul>
-      <a href="/thoughts" class="more-link"
-        >More <span class="arrow">→</span>
-      </a>
+      <div class="lg:grid grid-cols-12 gap-12">
+        <div class="col-span-8">
+          <SectionHeading> About Me </SectionHeading>
+          <article class="aspect-video">
+            <div class="bg-faint aspect-video px-4">
+              <HeadingSlider client:load />
+            </div>
+            <p class="text-xs text-center font-serif mt-4 opacity-50">
+              Scrub the timeline
+            </p>
+          </article>
+        </div>
+        <div class="col-span-4">
+          <SectionHeading> Recent Thoughts </SectionHeading>
+          <ul>
+            {
+              topPosts.map(({ frontmatter, url }) => (
+                <PostItem
+                  isHomePage={true}
+                  title={frontmatter.title}
+                  published={frontmatter.published}
+                  url={url}
+                />
+              ))
+            }
+          </ul>
+          <a href="/thoughts" class="more-link mt-8"
+            >More <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
     </section>
     <section class="fade-in pt-12">
-      <h3 class="uppercase text-sm mb-12 font-bold text-accent">Experiments</h3>
+      <SectionHeading>Experiments</SectionHeading>
       <main class="flex gap-4 overflow-auto">
         <GameOfLife />
         <ImageColors client:visible />

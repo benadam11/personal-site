@@ -2,51 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root,
-.default-scheme {
-  --green: rgb(0, 68, 69);
-  --light-green: rgb(82, 190, 172);
-  --blue: rgb(57, 103, 131);
-  --light-blue: rgb(108, 204, 249);
-  --red: rgb(150, 53, 60);
-  --purple: rgb(50, 41, 60);
-  --contrast: #34373c;
-  --grey2: rgb(110, 108, 110);
-  --grey3: rgb(134, 130, 121);
-  --contrast-alpha: rgba(0,0,0,.2);
-  --base: rgb(255, 255, 255);
-  --alt: var(--contrast);
-  --accent: var(--blue);
+:root {
+  --stone: #282725;
+  --stone-shaded: #343330;
+  --ghost: #f7f5f1;
+  --ghost-shaded: #eeeae3;
+  --lichen: #d2d6c5;
+  --eggplant: #35313d;
+  --vellum: #EEEAE3;
+  --shadow: var(--vellum);
+  --acid: #dfff56;
+
+  --base: var(--ghost);
+  --base-shaded: var(--ghost-shaded);
+  --contrast: var(--stone);
+  --contrast-shaded: var(--stone-shaded);
+  --accent: var(--eggplant);
+  --faint: var(--vellum);
+  --font-mono: "Departure Mono", monospace;
 }
 
-.alt-scheme {
-  --contrast-alpha: rgba(255,255,255,.2);
-  --contrast: #fdfcfe;
-  --grey2: #a9a9a9;
-  --grey3: #34373c;
-  --base: #1f1f24;
-  --red: #FF6A67;
-  --accent: var(--light-green);
+@font-face {
+  font-family: "Departure Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/DepartureMono-Regular.woff2") format("woff2");
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --contrast-alpha: rgba(255,255,255,.5);
-    --contrast: #fdfcfe;
-    --grey2: #a9a9a9;
-    --grey3: #34373c;
-    --base: #1f1f24;
-    --alt: #222528;
-    --red: #FF6A67;
-    --accent: var(--light-green);
+    --base: var(--stone);
+    --base-shaded: var(--stone-shaded);
+    --contrast: var(--ghost);
+    --contrast-shaded: var(--ghost-shaded);
+    --accent: var(--lichen);
+    --shadow: rgba(62, 61, 58, 50);
+    --faint: var(--stone-shaded);
   }
 }
 
-button, a {
+body {
+  @apply font-serif;
+}
+
+h1 {
+  --contrast: #000;
+  @apply font-mono;
+  color: var(--acid);
+  text-shadow: -1px -1px 0 var(--contrast), 1px -1px 0 var(--contrast),
+    -1px 1px 0 var(--contrast), 1px 1px 0 var(--contrast),
+    0px 0px 0 var(--contrast), 2px 2px 0 var(--contrast);
+}
+
+button,
+a {
   transition: all 0.2s ease-in-out;
 }
 
-a:active,
+a:not(.logo-link):active,
 button:active {
   transform: translateY(1px);
 }
@@ -89,23 +102,8 @@ button:active {
   }
 }
 
-
 .nav-link {
-  @apply relative text-sm uppercase font-bold;
-}
-
-.nav-link.active::after {
-  animation: grow 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: currentColor;
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
+  @apply relative;
 }
 
 @keyframes grow {
@@ -118,12 +116,6 @@ button:active {
   100% {
     transform: translateX(-50%) scale(1);
   }
-}
-
-video.show {
-  border-radius: 8px;
-  overflow: visible;
-  animation: scale-up 0.3s ease-in-out;
 }
 
 .icon:hover {
@@ -142,7 +134,7 @@ video.show {
 }
 
 .more-link {
-  @apply flex items-center gap-1 font-semibold hover:text-accent opacity-80 hover:opacity-100;
+  @apply flex items-center gap-1 text-sm font-mono text-contrastShaded hover:text-contrast;
 }
 
 .arrow {
@@ -177,7 +169,12 @@ a:hover .arrow {
   animation-iteration-count: infinite;
   width: 100px;
   height: 100px;
-  background: var(--light-green);
+  background: var(--acid);
+  border: 2px solid #000;
   margin: auto;
 }
 
+
+pre,code{
+  font-family: monospace;
+}

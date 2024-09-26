@@ -1,9 +1,10 @@
+import * as React from 'react';
 import Card from "./Card";
 import CardStack from "./CardStack";
 
 export default function QuizCards() {
   return (
-    <article className="default-scheme bg-red w-full mb-12 p-8 rounded-2xl min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]">
+    <article className="bg-contrastShaded w-full mb-12 p-8 min-w-[328px] min-h-[400px] grid grid-rows-[auto_1fr]">
       <header className="text-base text-center font-serif">
         <h4 className="text-xl">Card Swipe</h4>
         <p className="text-xs font-serif text-center mt-2 opacity-70">

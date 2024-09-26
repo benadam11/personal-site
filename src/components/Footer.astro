@@ -1,0 +1,30 @@
+---
+import DecorativeHr from "./DecorativeHr.astro";
+import FooterLogo from "./FooterLogo.astro";
+---
+
+<footer class="mx-auto max-w-[1200px] py-12 fade-in px-8">
+  <div class="relative flex items-center justify-center gap-4">
+    <DecorativeHr right={false} />
+    <a
+      href="/"
+      class=""
+    >
+      <FooterLogo />
+    </a>
+    <DecorativeHr left={false} />
+  </div>
+
+  <p class="text-center mt-8">
+    Copyright Ben Adam - <span id="footer-date"
+      >{new Date(Date.now()).getFullYear()}</span
+    >
+  </p>
+</footer>
+
+<script>
+  const footerDate = document.getElementById("footer-date");
+  if (footerDate) {
+    footerDate.textContent = String(new Date(Date.now()).getFullYear());
+  }
+</script>

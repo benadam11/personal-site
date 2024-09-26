@@ -1,0 +1,42 @@
+---
+const { left = true, right = true } = Astro.props;
+const leftVisibility = left ? "block" : "none";
+const rightVisibility = right ? "block" : "none";
+---
+
+<div class="relative w-full">
+  <hr />
+</div>
+
+<style define:vars={{ leftVisibility, rightVisibility }}>
+  hr {
+    border: none;
+    border-bottom: 1px solid var(--shadow);
+    margin: 0;
+    width: 100%;
+  }
+
+  /* hr:before,
+  hr:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--shadow);
+    border: 1px solid var(--shadow);
+    z-index: 1;
+  }
+
+  hr:before {
+    left: 0px;
+    display: var(--leftVisibility);
+  }
+
+  hr:after {
+    right: 0;
+    display: var(--rightVisibility);
+  } */
+</style>

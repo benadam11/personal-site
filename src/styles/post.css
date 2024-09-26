@@ -1,18 +1,19 @@
 .post-content {
   max-width: 80ch;
   margin: auto;
+  min-height: 75vh;
 }
 
 .post-content h1 {
-  @apply text-4xl font-sans font-bold mt-10;
+  @apply text-4xl font-bold mt-10;
 }
 
 .post-content h2 {
-  @apply text-2xl font-sans font-bold mt-10;
+  @apply text-2xl font-serif font-bold mt-10;
 }
 
 .post-content h3 {
-  @apply text-xl font-sans font-bold mt-10;
+  @apply text-xl font-serif font-bold mt-10;
 }
 
 .post-content p {
@@ -20,11 +21,11 @@
 }
 
 .post-content strong {
-  @apply font-bold font-sans text-xl;
+  @apply font-bold font-serif text-xl;
 }
 
 .post-content blockquote {
-  @apply italic relative my-10 pl-4;
+  @apply relative my-10 pl-4;
 }
 
 .post-content blockquote:before {
@@ -43,7 +44,7 @@
 
 .post-content ol {
   list-style: decimal;
-  @apply pl-6 my-8 italic;
+  @apply pl-6 my-8;
 }
 
 .post-content ul {
@@ -77,18 +78,21 @@
   max-width: 280px;
   transform: translateY(calc(-50% + 40px));
   z-index: 2;
+  padding: 1rem;
+  
 }
 
 .toc::before {
   content: 'Table of Contents';
-  top: -8px;
+  top: 0px;
+  padding-top: 1rem;
   font-weight: 800;
   transform: translateX(-24px);
   @apply text-sm absolute invisible uppercase;
 }
 
 .toc:hover {
-  @apply bg-base;
+  @apply bg-base border border-faint;
 }
 
 .toc:hover::before {
@@ -100,6 +104,10 @@
   visibility: visible;
 }
 
+.toc:hover > ol {
+  padding-top: 8px;
+}
+
 .toc ol {
   @apply relative pl-0 invisible;
 }
@@ -109,7 +117,7 @@
 }
 
 .toc li {
-  @apply block text-sm font-sans not-italic font-bold pl-0 my-0;
+  @apply block text-sm font-serif not-italic font-bold pl-0 my-0;
 }
 .toc li + li {
   @apply mt-2;
@@ -195,8 +203,48 @@
 
 .astro-code {
   padding: 2rem;
-  border-radius: 12px;
-  background-color: var(--alt) !important;
+  background-color: var(--base-shaded) !important;
+  border-bottom: 2px solid var(--contrast);
+}
+
+.code-wrapper {
+  position: relative;
+}
+
+.code-wrapper:has(.astro-code[data-language]):after {
+  font-family: var(--font-mono);
+  background-color: var(--acid);
+  border: 2px solid var(--contrast);
+  color: var(--contrast);
+  display: inline-block;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 22px;
+  z-index: 1;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.code-wrapper:has(.astro-code[data-language='html']):after {
+  content: 'HTML';
+  aspect-ratio: 4/3;
+}
+
+.code-wrapper:has(.astro-code[data-language='css']):after {
+  content: 'CSS';
+  aspect-ratio: 4/3;
+}
+
+.code-wrapper:has(.astro-code[data-language='js']):after {
+  content: 'JS';
 }
 
 img + em {
@@ -205,4 +253,15 @@ img + em {
   font-size: 1rem;
   opacity: .75;
   margin-top: -1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    /* Optional, if you also want font styles */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }

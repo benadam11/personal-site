@@ -1,0 +1,69 @@
+<svg role="img" width="24" height="24" viewBox="0 0 24 24">
+  <circle r="12" cx="12" cy="12" fill="var(--contrast)"></circle>
+  <circle id="circle" r="3" cx="12" cy="18" fill="var(--base)"></circle>
+</svg>
+
+<script>
+  const circle = document.getElementById("circle") as SVGElement | null;
+
+  function pointsOnCircle({
+    radius,
+    angle,
+    cx,
+    cy,
+  }: {
+    radius: number;
+    angle: number;
+    cx: number;
+    cy: number;
+  }): [number, number] {
+    angle = angle * (Math.PI / 180);
+    const x = cx + radius * Math.sin(angle);
+    const y = cy + radius * Math.cos(angle);
+    return [x, y];
+  }
+
+  function move(x: number, y: number): void {
+    if (circle) {
+      circle.setAttribute("cx", x.toString());
+      circle.setAttribute("cy", y.toString());
+    }
+  }
+
+  function paint(angle: number): () => void {
+    return () => {
+      const [x, y] = pointsOnCircle({
+        angle,
+        radius: 6,
+        cx: 12,
+        cy: 12,
+      });
+      move(x, y);
+    };
+  }
+
+  if (!localStorage.getItem("mouseX")) {
+    localStorage.setItem("mouseX", "0");
+  }
+
+  ["mousemove", "touchmove"].forEach((evt) => {
+    window.addEventListener(evt, (e) => {
+      const x =
+        (e as TouchEvent)?.touches?.[0]?.clientX || (e as MouseEvent).clientX;
+      localStorage.setItem("mouseX", x.toString());
+      requestAnimationFrame(paint(x / 4));
+    });
+  });
+
+  let count = 0;
+  const x = Number(localStorage.getItem("mouseX"));
+  const interval = setInterval(update, 16); // Add a delay for smooth animation
+
+  function update(): void {
+    if (count >= 360) {
+      clearInterval(interval);
+    }
+    requestAnimationFrame(paint(x / 4 + count));
+    count += 2;
+  }
+</script>

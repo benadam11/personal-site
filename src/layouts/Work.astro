@@ -1,0 +1,27 @@
+---
+import MainHead from '../components/MainHead.astro';
+import MainBody from '../components/MainBody.astro';
+import "../styles/post.css";
+const { content } = Astro.props;
+---
+
+<html lang={ content.lang || 'en' }>
+  <head>
+    <MainHead title={content.title} description={content.description} image={content.image} />
+  </head>
+  <MainBody>
+    <div class="post-content">
+      <header class='py-12 intro-animation'>
+        <a href='/work' class='more-link'><span class="arrow left">&larr;</span>Work</a>
+        <h1>{content.title}</h1>
+      </header>
+      <div class='fade-in'>
+        <slot />
+        <a href='/work' class='more-link'><span class="arrow left">&larr;</span>Work</a>
+      </div>
+    </div>
+    <script>
+      import '../scripts/post.js';
+    </script>
+  </MainBody>
+</html>

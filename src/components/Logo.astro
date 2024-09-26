@@ -1,0 +1,494 @@
+---
+import DecorativeHr from "./DecorativeHr.astro";
+---
+
+<div class="logo relative">
+  <DecorativeHr />
+  <a
+    href="/"
+    class="logo-link absolute top-0 left-1/2 transform -translate-x-1/2"
+  >
+    <canvas
+      class="w-[160px] h-[40px] relative top-[-20px] border-shadow border bg-base text-contrast"
+      id="logo-canvas"></canvas>
+    <!-- <span
+      class="absolute top-[-12px] left-1/2 transform -translate-x-1/2 uppercase"
+    >
+      Ben Adam
+    </span> -->
+  </a>
+</div>
+
+<script>
+  const canvas = document.getElementById("logo-canvas") as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+  const canvasWidth = 160; // visual width of the canvas
+  const canvasHeight = 40; // visual height of the canvas
+
+  // Get the device pixel ratio for Retina support
+  const dpr = window.devicePixelRatio || 1;
+
+  // Set the canvas dimensions accounting for the device pixel ratio
+  canvas.width = canvasWidth * dpr;
+  canvas.height = canvasHeight * dpr;
+
+  // Style the canvas to the original visual size
+  canvas.style.width = `${canvasWidth}px`;
+  canvas.style.height = `${canvasHeight}px`;
+
+  // Scale the context to match the device pixel ratio
+  ctx.scale(dpr, dpr);
+
+  const rootStyles = getComputedStyle(document.documentElement);
+  let contrast = rootStyles.getPropertyValue("--contrast").trim();
+
+  const gridCols = 32; // number of columns for grid squares
+  const gapSize = 1; // gap size between squares
+
+  // Set square size to 2x2 pixels
+  const squareSize = 2;
+
+  let messageIndex = 0; // Index of the current message
+
+  // List of messages and their effects
+  const messages = [
+    { text: " BEN ADAM " },
+    { text: "WELCOME TO MY SITE" },
+    { text: " BEN ADAM " },
+  ];
+
+  // Full Character-to-grid mapping for letters (A-Z), numbers (0-9), and punctuation (.,!?)
+  const letterMap = {
+    " ": [
+      // Space: Empty 3x5 grid
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ],
+    A: [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 1, 1, 1, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+    ],
+    B: [
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 1, 1, 1, 0],
+    ],
+    C: [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 0],
+      [1, 0, 0, 0, 0],
+      [0, 1, 1, 1, 0],
+    ],
+    D: [
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 1, 1, 1, 0],
+    ],
+    E: [
+      [1, 1, 1, 1, 1],
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1],
+    ],
+    F: [
+      [1, 1, 1, 1, 1],
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 0],
+      [1, 0, 0, 0, 0],
+    ],
+    G: [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 0],
+      [1, 0, 0, 1, 1],
+      [0, 1, 1, 1, 0],
+    ],
+    H: [
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 1, 1, 1, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+    ],
+    I: [
+      [0, 1, 1, 1, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 1, 1, 1, 0],
+    ],
+    J: [
+      [0, 1, 1, 1, 1],
+      [0, 0, 0, 1, 0],
+      [0, 0, 0, 1, 0],
+      [1, 0, 0, 1, 0],
+      [0, 1, 1, 0, 0],
+    ],
+    K: [
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 1, 0],
+      [1, 1, 1, 0, 0],
+      [1, 0, 0, 1, 0],
+      [1, 0, 0, 0, 1],
+    ],
+    L: [
+      [1, 0, 0, 0, 0],
+      [1, 0, 0, 0, 0],
+      [1, 0, 0, 0, 0],
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1],
+    ],
+    M: [
+      [1, 0, 0, 0, 1],
+      [1, 1, 0, 1, 1],
+      [1, 0, 1, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+    ],
+    N: [
+      [1, 0, 0, 0, 1],
+      [1, 1, 0, 0, 1],
+      [1, 0, 1, 0, 1],
+      [1, 0, 0, 1, 1],
+      [1, 0, 0, 0, 1],
+    ],
+    O: [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+    ],
+    P: [
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 0],
+      [1, 0, 0, 0, 0],
+    ],
+    Q: [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 1, 0],
+      [0, 1, 1, 0, 1],
+    ],
+    R: [
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 1, 0],
+      [1, 0, 0, 0, 1],
+    ],
+    S: [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 0],
+      [0, 1, 1, 1, 0],
+      [0, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+    ],
+    T: [
+      [1, 1, 1, 1, 1],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+    ],
+    U: [
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+    ],
+    V: [
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [0, 1, 0, 1, 0],
+      [0, 1, 0, 1, 0],
+      [0, 0, 1, 0, 0],
+    ],
+    W: [
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 1, 0, 1],
+      [1, 0, 1, 0, 1],
+      [0, 1, 0, 1, 0],
+    ],
+    X: [
+      [1, 0, 0, 0, 1],
+      [0, 1, 0, 1, 0],
+      [0, 0, 1, 0, 0],
+      [0, 1, 0, 1, 0],
+      [1, 0, 0, 0, 1],
+    ],
+    Y: [
+      [1, 0, 0, 0, 1],
+      [0, 1, 0, 1, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+    ],
+    Z: [
+      [1, 1, 1, 1, 1],
+      [0, 0, 0, 1, 0],
+      [0, 0, 1, 0, 0],
+      [0, 1, 0, 0, 0],
+      [1, 1, 1, 1, 1],
+    ],
+    "0": [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+    ],
+    "1": [
+      [0, 0, 1, 0, 0],
+      [0, 1, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 1, 1, 1, 0],
+    ],
+    "2": [
+      [1, 1, 1, 1, 0],
+      [0, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1],
+    ],
+    "3": [
+      [1, 1, 1, 1, 0],
+      [0, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+      [0, 0, 0, 0, 1],
+      [1, 1, 1, 1, 0],
+    ],
+    "4": [
+      [1, 0, 0, 1, 0],
+      [1, 0, 0, 1, 0],
+      [1, 1, 1, 1, 1],
+      [0, 0, 0, 1, 0],
+      [0, 0, 0, 1, 0],
+    ],
+    "5": [
+      [1, 1, 1, 1, 1],
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 0],
+      [0, 0, 0, 0, 1],
+      [1, 1, 1, 1, 0],
+    ],
+    "6": [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+    ],
+    "7": [
+      [1, 1, 1, 1, 1],
+      [0, 0, 0, 0, 1],
+      [0, 0, 0, 1, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+    ],
+    "8": [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+    ],
+    "9": [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+      [0, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0],
+    ],
+    ".": [
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 1, 0, 0],
+    ],
+    "!": [
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 1, 0, 0],
+    ],
+    ",": [
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 1, 0],
+      [0, 0, 1, 0, 0],
+    ],
+    "?": [
+      [0, 1, 1, 1, 0],
+      [1, 0, 0, 0, 1],
+      [0, 0, 0, 1, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+    ],
+  };
+
+  // Function to draw a single square
+  function drawSquare(col, row, color) {
+    const x = col * (squareSize + gapSize);
+    const y = row * (squareSize + gapSize);
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, squareSize, squareSize);
+  }
+
+  // Function to draw a letter from the map
+  function drawLetter(letter, startCol, startRow) {
+    const pattern = letterMap[letter.toUpperCase()];
+    if (pattern) {
+      for (let row = 0; row < pattern.length; row++) {
+        for (let col = 0; col < pattern[row].length; col++) {
+          const color = pattern[row][col] === 1 ? contrast : "transparent";
+          drawSquare(startCol + col, startRow + row, color);
+        }
+      }
+    }
+  }
+
+  function drawTextAtPosition(text, colStart, centerVertically = false) {
+    const rowStart = centerVertically ? 4 : 0;
+    let currentCol = colStart;
+
+    text.split("").forEach((letter) => {
+      if (letterMap[letter.toUpperCase()]) {
+        drawLetter(letter, currentCol, rowStart); // Start drawing at the provided position
+        currentCol += letterMap[letter.toUpperCase()][0].length + 1; // Move to the next letter position
+      }
+    });
+  }
+
+  // Marquee effect: Scroll text from right to left
+  function createMarqueeEffect(text, callback) {
+    let currentOffset = 100;
+
+    function animateMarquee() {
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the text at the current offset
+      drawTextAtPosition(text, currentOffset, true); // Start at row 0
+
+      // Update the position of the marquee
+      currentOffset -= 1; // Adjust marquee speed
+
+      // Check if the text has moved entirely off the canvas
+      const textWidth = text.length * (5 + 1); // Approximate width of the text (5 squares per letter)
+      if (currentOffset + textWidth < 0) {
+        callback(); // Trigger the next effect/message
+      } else {
+        requestAnimationFrame(animateMarquee); // Continue animating
+      }
+    }
+
+    animateMarquee(); // Start the marquee effect
+  }
+
+  function createTilingEffect(text, callback) {
+    let currentCol = 0; // Position in grid columns
+    let charIndex = 0; // Current letter in the text
+    let row = 0; // Current row in the letter's grid
+    let col = 0; // Current column in the letter's grid
+
+    function tileNextSquare() {
+      // Get the current letter to draw
+      const letter = text[charIndex % text.length].toUpperCase();
+      const pattern = letterMap[letter];
+
+      if (pattern) {
+        // Draw the individual square within the letter's grid
+        const color = pattern[row][col] === 1 ? contrast : "transparent";
+        drawSquare(currentCol + col, 4 + row, color); // Center vertically by using row offset of 3
+
+        // Move to the next square in the grid (left-to-right, top-to-bottom)
+        col++;
+        if (col >= pattern[0].length) {
+          col = 0; // Move to the next row when the end of the current row is reached
+          row++;
+        }
+
+        // If the entire letter has been drawn, move to the next letter
+        if (row >= pattern.length) {
+          row = 0;
+          col = 0;
+          currentCol += pattern[0].length + 1; // Move to the next letter position
+          charIndex++;
+        }
+      }
+
+      // Stop if we reach the end of the text
+      if (charIndex >= text.length) {
+        callback(); // Trigger the next effect/message
+      } else {
+        // Keep drawing, regardless of grid column constraints
+        setTimeout(tileNextSquare, 10); // Adjust delay for speed
+      }
+    }
+
+    tileNextSquare(); // Start the tiling effect
+  }
+
+  // Calculate the width of the text in squares (including gaps)
+  function getTextWidthInSquares(text) {
+    return text.length * (2 + 1); // 5 squares per letter, 1 gap between letters
+  }
+
+  // Apply the effect based on the word's length
+  function applyEffectBasedOnLength(text, callback) {
+    const textWidthInSquares = getTextWidthInSquares(text);
+
+    if (textWidthInSquares <= gridCols) {
+      // If the text fits in the available columns, use the tiling effect
+      createTilingEffect(text, callback);
+    } else {
+      // If the text is too long, use the marquee effect
+      createMarqueeEffect(text, callback);
+    }
+  }
+
+  // Cycle through messages and apply effects based on text length
+  function cycleMessages() {
+    const message = messages[messageIndex];
+
+    applyEffectBasedOnLength(message.text, () => {
+      // Pause for 2 seconds before transitioning to the next message
+      setTimeout(() => {
+        messageIndex = (messageIndex + 1) % messages.length;
+        cycleMessages(); // Move to the next message after the pause
+      }, 6000); // 2-second pause after each animation completes
+    });
+  }
+
+  // Start the cycle
+  cycleMessages();
+
+  const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  darkModeQuery.addEventListener("change", (e) => {
+    // Update canvas when the theme changes
+    contrast = rootStyles.getPropertyValue("--contrast").trim();
+  });
+</script>

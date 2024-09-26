@@ -1,10 +1,10 @@
 /* buttons */
 .pause,
 .play {
-  border-color: #fff;
+  border-color: var(--base);
   display: flex;
   align-items: center;
-  --pauseColor: #fff;
+  --pauseColor: var(--base);
 }
 
 .pause::before,
@@ -18,7 +18,7 @@
 
 .pause:hover,
 .play:hover {
-  --pauseColor: #fff;
+  --pauseColor: var(--base);
 }
 
 .pause::before {
