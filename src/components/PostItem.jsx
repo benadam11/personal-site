@@ -1,11 +1,12 @@
-export default function PostItem({ published, url, title }) {
+export default function PostItem({ published, url, title, isHomePage }) {
+  const headingClasses = isHomePage ? "text-xl" : "text-3xl font-bold";
   return (
-    <li className="block mb-4">
-      <time className="font-mono font-medium text-grey2 text-sm mb-2">
+    <li className={`block ${isHomePage ? "mb-4" : "mb-12"}`}>
+      <time className="font-mono text-contrastShaded text-sm mb-2">
         {published}
       </time>
       <a href={url}>
-        <h3 className="text-xl font-serif font-bold">{title}</h3>
+        <h3 className={headingClasses}>{title}</h3>
       </a>
     </li>
   );

@@ -1,5 +1,4 @@
 ---
-import HeadingSlider from "../../components/HeadingSlider";
 import MainBody from "../../components/MainBody.astro";
 import MainHead from "../../components/MainHead.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
@@ -8,6 +7,7 @@ const posts = await Astro.glob("./*.md");
 const work = posts
   .filter((post) => post.frontmatter.type !== "sideproject")
   .sort(sortDate);
+
 const sideProjects = posts
   .filter((post) => post.frontmatter.type === "sideproject")
   .sort(sortDate);
@@ -29,36 +29,27 @@ const sideProjects = posts
     </section>
 
     <section class="fade-in max-w-[960px] mx-auto">
-      <SectionHeading> About Me </SectionHeading>
-
-      <div class="overflow-hidden rounded-md">
-        <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
-          <source src="/video/react-interview-questions.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </section>
-
-    <section class="fade-in max-w-[960px] mx-auto my-24">
-      <article class="border border-shadow relative aspect-video">
-        <span
-          class="border border-shadow bg-base p-1 px-2 absolute top-[-14px] left-[14px] text-xs"
-        >
-          About Me
-        </span>
-        <HeadingSlider client:load />
-      </article>
-    </section>
-
-    <section class="fade-in max-w-[960px] mx-auto">
       <SectionHeading> Work </SectionHeading>
       <ul class="grid md:grid-cols-2 gap-8">
         {
           work.map((post) => {
             return (
-              <li class="border border-shadow p-8 aspect-video relative flex flex-col justify-end">
-                <span class="text-contrastShaded">
-                  {post.frontmatter.title}
-                </span>
+              <li>
+                <a
+                  href={post.url}
+                  class="border border-shadow bg-[var(--vellum)] p-8 aspect-video relative flex flex-col items-center justify-center"
+                >
+                  <img
+                    width={60}
+                    src={post.frontmatter.logo || ""}
+                    alt={post.frontmatter.title}
+                    class="h-auto"
+                  />
+                  <div class="text-[var(--stone)] absolute bottom-[16px] left-[16px] flex flex-col">
+                    <span class="font-mono text-[10px] uppercase">{post.frontmatter.year}</span>
+                    <span>{post.frontmatter.title}</span>
+                  </div>
+                </a>
               </li>
             );
           })
@@ -72,10 +63,21 @@ const sideProjects = posts
         {
           sideProjects.map((post) => {
             return (
-              <li class="border border-shadow p-8 aspect-video relative flex flex-col justify-end">
-                <span class="text-contrastShaded">
-                  {post.frontmatter.title}
-                </span>
+              <li>
+                <a
+                  href={post.url}
+                  class="border border-shadow bg-[var(--vellum)] p-8 aspect-video relative flex flex-col items-center justify-center"
+                >
+                  <img
+                    width={60}
+                    src={post.frontmatter.logo || ""}
+                    alt={post.frontmatter.title}
+                  />
+                  <div class="text-[var(--stone)] absolute bottom-[16px] left-[16px] flex flex-col">
+                    <span class="font-mono text-xs">{post.frontmatter.year}</span>
+                    <span>{post.frontmatter.title}</span>
+                  </div>
+                </a>
               </li>
             );
           })

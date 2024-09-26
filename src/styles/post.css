@@ -78,20 +78,21 @@
   max-width: 280px;
   transform: translateY(calc(-50% + 40px));
   z-index: 2;
+  padding: 1rem;
   
 }
 
 .toc::before {
   content: 'Table of Contents';
   top: 0px;
-  padding-top: 8px;
+  padding-top: 1rem;
   font-weight: 800;
   transform: translateX(-24px);
   @apply text-sm absolute invisible uppercase;
 }
 
 .toc:hover {
-  @apply bg-base border border-contrast;
+  @apply bg-base border border-faint;
 }
 
 .toc:hover::before {

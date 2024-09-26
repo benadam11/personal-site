@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/Post.astro
+layout: ../../layouts/Work.astro
 title: investmentcalculator.io
-description: >
-  Personal areas of focus for the new year
+description:
+year: 2017
 published: 12/28/2023
 type: sideproject
+logo: /images/ic-logo.svg
 ---
 
-## Test
+Coming soon...

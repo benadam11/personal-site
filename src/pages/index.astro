@@ -78,6 +78,7 @@ const topPosts = posts.sort(sortDate).slice(0, 5);
             {
               topPosts.map(({ frontmatter, url }) => (
                 <PostItem
+                  isHomePage={true}
                   title={frontmatter.title}
                   published={frontmatter.published}
                   url={url}

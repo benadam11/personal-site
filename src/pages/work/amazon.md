@@ -1,9 +1,10 @@
 ---
-layout: ../../layouts/Post.astro
+layout: ../../layouts/Work.astro
 title: Amazon
-description: >
-  Personal areas of focus for the new year
+description:
 published: 12/28/2023
+year: 2021-2022
+logo: /images/amazon-logo.svg
 ---
 
-## Test
+Coming soon...
