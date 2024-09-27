@@ -10,6 +10,16 @@ year: 2022-Present
 
 ## Course Platform
 
+### Landing Page
+
+One of the first projects I worked on after joining ui.dev was redesigning and building our landing pages and revamping our pricing. As a result our revenue per customer nearly doubled. As a part of this initiative, we unified unified our marketing pages with the course platform application allowing us to do logged out previews, in app upgrades and other features that that wouldn't have been possible otherwise. 
+
+<div class="overflow-hidden my-8">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+    <source src="/video/landing-page.mp4" type="video/mp4" />
+  </video>
+</div>
+
 ### Dashboard
 
 Building the course dashboard for [ui.dev](https://ui.dev) was a fun project. I was responsible for the design and implementation of the dashboard. The primary goal was to provide an interactive place for students to track their course progress and encourage them to continue learning using the badges and achievements they earn along the way. From a business perspective, the dashboard also supports a logged out experience which allows perspective students to preview the course and see a selection of the lessons to get a feel for the content. You can see that in action [here](https://ui.dev/c/react).
@@ -17,6 +27,16 @@ Building the course dashboard for [ui.dev](https://ui.dev) was a fun project. I 
 <div class="overflow-hidden my-8">
   <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
     <source src="/video/dashboard-walkthrough.mp4" type="video/mp4" />
+  </video>
+</div>
+
+### Code Previews
+
+To make lessons more engaging, I built a CodePreview component on top of [Sandpack](https://sandpack.codesandbox.io/) in order to bring the code examples to life. The CodePreview component allows students to interact with the code examples in the lesson, and see the results in real time.
+
+<div class="overflow-hidden my-8">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+    <source src="/video/code-preview.mp4" type="video/mp4" />
   </video>
 </div>
 
