@@ -79,11 +79,10 @@
   transform: translateY(calc(-50% + 40px));
   z-index: 2;
   padding: 1rem;
-  
 }
 
 .toc::before {
-  content: 'Table of Contents';
+  content: "Table of Contents";
   top: 0px;
   padding-top: 1rem;
   font-weight: 800;
@@ -150,7 +149,7 @@
     color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.toc-link  {
+.toc-link {
   font-weight: 600;
 }
 
@@ -167,7 +166,7 @@
   display: block;
   width: 28px;
   height: 2px;
-  background-color: currentColor;
+  background-color: var(--acid);
   position: absolute;
   right: 0px;
   top: 10px;
@@ -199,7 +198,6 @@
 .post-content .twitter-tweet {
   @apply mx-auto my-10 !important;
 }
-
 
 .astro-code {
   padding: 2rem;
@@ -233,25 +231,25 @@
   padding-right: 2px;
 }
 
-.code-wrapper:has(.astro-code[data-language='html']):after {
-  content: 'HTML';
+.code-wrapper:has(.astro-code[data-language="html"]):after {
+  content: "HTML";
   aspect-ratio: 4/3;
 }
 
-.code-wrapper:has(.astro-code[data-language='css']):after {
-  content: 'CSS';
+.code-wrapper:has(.astro-code[data-language="css"]):after {
+  content: "CSS";
   aspect-ratio: 4/3;
 }
 
-.code-wrapper:has(.astro-code[data-language='js']):after {
-  content: 'JS';
+.code-wrapper:has(.astro-code[data-language="js"]):after {
+  content: "JS";
 }
 
 img + em {
   display: block;
   text-align: center;
   font-size: 1rem;
-  opacity: .75;
+  opacity: 0.75;
   margin-top: -1rem;
 }
 

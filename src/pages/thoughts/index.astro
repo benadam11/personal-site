@@ -28,6 +28,7 @@ const postData = posts.sort(sortDate);
             .sort(sortDate)
             .map(({ frontmatter, url }) => (
               <PostItem
+                isHomePage={false}
                 published={frontmatter.published}
                 title={frontmatter.title}
                 url={url}
