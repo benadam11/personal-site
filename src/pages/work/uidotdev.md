@@ -4,7 +4,7 @@ title: ui.dev
 description: >
   Personal areas of focus for the new year
 published: 9/17/24
-logo: /images/uidotdev-logo.svg
+logo: /images/bytes-logo.svg
 year: 2022-Present
 ---
 
