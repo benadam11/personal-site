@@ -9,6 +9,26 @@ const springConfig = {
 
 const history = [
   {
+    year: 1987,
+    event: "Born. Didn't do too much that year.",
+  },
+  {
+    year: 1988,
+    event: "Moved to Tucson, Arizona.",
+  },
+  {
+    year: 1997,
+    event: "The University of Arizona won the NCAA Championship making basketball my one true love.",
+  },
+  {
+    year: 1998,
+    event: "As a kid who grew up without TV, the velvety voice of Al McCoy turned me into a Suns fan for life.",
+  },
+  {
+    year: 2005,
+    event: "I became a state champion in swimming.",
+  },
+  {
     year: 2010,
     event: "Graduated from ASU.",
   },
@@ -22,7 +42,15 @@ const history = [
   },
   {
     year: 2013,
+    event: "Got engaged.",
+  },
+  {
+    year: 2013,
     event: "Closed Blinktank and joined Strongmind.",
+  },
+  {
+    year: 2014,
+    event: "Got married.",
   },
   {
     year: 2014,
@@ -38,11 +66,19 @@ const history = [
   },
   {
     year: 2017,
+    event: "I became a dad to twins.",
+  },
+  {
+    year: 2017,
     event: "Was promoted to UX Engineer III at GoDaddy.",
   },
   {
     year: 2019,
     event: "Was promoted to UX Engineer IV at GoDaddy.",
+  },
+  {
+    year: 2020,
+    event: "I became a dad of 3 (pandemic baby).",
   },
   {
     year: 2021,
@@ -54,7 +90,7 @@ const history = [
   },
   {
     year: 2024,
-    event: "Designer / Engineer based in Tempe, Arizona.",
+    event: "Ready to get hurt again by all my Arizona Sports teams.",
   },
 ];
 
@@ -105,7 +141,7 @@ export default function HeadingSlider() {
           exit={{ opacity: 0, y: -20 }}
           transition={{ ...springConfig }}
           key={index}
-          className="md:text-xl mb-4"
+          className="md:text-xl mb-4 max-w-[500px] mx-auto"
         >
           {history[index].event}
         </motion.h3>
