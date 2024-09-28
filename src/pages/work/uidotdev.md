@@ -12,10 +12,10 @@ year: 2022-Present
 
 ### Landing Page
 
-One of the first projects I worked on after joining ui.dev was redesigning and building our landing pages and revamping our pricing. As a result our revenue per customer nearly doubled. As a part of this initiative, we unified unified our marketing pages with the course platform application allowing us to do logged out previews, in app upgrades and other features that that wouldn't have been possible otherwise. 
+One of the first projects I worked on after joining ui.dev was redesigning and building our landing pages and revamping our pricing. As a result our revenue per customer nearly doubled. As a part of this initiative, we unified unified our marketing pages with the course platform application allowing us to do logged out previews, in app upgrades and other features that that wouldn't have been possible otherwise.
 
 <div class="overflow-hidden my-8">
-  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/landing-page-placeholder.jpg">
     <source src="/video/landing-page.mp4" type="video/mp4" />
   </video>
 </div>
@@ -25,7 +25,7 @@ One of the first projects I worked on after joining ui.dev was redesigning and b
 Building the course dashboard for [ui.dev](https://ui.dev) was a fun project. I was responsible for the design and implementation of the dashboard. The primary goal was to provide an interactive place for students to track their course progress and encourage them to continue learning using the badges and achievements they earn along the way. From a business perspective, the dashboard also supports a logged out experience which allows perspective students to preview the course and see a selection of the lessons to get a feel for the content. You can see that in action [here](https://ui.dev/c/react).
 
 <div class="overflow-hidden my-8">
-  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/dashboard-placeholder.jpg">
     <source src="/video/dashboard-walkthrough.mp4" type="video/mp4" />
   </video>
 </div>
@@ -35,7 +35,7 @@ Building the course dashboard for [ui.dev](https://ui.dev) was a fun project. I 
 To make lessons more engaging, I built a CodePreview component on top of [Sandpack](https://sandpack.codesandbox.io/) in order to bring the code examples to life. The CodePreview component allows students to interact with the code examples in the lesson, and see the results in real time.
 
 <div class="overflow-hidden my-8">
-  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/code-preview-placeholder.jpg">
     <source src="/video/code-preview.mp4" type="video/mp4" />
   </video>
 </div>
@@ -45,7 +45,7 @@ To make lessons more engaging, I built a CodePreview component on top of [Sandpa
 One of the core features I built for our course platform was an interactive code challege experience. Built on top of [Sandpack](https://sandpack.codesandbox.io/), the challenge editor allowed students to test their knowledge from the lesson with real time visual feedback. Once they complete their tasks, I wrote a series of automated tests to assess their solution. Many technical challenges to overcome building this feature, but it was worth the effort. In addition to the code editor we also designed a custom code theme, and added integrations for `prettier` and `autosave` to make the experience as seamless as possible.
 
 <div class="overflow-hidden my-8">
-  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/challenge-editor-placeholder.jpg">
     <source src="/video/challenge-editor.mp4" type="video/mp4" />
   </video>
 </div>
@@ -55,7 +55,7 @@ One of the core features I built for our course platform was an interactive code
 One of the sections we built for the course was a custom module for React Interview Questions. We explored a number of different ideas but settled for a quiz based module, that covered all of the common React specific questions we've seen covered in interviews. I build an interactive Card UI using `framer-motion` that allows students to flip the card to reveal the answer as well as the ability to filter based on the difficulty. The module also allows users to mark questions as completed once they feel comfortable with their ability to answer it correctly.
 
 <div class="overflow-hidden my-8">
-  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/react-interview-questions-placeholder.jpg">
     <source src="/video/react-interview-questions.mp4" type="video/mp4" />
   </video>
 </div>
@@ -67,7 +67,7 @@ One of the sections we built for the course was a custom module for React Interv
 One of our goals for Bytes was to improve organic growth so we experimented with creating an interactive sharing experience for the newsletter. When you click the share button in the newsletter, it will take you to a page where you can customize a message and graphic that can be shared on LinkedIn or Twitter (X). Because neither platform supports attaching images in their intent URLs, I built a service that would take in a query param and generate an image on the fly based on what the user had selected in the composer. You can play with the experience [here](https://bytes.dev/share).
 
 <div class="overflow-hidden my-8">
-  <video class="w-full" autoplay loop muted playsinline poster="/images/placeholder.jpg">
+  <video class="w-full" autoplay loop muted playsinline poster="/images/bytes-share-placeholder.jpg">
     <source src="/video/bytes-share.mp4" type="video/mp4" />
   </video>
 </div>
