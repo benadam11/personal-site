@@ -5,7 +5,7 @@ import ImageColors from "../../components/ImageColor.jsx";
 import KeyframePlayer from "../../components/KeyframePlayer";
 import MainBody from "../../components/MainBody.astro";
 import MainHead from "../../components/MainHead.astro";
-import ParticleAnimation from "../../components/ParticleAnimation.jsx";
+import ParticleAnimation from "../../components/ParticleAnimation.astro";
 import PulsingActionButton from "../../components/PulsingActionButton.astro";
 ---
 
@@ -28,7 +28,7 @@ import PulsingActionButton from "../../components/PulsingActionButton.astro";
         <QuizCards client:only="react" />
         <GameOfLife />
         <KeyframePlayer client:visible />
-        <ParticleAnimation client:visible />
+        <ParticleAnimation />
         <ImageColors client:visible />
         <PulsingActionButton />
       </main>

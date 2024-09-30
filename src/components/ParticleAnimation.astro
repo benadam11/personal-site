@@ -1,0 +1,15 @@
+<article
+  class="default-scheme w-full mb-12 p-8 bg-baseShaded text-contrastShaded grid grid-rows-[auto_1fr]"
+>
+  <h4 class="text-center font-serif text-xl">{`Animated Particles`}</h4>
+  <p class="text-xs font-serif text-center mt-2 pb-8">From Day of The Dead</p>
+  <figure class="grid grid-rows-[auto_1fr] w-full">
+    <canvas id="canvas-demo"></canvas>
+  </figure>
+</article>
+
+<script>
+  import { animateCanvas } from "../scripts/particle-animation";
+  const canvas = document.getElementById("canvas-demo");
+  animateCanvas(canvas, 100);
+</script>

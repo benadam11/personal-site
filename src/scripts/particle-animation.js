@@ -62,7 +62,7 @@ export const animateCanvas = (canvas, count) => {
       this.vx = Math.cos(direction) * speed;
       this.vy = Math.sin(direction) * speed;
     }
-
+    
     reset() {
       this.x = this.base[0];
       this.y = this.base[1];

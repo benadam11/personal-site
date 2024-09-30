@@ -80,7 +80,7 @@ export default function ImageColors() {
           <button
             className="font-bold underline cursor-pointer"
             onClick={() =>
-              setImgUrl(`https://bingw.jasonzeng.dev/?index=random`)
+              setImgUrl(`https://picsum.photos/seed/${Math.random()}/1334/2000`)
             }
           >
             Try Random
