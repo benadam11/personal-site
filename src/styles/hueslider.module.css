@@ -1,0 +1,45 @@
+.huePicker {
+  position: relative;
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+}
+
+.hueContainer {
+  background: linear-gradient(
+    to right,
+    #df0060,
+    #d64400,
+    #fd9000,
+    #fcbc00,
+    #fde400,
+    #bdd200,
+    #89dc00,
+    #00e558,
+    #00e1a2,
+    #00c1a7,
+    #0194a1,
+    #0081a4,
+    #007cc5,
+    #5d63ff,
+    #b12cff,
+    #cf00db,
+    #da00b8,
+    #e20096,
+    #e20096
+  );
+  padding: 0 2px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+}
+
+.knob {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transform: translate(-14px, -7px) scale(var(--scale, 1));
+  background-color: white;
+  transition: transform 0.2s ease-in-out;
+}

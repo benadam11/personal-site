@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+import styles from "../styles/hueslider.module.css";
 
 const HueSlider = ({ color, onChange }) => {
   const [hue, setHue] = useState(color.hue);
+  const [isPressed, setIsPressed] = useState(false);
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -16,6 +18,14 @@ const HueSlider = ({ color, onChange }) => {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.cursor = isPressed ? "grabbing" : "default";
+
+    return () => {
+      document.body.style.cursor = "default";
+    };
+  }, [isPressed]);
+
   const handleChange = (e) => {
     const hueValue = calculateChange(e, containerRef.current);
     setHue(hueValue);
@@ -23,12 +33,14 @@ const HueSlider = ({ color, onChange }) => {
 
   const handleMouseDown = (e) => {
     handleChange(e);
+    setIsPressed(true);
     window.addEventListener("mousemove", handleChange);
     window.addEventListener("mouseup", handleMouseUp);
   };
 
   const handleMouseUp = () => {
     onChange && onChange(hue);
+    setIsPressed(false);
     unbindEventListeners();
   };
 
@@ -56,17 +68,22 @@ const HueSlider = ({ color, onChange }) => {
     left: `${(hue * 100) / 360}%`,
   };
 
+  const knobStyles = {
+    "--scale": isPressed ? 1.2 : 1,
+    cursor: isPressed ? "grabbing" : "grab",
+  };
+
   return (
-    <div className="relative w-full h-4">
+    <div className={styles.huePicker}>
       <div
-        className="relative w-full h-full rounded-full bg-gradient-to-r from-[#DF0060] via-[#00e558] to-[#e20096] p-0.5"
+        className={styles.hueContainer}
         ref={containerRef}
         onMouseDown={handleMouseDown}
         onTouchMove={handleChange}
         onTouchStart={handleChange}
       >
         <div className="absolute" style={pointerStyles}>
-          <div className="w-7 h-7 rounded-full transform -translate-x-3.5 -translate-y-1.5 bg-gray-200 shadow-md" />
+          <div className={styles.knob} style={knobStyles} />
         </div>
       </div>
     </div>

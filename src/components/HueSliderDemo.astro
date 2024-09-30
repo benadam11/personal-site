@@ -1,0 +1,15 @@
+---
+import HueSlider from "./HueSlider.jsx";
+---
+
+<article
+  class="default-scheme w-full mb-12 p-8 bg-baseShaded text-contrastShaded grid grid-rows-[auto_1fr]"
+>
+  <h4 class="text-center font-serif text-xl">Hue Slider</h4>
+  <p class="text-xs font-serif text-center mt-2 pb-8">
+    Color Picker UI built for GoDaddy's website builder
+  </p>
+  <div class="my-8">
+    <HueSlider color={{ hue: 30 }} onChange={() => {}} client:only="react" />
+  </div>
+</article>
