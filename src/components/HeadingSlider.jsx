@@ -86,11 +86,11 @@ const history = [
   },
   {
     year: 2022,
-    event: "Joined uidotdev as a Staff Engineer.",
+    event: "Joined ui.dev as a Staff Engineer.",
   },
   {
     year: 2024,
-    event: "Ready to get hurt again by all my Arizona Sports teams.",
+    event: "Still being written ...",
   },
 ];
 
