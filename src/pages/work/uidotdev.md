@@ -12,7 +12,7 @@ year: 2022-Present
 
 ### Landing Page
 
-One of the first projects I worked on after joining ui.dev was redesigning and building our landing pages and revamping our pricing. As a result our revenue per customer nearly doubled. As a part of this initiative, we unified unified our marketing pages with the course platform application allowing us to do logged out previews, in app upgrades and other features that that wouldn't have been possible otherwise.
+One of the first projects I worked on after joining ui.dev was redesigning and building our landing pages and revamping our pricing. As a result our revenue per customer nearly doubled. As a part of this initiative, we unified our marketing pages with the course platform application allowing us to do logged out previews, in app upgrades and other features that that wouldn't have been possible otherwise.
 
 <div class="overflow-hidden my-8">
   <video class="w-full" autoplay loop muted playsinline poster="/images/landing-page-placeholder.jpg">
