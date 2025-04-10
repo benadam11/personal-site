@@ -90,7 +90,15 @@ const history = [
   },
   {
     year: 2024,
-    event: "Still being written ...",
+    event: "ui.dev gets acquired",
+  },
+  {
+    year: 2025,
+    event: "Joined agree.com as a Senior Software Engineer.",
+  },
+  {
+    year: 2025,
+    event: "Competed in my first triathalon.",
   },
 ];
 
