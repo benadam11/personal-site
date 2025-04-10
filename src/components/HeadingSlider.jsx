@@ -90,7 +90,7 @@ const history = [
   },
   {
     year: 2024,
-    event: "ui.dev gets acquired",
+    event: "ui.dev gets acquired.",
   },
   {
     year: 2025,
